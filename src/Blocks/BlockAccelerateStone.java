@@ -38,7 +38,6 @@ public class BlockAccelerateStone extends BlockGlass implements ITileEntityProvi
 			double sy = rnd.nextFloat() * 2 - 1.5;
 			double sz = rnd.nextFloat() * 3 - 1.5;
 			world.spawnParticle(EnumParticleTypes.PORTAL, rx, ry, rz, sx, sy, sz);
-
 		}
 	}
 
