@@ -1,0 +1,6 @@
+{
+    "parent": "experienceapple2:block/ritual_cube_all",
+    "textures": {
+        "all": "experienceapple2:blocks/ritualglasstier1"
+    }
+}
