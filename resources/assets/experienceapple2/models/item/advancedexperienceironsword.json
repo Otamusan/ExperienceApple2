@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "experienceapple2:items/experienceironsword"
+    "layer0": "experienceapple2:items/advancedexperienceironsword"
   }
 }

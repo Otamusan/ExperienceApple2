@@ -28,15 +28,6 @@ public class RitualCore {
 						Block Rblock = blockstate.getBlock();
 						Block Dblock = RitualLocateData.Data(in, ix, iy, iz);
 
-						/*if (Rblock == Dblock || (Dblock == null
-								&& (Rblock != BlockRegister.ritualGlassTier1)
-								&& (Rblock != BlockRegister.ritualGlassTier2)
-								&& (Rblock != BlockRegister.ritualGlassTier3)
-								&& (Rblock != BlockRegister.ritualGlassTier4))) {
-							count[in]++;
-						} else {
-							break outside;
-						}*/
 						if (Rblock==Dblock || (Dblock==null
         						&& (Rblock!=BlockRegister.ritualGlassTier1 && Rblock!=BlockRegister.ritualStoneTier1 && Rblock!=BlockRegister.ritualLauncherTier1)
         						&& (Rblock!=BlockRegister.ritualGlassTier2 && Rblock!=BlockRegister.ritualStoneTier2 && Rblock!=BlockRegister.ritualLauncherTier2)
