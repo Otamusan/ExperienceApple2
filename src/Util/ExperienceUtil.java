@@ -10,26 +10,31 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ExperienceUtil {
-	public static boolean experiencePull(EntityPlayer player, int n, World world) {
-		if (player != null && !world.isRemote) {
-			for (int i = 0; i < n; i++) {
 
-				if (player.experience > 0) {
-					player.experience -= 1F / player.xpBarCap();
-				} else {
-					player.experienceLevel--;
-					player.experience = 1;
-				}
+	public static boolean experiencePull(EntityPlayer player,int n,World world){
+    	if (player!=null){
+    		for (int i = 0; i <= n; i++){
+    			if (!(player.experienceLevel>0)){
+    				player.experience=0;
+    				player.experienceLevel=0;
+    				return false;
+    			}
 
-				player.experienceLevel--;
-				player.addExperienceLevel(1);
-			}
-		} else {
-			return false;
-		}
-		return true;
-	}
+    			if (player.experience>0){
+    				player.experience-=1F/player.xpBarCap();
+    			}else{
+    				player.experienceLevel--;
+    				player.experience=1;
+    			}
 
+    			player.experienceLevel--;
+    			player.addExperienceLevel(1);
+    		}
+    	}else{
+    		return false;
+    	}
+    	return true;
+    }
 	public static double getExperiencePoints(EntityPlayer player) {
 		double exp = 0;
 		for (int i = 0; i < player.experienceLevel; i++) {
@@ -43,9 +48,11 @@ public class ExperienceUtil {
 		if (world.getBlockState(new BlockPos(x, y, z)).getBlock() != Blocks.AIR) {
 			if (!world.isRemote) {
 				ItemStack itemstack3 = new ItemStack(Item.getItemFromBlock(block));
+				
 				EntityItem itementity3 = new EntityItem(world, x, (double) y - 1, z, itemstack3);
 				world.spawnEntityInWorld(itementity3);
 			}
+			System.out.println(world.isRemote);
 		} else {
 			world.setBlockState(new BlockPos(x, y, z), block.getBlockState().getBaseState());
 		}

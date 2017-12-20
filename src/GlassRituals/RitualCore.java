@@ -1,5 +1,6 @@
 package GlassRituals;
 
+import Crafting.ExperienceAppleCrafting.ExperienceAppleCraftingRegister;
 import ExperienceApple.EAMain;
 import ExperienceApple.Register.BlockRegister;
 import Util.ExperienceUtil;
@@ -27,7 +28,7 @@ public class RitualCore {
 						Block Rblock = blockstate.getBlock();
 						Block Dblock = RitualLocateData.Data(in, ix, iy, iz);
 
-						if (Rblock == Dblock || (Dblock == null
+						/*if (Rblock == Dblock || (Dblock == null
 								&& (Rblock != BlockRegister.ritualGlassTier1)
 								&& (Rblock != BlockRegister.ritualGlassTier2)
 								&& (Rblock != BlockRegister.ritualGlassTier3)
@@ -35,7 +36,25 @@ public class RitualCore {
 							count[in]++;
 						} else {
 							break outside;
-						}
+						}*/
+						if (Rblock==Dblock || (Dblock==null
+        						&& (Rblock!=BlockRegister.ritualGlassTier1 && Rblock!=BlockRegister.ritualStoneTier1 && Rblock!=BlockRegister.ritualLauncherTier1)
+        						&& (Rblock!=BlockRegister.ritualGlassTier2 && Rblock!=BlockRegister.ritualStoneTier2 && Rblock!=BlockRegister.ritualLauncherTier2)
+        						&& (Rblock!=BlockRegister.ritualGlassTier3 && Rblock!=BlockRegister.ritualStoneTier3 && Rblock!=BlockRegister.ritualLauncherTier3)
+        						&& (Rblock!=BlockRegister.ritualGlassTier4 && Rblock!=BlockRegister.ritualStoneTier4 && Rblock!=BlockRegister.ritualLauncherTier4))
+        						|| (Dblock==BlockRegister.ritualGlassTier1 && Rblock==BlockRegister.ritualStoneTier1)
+        						|| (Dblock==BlockRegister.ritualGlassTier2 && Rblock==BlockRegister.ritualStoneTier2)
+        						|| (Dblock==BlockRegister.ritualGlassTier3 && Rblock==BlockRegister.ritualStoneTier3)
+        						|| (Dblock==BlockRegister.ritualGlassTier4 && Rblock==BlockRegister.ritualStoneTier4)
+        						|| (Dblock==BlockRegister.ritualGlassTier1 && Rblock==BlockRegister.ritualLauncherTier1)
+        						|| (Dblock==BlockRegister.ritualGlassTier2 && Rblock==BlockRegister.ritualLauncherTier2)
+        						|| (Dblock==BlockRegister.ritualGlassTier3 && Rblock==BlockRegister.ritualLauncherTier3)
+        						|| (Dblock==BlockRegister.ritualGlassTier4 && Rblock==BlockRegister.ritualLauncherTier4)
+        						){
+        					count[in]++;
+        				}else{
+        					break outside;
+        				}
 					}
 				}
 			}
@@ -47,12 +66,13 @@ public class RitualCore {
 	}
 
 	public static boolean ritualActive(EntityPlayer player, World world, int x, int y, int z) {
-
 		int n = ritualScan(world, x, y, z);
-
-		if (n != 114514)
-			ritualRemove(x, y, z, n, world, player);
-
+		if (player==null) return false;
+		if (n != 114514){
+			if (!ritualRemove(x, y, z, n, world, player)){
+				return false;
+			}
+		}
 		switch (n) {
 		case 0:
 			world.createExplosion(null, x, y, z, 5.0F, true);
@@ -108,12 +128,44 @@ public class RitualCore {
 		return false;
 	}
 
-	public static void ritualRemove(int x, int y, int z, int n, World world, EntityPlayer player) {
-		for (int ix = 0; ix < 3; ix++) {
+	public static boolean ritualRemove(int x, int y, int z, int n, World world, EntityPlayer player) {
+		/*for (int ix = 0; ix < 3; ix++) {
 			for (int iy = 0; iy < 3; iy++) {
 				for (int iz = 0; iz < 3; iz++) {
 					IBlockState blockstate = world.getBlockState(new BlockPos(x + ix - 1, y + iy - 1, z + iz - 1));
 					Block Rblock = blockstate.getBlock();
+					int glassCost=ExperienceAppleCraftingRegister.EACRecipeCRtoCost.get(Item.getItemFromBlock(BlockRegister.ritualGlassTier1));
+					System.out.println(glassCost);
+					if (Rblock==BlockRegister.ritualStoneTier1 || Rblock==BlockRegister.ritualLauncherTier1){
+    					if (ExperienceUtil.getExperiencePoints(player)>=glassCost){
+    						ExperienceUtil.experiencePull(player,glassCost,world);
+    					}else{
+        					return false;
+    					}
+    				}
+					if (Rblock==BlockRegister.ritualStoneTier2 || Rblock==BlockRegister.ritualLauncherTier2){
+    					if (ExperienceUtil.getExperiencePoints(player)>=glassCost*8){
+    						ExperienceUtil.experiencePull(player,glassCost*8,world);
+    					}else{
+        					return false;
+    					}
+    				}
+					if (Rblock==BlockRegister.ritualStoneTier3 || Rblock==BlockRegister.ritualLauncherTier3){
+    					if (ExperienceUtil.getExperiencePoints(player)>=glassCost*64){
+    						ExperienceUtil.experiencePull(player,glassCost*64,world);
+    					}else{
+        					return false;
+    					}
+    				}
+					if (Rblock==BlockRegister.ritualStoneTier4 || Rblock==BlockRegister.ritualLauncherTier4){
+    					if (ExperienceUtil.getExperiencePoints(player)>=glassCost*512){
+    						ExperienceUtil.experiencePull(player,glassCost*512,world);
+    					}else{
+        					return false;
+    					}
+    				}
+					//ExperienceUtil.experiencePull(player,glassCost*512,world);
+
 					if (Rblock == BlockRegister.ritualGlassTier1 || Rblock == BlockRegister.ritualGlassTier2
 							|| Rblock == BlockRegister.ritualGlassTier3 || Rblock == BlockRegister.ritualGlassTier4
 							|| Rblock == RitualLocateData.Data(n, ix, iy, iz)) {
@@ -131,5 +183,45 @@ public class RitualCore {
 				}
 			}
 		}
+		return true;*/
+		for (int ix = 0; ix < 3; ix++){
+    		for (int iy = 0; iy < 3; iy++){
+    			for (int iz = 0; iz < 3; iz++){
+    				IBlockState blockstate = world.getBlockState(new BlockPos(x + ix - 1, y + iy - 1, z + iz - 1));
+					Block Rblock = blockstate.getBlock();
+    				//EntityPlayerMP playerMP=(EntityPlayerMP)player;
+					int glassCost=ExperienceAppleCraftingRegister.EACRecipeCRtoCost.get(Item.getItemFromBlock(BlockRegister.ritualGlassTier1));
+
+    				if (Rblock==BlockRegister.ritualStoneTier1 || Rblock==BlockRegister.ritualLauncherTier1){
+    					if (!ExperienceUtil.experiencePull(player,glassCost,world))return false;
+    				}
+
+    				if (Rblock==BlockRegister.ritualStoneTier2 || Rblock==BlockRegister.ritualLauncherTier2){
+    					if (!ExperienceUtil.experiencePull(player,glassCost*8,world))return false;
+    				}
+
+    				if (Rblock==BlockRegister.ritualStoneTier3 || Rblock==BlockRegister.ritualLauncherTier3){
+    					if (!ExperienceUtil.experiencePull(player,glassCost*64,world))return false;
+    				}
+
+    				if (Rblock==BlockRegister.ritualStoneTier4 || Rblock==BlockRegister.ritualLauncherTier4){
+    					if (!ExperienceUtil.experiencePull(player,glassCost*512,world))return false;
+    				}
+
+    				if (Rblock==RitualLocateData.Data(n, ix, iy, iz)){
+    					if (EAMain.particle==false && RitualLocateData.Data(n,ix,iy,iz)!=Blocks.AIR) {
+    						for (int i = 0; i < 10; i++){
+    							world.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, x + ix - Math.random(),
+										y + iy - Math.random(), z + iz - Math.random(), 0.0D, 0.0D, 0.0D);    						}
+    					}
+    					
+    					if (!((Rblock==BlockRegister.ritualStoneTier1) || (Rblock==BlockRegister.ritualStoneTier2) || (Rblock==BlockRegister.ritualStoneTier3) || ((Rblock==BlockRegister.ritualStoneTier4)))){
+    						world.setBlockToAir(new BlockPos(x + ix - 1, y + iy - 1, z + iz - 1));
+    					}
+    				}
+    			}
+    		}
+    	}
+    	return true;
 	}
 }

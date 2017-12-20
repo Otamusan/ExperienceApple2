@@ -23,6 +23,7 @@ public class RitualLocateData {
 			}
 		}
 		ritualname[0] = "Explosion";
+		
 		ritualLocate[0][0][1][1] = BlockRegister.ritualGlassTier1;
 		ritualLocate[0][1][1][0] = BlockRegister.ritualGlassTier1;
 		ritualLocate[0][1][1][1] = BlockRegister.ritualGlassTier1;
@@ -48,13 +49,13 @@ public class RitualLocateData {
 		ritualname[3] = "CreateLava";
 
 		ritualLocate[3][0][1][0] = BlockRegister.ritualGlassTier1;
-		ritualLocate[3][0][1][1] = BlockRegister.ritualGlassTier2;
+		ritualLocate[3][0][2][1] = BlockRegister.ritualGlassTier2;
 		ritualLocate[3][0][1][2] = BlockRegister.ritualGlassTier1;
-		ritualLocate[3][1][1][0] = BlockRegister.ritualGlassTier2;
+		ritualLocate[3][1][2][0] = BlockRegister.ritualGlassTier2;
 		ritualLocate[3][1][1][1] = BlockRegister.ritualGlassTier1;
-		ritualLocate[3][1][1][2] = BlockRegister.ritualGlassTier2;
+		ritualLocate[3][1][2][2] = BlockRegister.ritualGlassTier2;
 		ritualLocate[3][2][1][0] = BlockRegister.ritualGlassTier1;
-		ritualLocate[3][2][1][1] = BlockRegister.ritualGlassTier2;
+		ritualLocate[3][2][2][1] = BlockRegister.ritualGlassTier2;
 		ritualLocate[3][2][1][2] = BlockRegister.ritualGlassTier1;
 
 		ritualname[4] = "CreateEI";

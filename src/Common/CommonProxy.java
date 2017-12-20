@@ -6,6 +6,7 @@ import TileEntity.TileAccelerateStone;
 import TileEntity.TileAdvancedAccelerateStone;
 import TileEntity.TileAdvancedGrowthStone;
 import TileEntity.TileGrowthStone;
+import TileEntity.TileRitualLauncher;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -21,6 +22,8 @@ public class CommonProxy {
 				EAMain.MOD_ID + "tileAdvancedAccelerateStone");
 		GameRegistry.registerTileEntity(TileGrowthStone.class, EAMain.MOD_ID + "tileGrowthStone");
 		GameRegistry.registerTileEntity(TileAdvancedGrowthStone.class, EAMain.MOD_ID + "tileAdvancedGrowthStone");
+		GameRegistry.registerTileEntity(TileRitualLauncher.class, EAMain.MOD_ID + "tileRitualLauncher");
+
 	}
 
 	public void registerEventHandlers() {
