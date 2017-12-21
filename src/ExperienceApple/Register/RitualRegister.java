@@ -14,7 +14,7 @@ public class RitualRegister {
 		list.add(new BlockAndPos(0, 0, 0, BlockRegister.ritualGlassTier1.getDefaultState()));
 		list.add(new BlockAndPos(0, 0, 1, BlockRegister.ritualGlassTier1.getDefaultState()));
 		list.add(new BlockAndPos(1, 0, 0, BlockRegister.ritualGlassTier1.getDefaultState()));
-		.register("Explosion", list);
+		GlassRitualRegister.register("Explosion", list);
 
 		List<BlockAndPos> list1 = new ArrayList<BlockAndPos>();
 		list1.add(new BlockAndPos(-1, -1, 0, BlockRegister.ritualGlassTier1.getDefaultState()));
