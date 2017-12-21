@@ -1,44 +1,60 @@
 package ExperienceApple.Register;
 
-import java.util.ArrayList;
-import java.util.List;
+import static Rituals.RitualStones.*;
 
-import GlassRituals.GlassRitualRegister;
-import Util.BlockAndPos;
+import Rituals.RitualRegistry;
+import Rituals.StonePosData;
+import Rituals.Rituals.Ritual;
+import Rituals.Rituals.RitualBlockCut;
+import Rituals.Rituals.RitualCreateEI;
+import Rituals.Rituals.RitualCreateLava;
+import Rituals.Rituals.RitualCreateWater;
+import Rituals.Rituals.RitualExplode;
 
 public class RitualRegister {
 	public static void init() {
-		List<BlockAndPos> list = new ArrayList<BlockAndPos>();
-		list.add(new BlockAndPos(-1, 0, 0, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list.add(new BlockAndPos(0, 0, -1, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list.add(new BlockAndPos(0, 0, 0, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list.add(new BlockAndPos(0, 0, 1, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list.add(new BlockAndPos(1, 0, 0, BlockRegister.ritualGlassTier1.getDefaultState()));
-		GlassRitualRegister.register("Explosion", list);
+		Ritual ritualExplode = new RitualExplode(new StonePosData(), "Explode");
+		ritualExplode.setStoneBlock(0, 0, 0, tier1);
+		ritualExplode.setStoneBlock(0, 0, 1, tier1);
+		ritualExplode.setStoneBlock(0, 0, -1, tier1);
+		ritualExplode.setStoneBlock(-1, 0, 0, tier1);
+		ritualExplode.setStoneBlock(1, 0, 0, tier1);
+		RitualRegistry.register(ritualExplode);
 
-		List<BlockAndPos> list1 = new ArrayList<BlockAndPos>();
-		list1.add(new BlockAndPos(-1, -1, 0, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list1.add(new BlockAndPos(0, -1, -1, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list1.add(new BlockAndPos(0, -1, 1, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list1.add(new BlockAndPos(1, -1, 0, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list1.add(new BlockAndPos(0, 0, 0, BlockRegister.ritualGlassTier1.getDefaultState()));
-		GlassRitualRegister.register("BlockRemove", list1);
+		Ritual ritualBlockCut = new RitualBlockCut(new StonePosData(), "BlockCut");
+		ritualBlockCut.setStoneBlock(0, -1, 1, tier1);
+		ritualBlockCut.setStoneBlock(1, -1, 0, tier1);
+		ritualBlockCut.setStoneBlock(0, -1, -1, tier1);
+		ritualBlockCut.setStoneBlock(-1, -1, 0, tier1);
+		ritualBlockCut.setStoneBlock(0, 0, 0, tier1);
+		RitualRegistry.register(ritualBlockCut);
 
-		List<BlockAndPos> list2 = new ArrayList<BlockAndPos>();
-		list2.add(new BlockAndPos(-1, 0, -1, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list2.add(new BlockAndPos(-1, 0, 1, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list2.add(new BlockAndPos(0, 0, 0, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list2.add(new BlockAndPos(1, 0, -1, BlockRegister.ritualGlassTier1.getDefaultState()));
-		list2.add(new BlockAndPos(1, 0, 1, BlockRegister.ritualGlassTier1.getDefaultState()));
-		GlassRitualRegister.register("SetWater", list2);
+		Ritual ritualCreateWater = new RitualCreateWater(new StonePosData(), "CreateWater");
+		ritualCreateWater.setStoneBlock(-1, 0, 1, tier1);
+		ritualCreateWater.setStoneBlock(1, 0, -1, tier1);
+		ritualCreateWater.setStoneBlock(-1, 0, -1, tier1);
+		ritualCreateWater.setStoneBlock(1, 0, 1, tier1);
+		ritualCreateWater.setStoneBlock(0, 0, 0, tier1);
+		RitualRegistry.register(ritualCreateWater);
 
-		List<BlockAndPos> list3 = new ArrayList<BlockAndPos>();
-		list2.add(new BlockAndPos(-1, 0, -1, BlockRegister.ritualGlassTier2.getDefaultState()));
-		list2.add(new BlockAndPos(-1, 0, 1, BlockRegister.ritualGlassTier2.getDefaultState()));
-		list2.add(new BlockAndPos(0, 0, 0, BlockRegister.ritualGlassTier2.getDefaultState()));
-		list2.add(new BlockAndPos(1, 0, -1, BlockRegister.ritualGlassTier2.getDefaultState()));
-		list2.add(new BlockAndPos(1, 0, 1, BlockRegister.ritualGlassTier2.getDefaultState()));
-		GlassRitualRegister.register("SetLava", list3);
+		Ritual ritualCreateLava = new RitualCreateLava(new StonePosData(), "CreateLava");
+		ritualCreateLava.setStoneBlock(-1, 0, 1, tier2);
+		ritualCreateLava.setStoneBlock(1, 0, -1, tier2);
+		ritualCreateLava.setStoneBlock(-1, 0, -1, tier2);
+		ritualCreateLava.setStoneBlock(1, 0, 1, tier2);
+		ritualCreateLava.setStoneBlock(0, 0, 0, tier2);
+		ritualCreateLava.setStoneBlock(1, -1, 0, tier1);
+		ritualCreateLava.setStoneBlock(0, -1, 1, tier1);
+		ritualCreateLava.setStoneBlock(0, -1, -1, tier1);
+		ritualCreateLava.setStoneBlock(-1, -1, 0, tier1);
+		RitualRegistry.register(ritualCreateLava);
 
+		Ritual ritualCreateEI = new RitualCreateEI(new StonePosData(), "CreateEI");
+		ritualCreateEI.setStoneBlock(-1, 0, 1, tier2);
+		ritualCreateEI.setStoneBlock(1, 0, -1, tier2);
+		ritualCreateEI.setStoneBlock(-1, 0, -1, tier2);
+		ritualCreateEI.setStoneBlock(1, 0, 1, tier2);
+		ritualCreateEI.setStoneBlock(0, 0, 0, tier2);
+		RitualRegistry.register(ritualCreateEI);
 	}
 }
