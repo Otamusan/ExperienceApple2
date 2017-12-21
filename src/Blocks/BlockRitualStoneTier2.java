@@ -3,7 +3,6 @@ package Blocks;
 import java.util.Random;
 
 import ExperienceApple.EAMain;
-import Rituals.RitualStones;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -16,29 +15,16 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockRitual extends BlockGlass {
-	private int particleAmount;
-	private RitualStones tier;
-
-	public BlockRitual(Material materialIn, int particleAmount, RitualStones tier) {
+public class BlockRitualStoneTier2 extends BlockGlass {
+	public BlockRitualStoneTier2(Material materialIn) {
 		super(materialIn, true);
-		this.particleAmount = particleAmount;
-		this.tier = tier;
-	}
-
-	public RitualStones getTier() {
-		return tier;
-	}
-
-	public void setTier(RitualStones tier) {
-		this.tier = tier;
 	}
 
 	@Override
 	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rnd) {
 		if (EAMain.particle == true)
 			return;
-		for (int i = 0; i < particleAmount; i++) {
+		for (int i = 0; i < 4; i++) {
 			double rx = pos.getX() + rnd.nextFloat();
 			double ry = pos.getY() + rnd.nextFloat();
 			double rz = pos.getZ() + rnd.nextFloat();
@@ -71,4 +57,5 @@ public class BlockRitual extends BlockGlass {
 	public BlockRenderLayer getBlockLayer() {
 		return BlockRenderLayer.CUTOUT;
 	}
+
 }

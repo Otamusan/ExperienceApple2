@@ -11,13 +11,12 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;;
 
 public class RecipeRegister {
-	public static int ritualGlassCost = 50;
-
 	public static void init() {
 		ExperienceAppleCraftingRegister.register(Items.IRON_INGOT, ItemRegister.weakExperienceIronIngot, 25);
 		ExperienceAppleCraftingRegister.register(Item.getItemFromBlock(Blocks.GLASS),
-				Item.getItemFromBlock(BlockRegister.ritualGlassTier1), ritualGlassCost);
-		ExperienceAppleCraftingRegister.register(ItemRegister.bakedSeeds, ItemRegister.infusedBakedSeeds, 100);
+				Item.getItemFromBlock(BlockRegister.ritualGlassTier1), 50);
+		ExperienceAppleCraftingRegister.register(ItemRegister.bakedSeeds,
+				ItemRegister.infusedBakedSeeds, 100);
 
 		RepairRegister.register(ItemRegister.weakExperienceIronPickaxe);
 		RepairRegister.register(ItemRegister.weakExperienceIronAxe);
@@ -111,33 +110,38 @@ public class RecipeRegister {
 				ItemRegister.experienceIronHelmet, ItemRegister.pureExperienceIngot);
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.advancedExperienceIronLeggings),
 				ItemRegister.experienceIronLeggings, ItemRegister.pureExperienceIngot);
-		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.warpStone), ItemRegister.warpStone);
-		// GameRegistry.addShapelessRecipe(new
-		// ItemStack(ItemRegister.enchantmentPearl),
-		// Items.ENCHANTED_BOOK, Items.ENDER_PEARL);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.warpStone),
+				ItemRegister.warpStone);
+		//GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.enchantmentPearl),
+		//		Items.ENCHANTED_BOOK, Items.ENDER_PEARL);
 
 		GameRegistry.addShapedRecipe(new ItemStack(ItemRegister.gravityCompressor), "OOO", "OBO", "OOO", 'O',
 				BlockRegister.experienceOre, 'B', Blocks.OBSIDIAN);
 
 		GameRegistry.addShapedRecipe(new ItemStack(Item.getItemFromBlock(BlockRegister.ritualGlassTier2)), "OOO", "OBO",
-				"OOO", 'O', BlockRegister.ritualGlassTier1, 'B', ItemRegister.gravityCompressor);
+				"OOO", 'O',
+				BlockRegister.ritualGlassTier1, 'B', ItemRegister.gravityCompressor);
 		GameRegistry.addShapedRecipe(new ItemStack(Item.getItemFromBlock(BlockRegister.ritualGlassTier3)), "OOO", "OBO",
-				"OOO", 'O', BlockRegister.ritualGlassTier2, 'B', ItemRegister.gravityCompressor);
+				"OOO", 'O',
+				BlockRegister.ritualGlassTier2, 'B', ItemRegister.gravityCompressor);
 		GameRegistry.addShapedRecipe(new ItemStack(Item.getItemFromBlock(BlockRegister.ritualGlassTier4)), "OOO", "OBO",
-				"OOO", 'O', BlockRegister.ritualGlassTier3, 'B', ItemRegister.gravityCompressor);
+				"OOO", 'O',
+				BlockRegister.ritualGlassTier3, 'B', ItemRegister.gravityCompressor);
 		GameRegistry.addShapedRecipe(new ItemStack(Item.getItemFromBlock(BlockRegister.condensedExperienceOre)), "EOE",
-				"OGO", "EOE", 'E', BlockRegister.experienceOre, 'G', ItemRegister.gravityCompressor, 'O',
-				Items.EXPERIENCE_BOTTLE);
+				"OGO",
+				"EOE", 'E',
+				BlockRegister.experienceOre, 'G', ItemRegister.gravityCompressor, 'O', Items.EXPERIENCE_BOTTLE);
 		GameRegistry.addSmelting(Items.GHAST_TEAR, new ItemStack(ItemRegister.ashOfEntropy, 1, 99), 1F);
 
-		GameRegistry
-				.addSmelting(new ItemStack(ItemRegister.ashOfEntropy, 1, 0),
-						new ItemStack(ItemRegister.ashOfBalance, 1,
-								ItemRegister.ashOfBalance.getMaxDamage(new ItemStack(ItemRegister.ashOfBalance)) - 1),
-						1F);
+		GameRegistry.addSmelting(new ItemStack(ItemRegister.ashOfEntropy, 1, 0),
+				new ItemStack(ItemRegister.ashOfBalance, 1,
+						ItemRegister.ashOfBalance.getMaxDamage(new ItemStack(ItemRegister.ashOfBalance)) - 1),
+				1F);
 
-		GameRegistry.addSmelting(new ItemStack(ItemRegister.ashOfBalance, 1, 0), new ItemStack(ItemRegister.ashOfOrder,
-				1, ItemRegister.ashOfOrder.getMaxDamage(new ItemStack(ItemRegister.ashOfOrder)) - 1), 1F);
+		GameRegistry.addSmelting(new ItemStack(ItemRegister.ashOfBalance, 1, 0),
+				new ItemStack(ItemRegister.ashOfOrder, 1,
+						ItemRegister.ashOfOrder.getMaxDamage(new ItemStack(ItemRegister.ashOfOrder)) - 1),
+				1F);
 
 	}
 
