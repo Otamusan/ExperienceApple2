@@ -27,7 +27,6 @@ public class CommonProxy {
 	}
 
 	public void registerEventHandlers() {
-		//
 		FMLCommonHandler.instance().bus().register(new HasItemUpdate());
 		FMLCommonHandler.instance().bus().register(new DeathEnderDragon());
 	}
