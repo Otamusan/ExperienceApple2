@@ -1,41 +1,22 @@
 package Item;
 
-import net.minecraft.item.Item;
+import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
+import net.minecraft.world.World;
 
-public class ItemDebug extends Item {
-	/*
-	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
-	
-		return new ActionResult<ItemStack>(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
+public class ItemDebug extends ItemSword implements IExperienceRepair {
+
+	private ExperienceRepair experienceRepair;
+
+	public ItemDebug() {
+		super(ToolMaterial.DIAMOND);
+		this.experienceRepair = new ExperienceRepair(60, 20);
 	}
-	
+
 	@Override
-	public boolean itemInteractionForEntity(ItemStack stack, EntityPlayer player, EntityLivingBase target,
-			EnumHand hand) {
-		NBTTagCompound nbt = new NBTTagCompound();
-	
-		nbt.setString("entity", EntityList.getKey(target).toString());
-		stack.setTagCompound(nbt);
-		return true;
+	public void onUpdate(ItemStack stack, World worldIn, Entity entity, int itemSlot, boolean isSelected) {
+		this.experienceRepair.onUpdate(stack, worldIn, entity, itemSlot, isSelected);
 	}
-	
-	@Override
-	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand,
-			EnumFacing facing, float hitX, float hitY, float hitZ) {
-		ItemStack itemStack = player.getHeldItem(hand);
-		NBTTagCompound nbt = itemStack.getTagCompound();
-		if (nbt == null) {
-			return EnumActionResult.PASS;
-		}
-	
-		EntityLivingBase entity = (EntityLivingBase) worldIn.getEntityByID(nbt.getInteger("entity"));
-		entity.setPosition(pos.getX(), pos.getY(), pos.getZ());
-	
-		worldIn.spawnEntity(entity);
-		return EnumActionResult.SUCCESS;
-	
-	}
-	*/
 
 }

@@ -14,18 +14,9 @@ import Item.ItemSuperDye;
 import Item.ItemTimeSand;
 import Item.ItemUniversalNutrient;
 import Item.ItemWarpStone;
-import Item.Armors.ItemAdvancedExperienceIronBoots;
-import Item.Armors.ItemAdvancedExperienceIronChestplate;
-import Item.Armors.ItemAdvancedExperienceIronHelmet;
-import Item.Armors.ItemAdvancedExperienceIronLeggings;
-import Item.Armors.ItemExperienceIronBoots;
-import Item.Armors.ItemExperienceIronChestplate;
-import Item.Armors.ItemExperienceIronHelmet;
-import Item.Armors.ItemExperienceIronLeggings;
-import Item.Armors.ItemWeakExperienceIronBoots;
-import Item.Armors.ItemWeakExperienceIronChestplate;
-import Item.Armors.ItemWeakExperienceIronHelmet;
-import Item.Armors.ItemWeakExperienceIronLeggings;
+import Item.Armors.ItemAdvancedExperienceIronArmor;
+import Item.Armors.ItemExperienceIronArmor;
+import Item.Armors.ItemWeakExperienceIronArmor;
 import Item.SpellPapers.ItemAcceleratedSpellPaper;
 import Item.SpellPapers.ItemFlyingSpellPaper;
 import Item.SpellPapers.ItemSatietySpellPaper;
@@ -63,8 +54,8 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ItemRegister {
 	public static final ItemArmor.ArmorMaterial WEIArmorMaterial = EnumHelper.addArmorMaterial("EAWEI",
 			"weakexperienceiron", 15, new int[] { 2, 5, 6, 2 }, 9, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0f);
-	public static final ItemArmor.ArmorMaterial EIArmorMaterial = EnumHelper.addArmorMaterial("EAEI",
-			"experienceiron", 3, new int[] { 4, 7, 9, 4 }, 18, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0f);
+	public static final ItemArmor.ArmorMaterial EIArmorMaterial = EnumHelper.addArmorMaterial("EAEI", "experienceiron",
+			3, new int[] { 4, 7, 9, 4 }, 18, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0f);
 
 	public static final ItemArmor.ArmorMaterial AEIArmorMaterial = EnumHelper.addArmorMaterial("EAAEI",
 			"advancedexperienceiron", 0, new int[] { 5, 8, 10, 5 }, 18, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0f);
@@ -101,13 +92,13 @@ public class ItemRegister {
 	public static final Item weakExperienceIronSword = new ItemWeakExperienceIronSword();
 	public static final Item weakExperienceIronIngot = new Item();
 
-	public static final Item weakExperienceIronHelmet = new ItemWeakExperienceIronHelmet(WEIArmorMaterial, 0,
+	public static final Item weakExperienceIronHelmet = new ItemWeakExperienceIronArmor(WEIArmorMaterial, 0,
 			EntityEquipmentSlot.HEAD);
-	public static final Item weakExperienceIronChestplate = new ItemWeakExperienceIronChestplate(WEIArmorMaterial, 0,
+	public static final Item weakExperienceIronChestplate = new ItemWeakExperienceIronArmor(WEIArmorMaterial, 0,
 			EntityEquipmentSlot.CHEST);
-	public static final Item weakExperienceIronLeggings = new ItemWeakExperienceIronLeggings(WEIArmorMaterial, 0,
+	public static final Item weakExperienceIronLeggings = new ItemWeakExperienceIronArmor(WEIArmorMaterial, 0,
 			EntityEquipmentSlot.LEGS);
-	public static final Item weakExperienceIronBoots = new ItemWeakExperienceIronBoots(WEIArmorMaterial, 0,
+	public static final Item weakExperienceIronBoots = new ItemWeakExperienceIronArmor(WEIArmorMaterial, 0,
 			EntityEquipmentSlot.FEET);
 
 	public static final Item pureExperienceIngot = new Item();
@@ -120,35 +111,33 @@ public class ItemRegister {
 
 	public static final Item superDye = new ItemSuperDye();
 
-	public static final Item experienceIronAxe = new ItemExperienceIronAxe(EIToolMaterial);
-	public static final Item experienceIronPickaxe = new ItemExperienceIronPickaxe(EIToolMaterial);
-	public static final Item experienceIronShovel = new ItemExperienceIronShovel(EIToolMaterial);
-	public static final Item experienceIronSword = new ItemExperienceIronSword(EIToolMaterial);
+	public static final Item experienceIronAxe = new ItemExperienceIronAxe(EIToolMaterial, 60, 5);
+	public static final Item experienceIronPickaxe = new ItemExperienceIronPickaxe(EIToolMaterial, 60, 5);
+	public static final Item experienceIronShovel = new ItemExperienceIronShovel(EIToolMaterial, 60, 5);
+	public static final Item experienceIronSword = new ItemExperienceIronSword(EIToolMaterial, 60, 5);
 
 	public static final Item advancedExperienceIronAxe = new ItemAdvancedExperienceIronAxe(AEIToolMaterial);
 	public static final Item advancedExperienceIronPickaxe = new ItemAdvancedExperienceIronPickaxe(AEIToolMaterial);
 	public static final Item advancedExperienceIronShovel = new ItemAdvancedExperienceIronShovel(AEIToolMaterial);
 	public static final Item advancedExperienceIronSword = new ItemAdvancedExperienceIronSword(AEIToolMaterial);
 
-	public static final Item experienceIronHelmet = new ItemExperienceIronHelmet(EIArmorMaterial, 0,
-			EntityEquipmentSlot.HEAD);
-	public static final Item experienceIronChestplate = new ItemExperienceIronChestplate(EIArmorMaterial, 0,
-			EntityEquipmentSlot.CHEST);
-	public static final Item experienceIronLeggings = new ItemExperienceIronLeggings(EIArmorMaterial, 0,
-			EntityEquipmentSlot.LEGS);
-	public static final Item experienceIronBoots = new ItemExperienceIronBoots(EIArmorMaterial, 0,
-			EntityEquipmentSlot.FEET);
+	public static final Item experienceIronHelmet = new ItemExperienceIronArmor(EIArmorMaterial, 0,
+			EntityEquipmentSlot.HEAD, 60, 5);
+	public static final Item experienceIronChestplate = new ItemExperienceIronArmor(EIArmorMaterial, 0,
+			EntityEquipmentSlot.CHEST, 60, 5);
+	public static final Item experienceIronLeggings = new ItemExperienceIronArmor(EIArmorMaterial, 0,
+			EntityEquipmentSlot.LEGS, 60, 5);
+	public static final Item experienceIronBoots = new ItemExperienceIronArmor(EIArmorMaterial, 0,
+			EntityEquipmentSlot.FEET, 60, 5);
 
-	public static final Item advancedExperienceIronHelmet = new ItemAdvancedExperienceIronHelmet(AEIArmorMaterial, 0,
-			EntityEquipmentSlot.HEAD);
-	public static final Item advancedExperienceIronChestplate = new ItemAdvancedExperienceIronChestplate(
-			AEIArmorMaterial, 0,
-			EntityEquipmentSlot.CHEST);
-	public static final Item advancedExperienceIronLeggings = new ItemAdvancedExperienceIronLeggings(AEIArmorMaterial,
-			0,
-			EntityEquipmentSlot.LEGS);
-	public static final Item advancedExperienceIronBoots = new ItemAdvancedExperienceIronBoots(AEIArmorMaterial, 0,
-			EntityEquipmentSlot.FEET);
+	public static final Item advancedExperienceIronHelmet = new ItemAdvancedExperienceIronArmor(AEIArmorMaterial, 0,
+			EntityEquipmentSlot.HEAD, 80);
+	public static final Item advancedExperienceIronChestplate = new ItemAdvancedExperienceIronArmor(AEIArmorMaterial, 0,
+			EntityEquipmentSlot.CHEST, 80);
+	public static final Item advancedExperienceIronLeggings = new ItemAdvancedExperienceIronArmor(AEIArmorMaterial, 0,
+			EntityEquipmentSlot.LEGS, 80);
+	public static final Item advancedExperienceIronBoots = new ItemAdvancedExperienceIronArmor(AEIArmorMaterial, 0,
+			EntityEquipmentSlot.FEET, 80);
 
 	public static final Item bakedSeeds = new ItemFood(1, 0, true);
 	public static final Item infusedBakedSeeds = new ItemFood(1, 1, true);
@@ -167,7 +156,7 @@ public class ItemRegister {
 
 		register(flyingSpellPaper, "flyingSpellPaper");
 		register(satietySpellPaper, "satietySpellPaper");
-		//register(acceleratedSpellPaper, "acceleratedSpellPaper");
+		// register(acceleratedSpellPaper, "acceleratedSpellPaper");
 
 		register(experienceApple, "experienceApple");
 		register(registeredExperienceApple, "registeredExperienceApple");

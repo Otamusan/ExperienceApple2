@@ -5,7 +5,8 @@ import java.util.Set;
 import com.google.common.collect.Sets;
 
 import ExperienceApple.EAMain;
-import Util.ExperienceUtil;
+import Item.ExperienceRepair;
+import Item.IExperienceRepair;
 import Util.ParticleUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -14,15 +15,13 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemExperienceIronAxe extends ItemTool {
+public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair {
 
 	public static int cooldown = 0;
 
@@ -30,10 +29,13 @@ public class ItemExperienceIronAxe extends ItemTool {
 			Blocks.LOG, Blocks.LOG2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN, Blocks.MELON_BLOCK,
 			Blocks.LADDER, Blocks.WOODEN_BUTTON, Blocks.WOODEN_PRESSURE_PLATE });
 
-	public ItemExperienceIronAxe(ToolMaterial mate) {
+	private ExperienceRepair experienceRepair;
+
+	public ItemExperienceIronAxe(ToolMaterial mate, int cooltime, int cost) {
 		super(mate, EFFECTIVE_ON);
 		this.damageVsEntity = mate.getDamageVsEntity();
 		this.attackSpeed = -3.2F;
+		this.experienceRepair = new ExperienceRepair(cooltime, cost);
 	}
 
 	@Override
@@ -48,9 +50,7 @@ public class ItemExperienceIronAxe extends ItemTool {
 			EntityLivingBase entityLiving) {
 		if (!EAMain.particle) {
 			ParticleUtil.verticalCircle(EnumParticleTypes.VILLAGER_HAPPY, entityLiving.getEntityWorld(),
-					pos.getX() + 0.5,
-					pos.getY() + 0.5,
-					pos.getZ() + 0.5, 0.5, 12);
+					pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0.5, 12);
 		}
 
 		if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0D) {
@@ -62,32 +62,13 @@ public class ItemExperienceIronAxe extends ItemTool {
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
 		ParticleUtil.verticalCircle(EnumParticleTypes.VILLAGER_HAPPY, entity.getEntityWorld(), entity.posX,
-				entity.posY + entity.getMaxFallHeight() / 2,
-				entity.posZ, 1, 12);
+				entity.posY + entity.getMaxFallHeight() / 2, entity.posZ, 1, 12);
 		return false;
 	}
 
 	@Override
 	public void onUpdate(ItemStack stack, World worldIn, Entity entity, int itemSlot, boolean isSelected) {
-		if (ExperienceUtil.getExperiencePoints((EntityPlayer) entity) >= 8 && stack.getItemDamage() != 0
-				&& cooldown >= 60) {
-			for (int n = 0; n < 9; n++) {
-				if (!EAMain.particle) {
-					entity.getEntityWorld().spawnParticle(EnumParticleTypes.VILLAGER_HAPPY,
-							entity.posX + Math.random() - 0.5,
-							entity.posY + Math.random() * 2, entity.posZ + Math.random() - 0.5, 0.0D, 0.0D, 0.0D);
-				}
-			}
-			stack.setItemDamage(stack.getItemDamage() - 1);
-			EntityPlayer player = (EntityPlayer) entity;
-			ExperienceUtil.experiencePull(player, 8, worldIn);
-			worldIn.playSound(player, new BlockPos(player), SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP,
-					SoundCategory.PLAYERS, 1, 1);
-			cooldown = 0;
-			player.inventory.setInventorySlotContents(itemSlot, stack);
-		} else {
-			cooldown++;
-		}
+		this.experienceRepair.onUpdate(stack, worldIn, entity, itemSlot, isSelected);
 	}
 
 	@Override

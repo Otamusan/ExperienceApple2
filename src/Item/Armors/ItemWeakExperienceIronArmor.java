@@ -13,9 +13,9 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemWeakExperienceIronHelmet extends ItemArmor {
+public class ItemWeakExperienceIronArmor extends ItemArmor {
 
-	public ItemWeakExperienceIronHelmet(ArmorMaterial materialIn, int renderIndexIn,
+	public ItemWeakExperienceIronArmor(ArmorMaterial materialIn, int renderIndexIn,
 			EntityEquipmentSlot equipmentSlotIn) {
 		super(materialIn, renderIndexIn, equipmentSlotIn);
 	}
