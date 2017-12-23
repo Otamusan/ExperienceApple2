@@ -2,6 +2,7 @@ package Item.SpellPapers;
 
 import ExperienceApple.EAMain;
 import Util.ExperienceUtil;
+import Util.ParticleUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -25,8 +26,7 @@ public class ItemSatietySpellPaper extends Item {
 					SoundCategory.PLAYERS, 1, 1);
 			if (!EAMain.particle) {
 				for (int i = 0; i < 10; i++) {
-					entity.worldObj.spawnParticle(EnumParticleTypes.SLIME, entity.posX + Math.random() - 0.5,
-							entity.posY + 1.5, entity.posZ + Math.random() - 0.5, 0.0D, 0.0D, 0.0D);
+					ParticleUtil.playerRemaining(EnumParticleTypes.SLIME, entity, 9);
 				}
 			}
 		}

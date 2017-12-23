@@ -2,7 +2,7 @@ package Item.Armors;
 
 import java.util.Random;
 
-import ExperienceApple.EAMain;
+import Util.ParticleUtil;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -24,10 +24,7 @@ public class ItemWeakExperienceIronArmor extends ItemArmor {
 	public void onArmorTick(World world, EntityPlayer player, ItemStack itemStack) {
 		Random random = new Random();
 		if (random.nextInt(50) == 1) {
-			if (!EAMain.particle) {
-				world.spawnParticle(EnumParticleTypes.VILLAGER_HAPPY, player.posX + Math.random() - 0.5,
-						player.posY + Math.random() * 2, player.posZ + Math.random() - 0.5, 0.0D, 0.0D, 0.0D);
-			}
+			ParticleUtil.playerRemaining(EnumParticleTypes.VILLAGER_HAPPY, player, 1);
 		}
 	}
 

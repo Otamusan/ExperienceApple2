@@ -54,7 +54,7 @@ public class ExperienceRepair implements IExperienceRepair {
 			worldIn.playSound(player, new BlockPos(player), SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP,
 					SoundCategory.PLAYERS, 1, 1);
 			cooldown = 0;
-			player.inventory.setInventorySlotContents(itemSlot, stack);
+			// player.inventory.setInventorySlotContents(itemSlot, stack);
 		} else {
 			cooldown++;
 		}

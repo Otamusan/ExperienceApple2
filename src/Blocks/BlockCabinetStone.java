@@ -2,7 +2,7 @@ package Blocks;
 
 import java.util.Random;
 
-import ExperienceApple.EAMain;
+import Util.ParticleUtil;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -22,14 +22,8 @@ public class BlockCabinetStone extends BlockGlass {
 
 	@Override
 	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rnd) {
-		if (EAMain.particle == true)
-			return;
-		for (int i = 0; i < 16; i++) {
-			double rx = pos.getX() + rnd.nextFloat();
-			double ry = pos.getY() + rnd.nextFloat();
-			double rz = pos.getZ() + rnd.nextFloat();
-			world.spawnParticle(EnumParticleTypes.ENCHANTMENT_TABLE, rx, ry, rz, 0.0D, 0.0D, 0.0D);
-		}
+		ParticleUtil.blockRemaining(EnumParticleTypes.ENCHANTMENT_TABLE, world, pos, 9);
+
 	}
 
 	@Override

@@ -48,12 +48,7 @@ public class ItemAdvancedExperienceIronAxe extends ItemTool {
 	@Override
 	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
 			EntityLivingBase entityLiving) {
-		if (!EAMain.particle) {
-			ParticleUtil.verticalCircle(EnumParticleTypes.VILLAGER_HAPPY, entityLiving.getEntityWorld(),
-					pos.getX() + 0.5,
-					pos.getY() + 0.5,
-					pos.getZ() + 0.5, 0.5, 12);
-		}
+		ParticleUtil.blockRemaining(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
 
 		if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0D) {
 			stack.damageItem(1, entityLiving);
@@ -64,8 +59,7 @@ public class ItemAdvancedExperienceIronAxe extends ItemTool {
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
 		ParticleUtil.verticalCircle(EnumParticleTypes.VILLAGER_HAPPY, entity.getEntityWorld(), entity.posX,
-				entity.posY + entity.getMaxFallHeight() / 2,
-				entity.posZ, 1, 12);
+				entity.posY + entity.getMaxFallHeight() / 2, entity.posZ, 1, 12);
 		return false;
 	}
 
@@ -76,8 +70,8 @@ public class ItemAdvancedExperienceIronAxe extends ItemTool {
 			for (int n = 0; n < 9; n++) {
 				if (!EAMain.particle) {
 					entity.getEntityWorld().spawnParticle(EnumParticleTypes.VILLAGER_HAPPY,
-							entity.posX + Math.random() - 0.5,
-							entity.posY + Math.random() * 2, entity.posZ + Math.random() - 0.5, 0.0D, 0.0D, 0.0D);
+							entity.posX + Math.random() - 0.5, entity.posY + Math.random() * 2,
+							entity.posZ + Math.random() - 0.5, 0.0D, 0.0D, 0.0D);
 				}
 			}
 			stack.setItemDamage(stack.getItemDamage() - 1);
