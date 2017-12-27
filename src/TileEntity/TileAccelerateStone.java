@@ -1,11 +1,13 @@
 package TileEntity;
 
 import ExperienceApple.Register.BlockRegister;
+import Util.ParticleUtil;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -28,8 +30,6 @@ public class TileAccelerateStone extends TileEntity implements ITickable {
 
 	public void accelerate(TileEntity entity, World world, int x, int y, int z) {
 
-		if (world.isRemote)
-			return;
 		if (world.getBlockState(new BlockPos(x, y, z)).getBlock() == BlockRegister.accelerateStone)
 			return;
 		if (world.getBlockState(new BlockPos(x, y, z)).getBlock() == BlockRegister.advancedAccelerateStone)
@@ -41,7 +41,9 @@ public class TileAccelerateStone extends TileEntity implements ITickable {
 
 		if (!(entity instanceof ITickable))
 			return;
-
+		ParticleUtil.blockInjection(EnumParticleTypes.PORTAL, world, this.getPos(), new BlockPos(x, y, z), 10);
+		if (world.isRemote)
+			return;
 		for (int ix = 0; ix < 10; ix++) {
 			((ITickable) entity).update();
 		}

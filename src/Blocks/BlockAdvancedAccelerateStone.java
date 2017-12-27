@@ -2,14 +2,12 @@ package Blocks;
 
 import java.util.Random;
 
-import ExperienceApple.EAMain;
 import TileEntity.TileAdvancedAccelerateStone;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -24,22 +22,6 @@ public class BlockAdvancedAccelerateStone extends BlockGlass implements ITileEnt
 
 	public boolean hasTileEntity(int metadata) {
 		return true;
-	}
-
-	@Override
-	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rnd) {
-		if (EAMain.particle == true)
-			return;
-		for (int i = 0; i < 32; i++) {
-			double rx = pos.getX() + rnd.nextFloat();
-			double ry = pos.getY() + rnd.nextFloat();
-			double rz = pos.getZ() + rnd.nextFloat();
-			double sx = rnd.nextFloat() * 3 - 1.5;
-			double sy = rnd.nextFloat() * 2 - 1.5;
-			double sz = rnd.nextFloat() * 3 - 1.5;
-			world.spawnParticle(EnumParticleTypes.PORTAL, rx, ry, rz, sx, sy, sz);
-
-		}
 	}
 
 	@Override

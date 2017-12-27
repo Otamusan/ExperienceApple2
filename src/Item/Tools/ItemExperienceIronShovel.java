@@ -1,6 +1,5 @@
 package Item.Tools;
 
-import ExperienceApple.EAMain;
 import Item.ExperienceRepair;
 import Item.IExperienceRepair;
 import Util.ParticleUtil;
@@ -26,10 +25,8 @@ public class ItemExperienceIronShovel extends ItemSpade implements IExperienceRe
 	@Override
 	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
 			EntityLivingBase entityLiving) {
-		if (!EAMain.particle) {
-			ParticleUtil.verticalCircle(EnumParticleTypes.VILLAGER_HAPPY, entityLiving.getEntityWorld(),
-					pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0.5, 12);
-		}
+		ParticleUtil.blockSurface(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
+		ParticleUtil.blockRemaining(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
 
 		if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0D) {
 			stack.damageItem(1, entityLiving);

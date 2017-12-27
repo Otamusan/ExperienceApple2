@@ -4,7 +4,6 @@ import java.util.Set;
 
 import com.google.common.collect.Sets;
 
-import ExperienceApple.EAMain;
 import Item.ExperienceRepair;
 import Item.IExperienceRepair;
 import Util.ParticleUtil;
@@ -23,8 +22,8 @@ import net.minecraft.world.World;
 
 public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair {
 
-	public static int cooldown = 0;
-
+	int cooldown = 60;
+	int cost = 5;
 	private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(new Block[] { Blocks.PLANKS, Blocks.BOOKSHELF,
 			Blocks.LOG, Blocks.LOG2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN, Blocks.MELON_BLOCK,
 			Blocks.LADDER, Blocks.WOODEN_BUTTON, Blocks.WOODEN_PRESSURE_PLATE });
@@ -48,10 +47,8 @@ public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair
 	@Override
 	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
 			EntityLivingBase entityLiving) {
-		if (!EAMain.particle) {
-			ParticleUtil.verticalCircle(EnumParticleTypes.VILLAGER_HAPPY, entityLiving.getEntityWorld(),
-					pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0.5, 12);
-		}
+		ParticleUtil.blockSurface(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
+		ParticleUtil.blockRemaining(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
 
 		if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0D) {
 			stack.damageItem(1, entityLiving);
