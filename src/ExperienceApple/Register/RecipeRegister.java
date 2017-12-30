@@ -18,6 +18,7 @@ public class RecipeRegister {
 		ExperienceAppleCraftingRegister.register(Item.getItemFromBlock(Blocks.GLASS),
 				Item.getItemFromBlock(BlockRegister.ritualGlassTier1), ritualGlassCost);
 		ExperienceAppleCraftingRegister.register(ItemRegister.bakedSeeds, ItemRegister.infusedBakedSeeds, 100);
+		ExperienceAppleCraftingRegister.register(Items.DRAGON_BREATH, ItemRegister.superDye, 10000);
 
 		RepairRegister.register(ItemRegister.weakExperienceIronPickaxe);
 		RepairRegister.register(ItemRegister.weakExperienceIronAxe);
@@ -46,8 +47,6 @@ public class RecipeRegister {
 
 		GameRegistry.addSmelting(Items.WHEAT_SEEDS, new ItemStack(ItemRegister.bakedSeeds), 1);
 
-		GameRegistry.addShapedRecipe(new ItemStack(ItemRegister.enchantmentPearl), "EEE", "EPE", "EEE", 'E',
-				Items.APPLE, 'P', Items.ENDER_PEARL);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemRegister.warpStone, 16), "SGS", "GEG", "SGS", 'G',
 				BlockRegister.ritualGlassTier2, 'S', Blocks.STONE, 'E', Items.ENDER_PEARL);
 
@@ -85,6 +84,24 @@ public class RecipeRegister {
 		GameRegistry.addShapedRecipe(new ItemStack(ItemRegister.experienceIronBoots), "   ", "W W", "W W", 'W',
 				ItemRegister.experienceIronIngot);
 
+		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.ritualStoneTier1), "WWW", "WGW", "WWW", 'W',
+				BlockRegister.ritualGlassTier1, 'G', BlockRegister.cabinetStone);
+		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.ritualStoneTier2), "WWW", "WGW", "WWW", 'W',
+				BlockRegister.ritualGlassTier2, 'G', BlockRegister.cabinetStone);
+		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.ritualStoneTier3), "WWW", "WGW", "WWW", 'W',
+				BlockRegister.ritualGlassTier3, 'G', BlockRegister.cabinetStone);
+		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.ritualStoneTier4), "WWW", "WGW", "WWW", 'W',
+				BlockRegister.ritualGlassTier4, 'G', BlockRegister.cabinetStone);
+
+		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.ritualLauncherTier1), "WWW", "WGW", "WWW", 'W',
+				BlockRegister.ritualStoneTier1, 'G', BlockRegister.pureExperienceBlock);
+		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.ritualLauncherTier2), "WWW", "WGW", "WWW", 'W',
+				BlockRegister.ritualStoneTier2, 'G', BlockRegister.pureExperienceBlock);
+		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.ritualLauncherTier3), "WWW", "WGW", "WWW", 'W',
+				BlockRegister.ritualStoneTier3, 'G', BlockRegister.pureExperienceBlock);
+		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.ritualLauncherTier4), "WWW", "WGW", "WWW", 'W',
+				BlockRegister.ritualStoneTier4, 'G', BlockRegister.pureExperienceBlock);
+
 		GameRegistry.addShapedRecipe(new ItemStack(ItemRegister.timeSand), " W ", "WCW", " W ", 'W',
 				BlockRegister.ritualGlassTier2, 'C', Items.CLOCK);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemRegister.universalNutrient), " W ", "WCW", " W ", 'W',
@@ -93,6 +110,11 @@ public class RecipeRegister {
 				ItemRegister.timeSand, 'C', BlockRegister.cabinetStone);
 		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.growthStone), "TTT", "TCT", "TTT", 'T',
 				ItemRegister.universalNutrient, 'C', BlockRegister.cabinetStone);
+		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.advancedAccelerateStone), "TTT", "TCT", "TTT", 'T',
+				BlockRegister.accelerateStone, 'C', BlockRegister.pureExperienceBlock);
+		GameRegistry.addShapedRecipe(new ItemStack(BlockRegister.advancedGrowthStone), "TTT", "TCT", "TTT", 'T',
+				BlockRegister.growthStone, 'C', BlockRegister.pureExperienceBlock);
+
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.experienceApple), Items.APPLE, Items.GOLD_INGOT);
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.advancedExperienceIronAxe),
@@ -112,10 +134,12 @@ public class RecipeRegister {
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.advancedExperienceIronLeggings),
 				ItemRegister.experienceIronLeggings, ItemRegister.pureExperienceIngot);
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.warpStone), ItemRegister.warpStone);
-		// GameRegistry.addShapelessRecipe(new
-		// ItemStack(ItemRegister.enchantmentPearl),
-		// Items.ENCHANTED_BOOK, Items.ENDER_PEARL);
-
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.enchantmentPearl), Items.ENCHANTED_BOOK,
+				Items.ENDER_PEARL);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.flyingSpellPaper), ItemRegister.ashOfOrder,
+				ItemRegister.pureExperienceIngot, Items.NETHER_STAR, Items.FEATHER, Items.PAPER);
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.satietySpellPaper), ItemRegister.ashOfOrder,
+				ItemRegister.pureExperienceIngot, Items.NETHER_STAR, Items.SLIME_BALL, Items.PAPER);
 		GameRegistry.addShapedRecipe(new ItemStack(ItemRegister.gravityCompressor), "OOO", "OBO", "OOO", 'O',
 				BlockRegister.experienceOre, 'B', Blocks.OBSIDIAN);
 
