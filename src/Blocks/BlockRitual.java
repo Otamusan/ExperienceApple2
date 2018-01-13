@@ -4,7 +4,7 @@ import java.util.Random;
 
 import Rituals.RitualStones;
 import Util.ParticleUtil;
-import net.minecraft.block.BlockGlass;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockRenderLayer;
@@ -16,12 +16,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockRitual extends BlockGlass {
+public class BlockRitual extends Block {
 	private int particleAmount;
 	private RitualStones tier;
 
 	public BlockRitual(Material materialIn, int particleAmount, RitualStones tier) {
-		super(materialIn, true);
+		super(materialIn);
 		this.particleAmount = particleAmount;
 		this.tier = tier;
 	}

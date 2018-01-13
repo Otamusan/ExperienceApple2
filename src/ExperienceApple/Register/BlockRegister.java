@@ -26,29 +26,29 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockRegister {
-	public static final Block ritualGlassTier1 = new BlockRitualGlass(Material.GLASS, 4, RitualStones.tier1)
+	public static final Block ritualGlassTier1 = new BlockRitualGlass(Material.GLASS, 1, RitualStones.tier1)
 			.setHardness(0.3F);
-	public static final Block ritualGlassTier2 = new BlockRitualGlass(Material.GLASS, 8, RitualStones.tier2)
+	public static final Block ritualGlassTier2 = new BlockRitualGlass(Material.GLASS, 1, RitualStones.tier2)
 			.setHardness(0.3F);
-	public static final Block ritualGlassTier3 = new BlockRitualGlass(Material.GLASS, 12, RitualStones.tier3)
+	public static final Block ritualGlassTier3 = new BlockRitualGlass(Material.GLASS, 1, RitualStones.tier3)
 			.setHardness(0.3F);
-	public static final Block ritualGlassTier4 = new BlockRitualGlass(Material.GLASS, 16, RitualStones.tier4)
+	public static final Block ritualGlassTier4 = new BlockRitualGlass(Material.GLASS, 1, RitualStones.tier4)
 			.setHardness(0.3F);
-	public static final Block ritualStoneTier1 = new BlockRitualStone(Material.ROCK, 4, RitualStones.tier1)
+	public static final Block ritualStoneTier1 = new BlockRitualStone(Material.ROCK, 1, RitualStones.tier1)
 			.setHardness(100).setResistance(100);
-	public static final Block ritualStoneTier2 = new BlockRitualStone(Material.ROCK, 8, RitualStones.tier2)
+	public static final Block ritualStoneTier2 = new BlockRitualStone(Material.ROCK, 1, RitualStones.tier2)
 			.setHardness(100).setResistance(100);
-	public static final Block ritualStoneTier3 = new BlockRitualStone(Material.ROCK, 12, RitualStones.tier3)
+	public static final Block ritualStoneTier3 = new BlockRitualStone(Material.ROCK, 1, RitualStones.tier3)
 			.setHardness(100).setResistance(100);
-	public static final Block ritualStoneTier4 = new BlockRitualStone(Material.ROCK, 16, RitualStones.tier4)
+	public static final Block ritualStoneTier4 = new BlockRitualStone(Material.ROCK, 1, RitualStones.tier4)
 			.setHardness(100).setResistance(100);
-	public static final Block ritualLauncherTier1 = new BlockRitualLauncher(Material.ROCK, 4, RitualStones.tier1)
+	public static final Block ritualLauncherTier1 = new BlockRitualLauncher(Material.ROCK, 1, RitualStones.tier1)
 			.setHardness(100).setResistance(100);
-	public static final Block ritualLauncherTier2 = new BlockRitualLauncher(Material.ROCK, 8, RitualStones.tier2)
+	public static final Block ritualLauncherTier2 = new BlockRitualLauncher(Material.ROCK, 1, RitualStones.tier2)
 			.setHardness(100).setResistance(100);
-	public static final Block ritualLauncherTier3 = new BlockRitualLauncher(Material.ROCK, 12, RitualStones.tier3)
+	public static final Block ritualLauncherTier3 = new BlockRitualLauncher(Material.ROCK, 1, RitualStones.tier3)
 			.setHardness(100).setResistance(100);
-	public static final Block ritualLauncherTier4 = new BlockRitualLauncher(Material.ROCK, 16, RitualStones.tier4)
+	public static final Block ritualLauncherTier4 = new BlockRitualLauncher(Material.ROCK, 1, RitualStones.tier4)
 			.setHardness(100).setResistance(100);
 
 	public static final Block cabinetStone = new BlockCabinetStone(Material.ROCK).setHardness(5.0F);
