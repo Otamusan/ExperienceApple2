@@ -1,10 +1,12 @@
 package Item.Tools;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
 
+import ExperienceApple.ITooltip;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -23,7 +25,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import scala.util.Random;
 
-public class ItemUnstableAxe extends ItemTool {
+public class ItemUnstableAxe extends ItemTool implements ITooltip {
 
 	private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(new Block[] { Blocks.PLANKS, Blocks.BOOKSHELF,
 			Blocks.LOG, Blocks.LOG2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN, Blocks.MELON_BLOCK,
@@ -77,5 +79,17 @@ public class ItemUnstableAxe extends ItemTool {
 		worldIn.playSound(playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_ENDERMEN_TELEPORT,
 				SoundCategory.PLAYERS, 1, 1, true);
 		return new ActionResult<ItemStack>(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }

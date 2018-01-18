@@ -1,7 +1,9 @@
 package Item;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import ExperienceApple.ITooltip;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,7 +17,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemWarpStone extends Item {
+public class ItemWarpStone extends Item implements ITooltip {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World world, EntityPlayer player,
 			EnumHand hand) {
@@ -29,8 +31,8 @@ public class ItemWarpStone extends Item {
 			nbt.setDouble("setZ", player.posZ);
 			nbt.setInteger("setDimension", player.dimension);
 			itemStack.setTagCompound(nbt);
-			world.playSound(player.posX, player.posY, player.posZ, SoundEvents.BLOCK_ANVIL_USE,
-					SoundCategory.PLAYERS, 1, 1, true);
+			world.playSound(player.posX, player.posY, player.posZ, SoundEvents.BLOCK_ANVIL_USE, SoundCategory.PLAYERS,
+					1, 1, true);
 		} else {
 
 			if (nbt.getInteger("setDimension") == player.dimension) {
@@ -88,5 +90,17 @@ public class ItemWarpStone extends Item {
 					+ (int) nbt.getDouble("setZ"));
 			tooltip.add("Dimension: " + nbt.getInteger("setDimention"));
 		}
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }

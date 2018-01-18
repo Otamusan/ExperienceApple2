@@ -7,7 +7,6 @@ import Blocks.BlockCabinetStone;
 import Blocks.BlockCodensedExperienceOre;
 import Blocks.BlockExperienceOre;
 import Blocks.BlockGrowthStone;
-import Blocks.BlockLiquidXP;
 import Blocks.BlockPureExperience;
 import Blocks.BlockRitualGlass;
 import Blocks.BlockRitualLauncher;
@@ -62,7 +61,6 @@ public class BlockRegister {
 
 	public static final Block weakExperienceIronBlock = new Block(Material.IRON).setHardness(5.0F);
 	public static final Block experienceIronBlock = new Block(Material.IRON).setHardness(5.0F);
-	public static final Block liquidXP = new BlockLiquidXP();
 	public static final Block experienceOre = new BlockExperienceOre(Material.ROCK).setHardness(50);
 	public static final Block condensedExperienceOre = new BlockCodensedExperienceOre(Material.ROCK).setHardness(5.0F)
 			.setHardness(364);
@@ -73,8 +71,7 @@ public class BlockRegister {
 	public static void init(Side side) {
 
 		Fside = side;
-
-		register(liquidXP, "liquidXP");
+		// ((ITooltip) ritualGlassTier1).addTooltip("testtest");
 		register(ritualGlassTier1, "ritualGlassTier1");
 		register(ritualGlassTier2, "ritualGlassTier2");
 		register(ritualGlassTier3, "ritualGlassTier3");
@@ -112,6 +109,7 @@ public class BlockRegister {
 		GameRegistry.register(item, new ResourceLocation(EAMain.MOD_ID + ":" + str));
 		item.setUnlocalizedName(str);
 		item.setCreativeTab(EAMain.tabAdd);
+
 		if (Fside == Side.CLIENT) {
 			modelRegister(item, str);
 		}

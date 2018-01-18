@@ -1,5 +1,9 @@
 package Item;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ExperienceApple.ITooltip;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -10,10 +14,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemAshOfOrder extends Item {
-	public ItemAshOfOrder() {
-		setMaxDamage(10000);
-	}
+public class ItemAshOfOrder extends Item implements ITooltip {
 
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
@@ -39,5 +40,17 @@ public class ItemAshOfOrder extends Item {
 	@SideOnly(Side.CLIENT)
 	public boolean hasEffect(ItemStack stack) {
 		return this.getDamage(stack) == 0;
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }

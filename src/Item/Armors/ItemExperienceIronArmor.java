@@ -1,5 +1,9 @@
 package Item.Armors;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ExperienceApple.ITooltip;
 import Item.ExperienceRepair;
 import net.minecraft.entity.Entity;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -7,7 +11,7 @@ import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
-public class ItemExperienceIronArmor extends ItemArmor {
+public class ItemExperienceIronArmor extends ItemArmor implements ITooltip {
 
 	public static int cooldown = 0;
 	private ExperienceRepair experienceRepair;
@@ -32,5 +36,17 @@ public class ItemExperienceIronArmor extends ItemArmor {
 	@Override
 	public int getItemEnchantability() {
 		return 0;
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }

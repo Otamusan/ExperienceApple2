@@ -1,8 +1,10 @@
 package Item;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import ExperienceApple.ITooltip;
 import Util.ExperienceUtil;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -11,11 +13,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemRegisteredExperienceApple extends Item {
-
-	public ItemRegisteredExperienceApple() {
-		//this.setContainerItem(ItemRegister.registeredExperienceApple);
-	}
+public class ItemRegisteredExperienceApple extends Item implements ITooltip {
 
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -43,14 +41,22 @@ public class ItemRegisteredExperienceApple extends Item {
 		}
 	}
 
-	/*@Override
-	public ItemStack getContainerItem(ItemStack stack) {
-		System.out.println(stack);
-		return stack;
-	}
-	
+	public List<String> Tooltip = new ArrayList<String>();
+
 	@Override
-	public boolean hasContainerItem(ItemStack stack) {
-		return true;
-	}*/
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
+	}
+	/*
+	 * @Override public ItemStack getContainerItem(ItemStack stack) {
+	 * System.out.println(stack); return stack; }
+	 * 
+	 * @Override public boolean hasContainerItem(ItemStack stack) { return true;
+	 * }
+	 */
 }

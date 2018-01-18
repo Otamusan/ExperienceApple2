@@ -1,7 +1,10 @@
 package Blocks;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
+import ExperienceApple.ITooltip;
 import TileEntity.TileAdvancedAccelerateStone;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.ITileEntityProvider;
@@ -13,7 +16,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockAdvancedAccelerateStone extends BlockGlass implements ITileEntityProvider {
+public class BlockAdvancedAccelerateStone extends BlockGlass implements ITileEntityProvider, ITooltip {
 
 	public BlockAdvancedAccelerateStone(Material mate) {
 		super(mate, true);
@@ -37,6 +40,18 @@ public class BlockAdvancedAccelerateStone extends BlockGlass implements ITileEnt
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
 		return new TileAdvancedAccelerateStone();
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 
 }

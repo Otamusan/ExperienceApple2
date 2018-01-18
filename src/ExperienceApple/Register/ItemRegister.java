@@ -9,6 +9,7 @@ import Item.ItemEnchantmentPearl;
 import Item.ItemExperienceApple;
 import Item.ItemFragmentOfTheBrain;
 import Item.ItemGravityCompressor;
+import Item.ItemMod;
 import Item.ItemRegisteredExperienceApple;
 import Item.ItemSuperDye;
 import Item.ItemTimeSand;
@@ -68,9 +69,9 @@ public class ItemRegister {
 	public static final Item gravityCompressor = new ItemGravityCompressor().setMaxStackSize(1);
 	public static final Item enchantmentPearl = new ItemEnchantmentPearl().setMaxStackSize(1);
 
-	public static final Item ashOfEntropy = new ItemAshOfEntropy().setMaxStackSize(1);
-	public static final Item ashOfBalance = new ItemAshOfBalance().setMaxStackSize(1);
-	public static final Item ashOfOrder = new ItemAshOfOrder().setMaxStackSize(1);
+	public static final Item ashOfEntropy = new ItemAshOfEntropy().setMaxStackSize(1).setMaxDamage(100);
+	public static final Item ashOfBalance = new ItemAshOfBalance().setMaxStackSize(1).setMaxDamage(1000);;
+	public static final Item ashOfOrder = new ItemAshOfOrder().setMaxStackSize(1).setMaxDamage(10000);
 
 	public static final int flyingSpellPaperCost = 5;
 	public static final Item flyingSpellPaper = new ItemFlyingSpellPaper().setMaxStackSize(1);
@@ -101,8 +102,8 @@ public class ItemRegister {
 	public static final Item weakExperienceIronBoots = new ItemWeakExperienceIronArmor(WEIArmorMaterial, 0,
 			EntityEquipmentSlot.FEET);
 
-	public static final Item pureExperienceIngot = new Item();
-	public static final Item experienceIronIngot = new Item();
+	public static final Item pureExperienceIngot = new ItemMod();
+	public static final Item experienceIronIngot = new ItemMod();
 
 	public static final Item timeSand = new ItemTimeSand();
 	public static final Item universalNutrient = new ItemUniversalNutrient();
@@ -148,8 +149,10 @@ public class ItemRegister {
 
 	public static void init(Side side) {
 
-		Fside = side;
+		// ((ITooltip) pureExperienceIngot).addTooltip("testtest");
+		// ((ITooltip) experienceIronIngot).addTooltip("114514");
 
+		Fside = side;
 		register(ashOfEntropy, "ashOfEntropy");
 		register(ashOfBalance, "ashOfBalance");
 		register(ashOfOrder, "ashOfOrder");

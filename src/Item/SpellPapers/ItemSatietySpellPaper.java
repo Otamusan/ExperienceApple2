@@ -1,6 +1,10 @@
 package Item.SpellPapers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ExperienceApple.EAMain;
+import ExperienceApple.ITooltip;
 import Util.ExperienceUtil;
 import Util.ParticleUtil;
 import net.minecraft.entity.Entity;
@@ -13,7 +17,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemSatietySpellPaper extends Item {
+public class ItemSatietySpellPaper extends Item implements ITooltip {
 	public final int COST = 50;
 
 	@Override
@@ -30,5 +34,17 @@ public class ItemSatietySpellPaper extends Item {
 				}
 			}
 		}
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }

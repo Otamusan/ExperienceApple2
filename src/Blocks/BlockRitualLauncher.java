@@ -1,9 +1,12 @@
 package Blocks;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import javax.annotation.Nullable;
 
+import ExperienceApple.ITooltip;
 import Rituals.RitualCore;
 import Rituals.RitualStones;
 import TileEntity.TileRitualLauncher;
@@ -20,7 +23,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
-public class BlockRitualLauncher extends BlockRitual implements ITileEntityProvider {
+public class BlockRitualLauncher extends BlockRitual implements ITileEntityProvider, ITooltip {
 
 	public BlockRitualLauncher(Material materialIn, int particleAmount, RitualStones tier) {
 		super(materialIn, particleAmount, tier);
@@ -59,6 +62,7 @@ public class BlockRitualLauncher extends BlockRitual implements ITileEntityProvi
 		return true;
 	}
 
+	@Override
 	public void neighborChanged(IBlockState state, World worldIn, BlockPos pos, Block blockIn) {
 		boolean flag = worldIn.isBlockPowered(pos);
 		TileEntity tileentity = worldIn.getTileEntity(pos);
@@ -69,14 +73,33 @@ public class BlockRitualLauncher extends BlockRitual implements ITileEntityProvi
 			if (tilerituallauncher.previousRedstoneState != flag) {
 				if (flag) {
 					if (tilerituallauncher.Eplayer != "null") {
-
-						RitualCore.ActRitual(worldIn.getPlayerEntityByUUID(UUID.fromString(tilerituallauncher.Eplayer)),
-								worldIn, pos);
+						tilerituallauncher.activate();
 					}
 				}
 
 				tilerituallauncher.previousRedstoneState = flag;
 			}
 		}
+	}
+
+	public boolean eventReceived(IBlockState state, World worldIn, BlockPos pos, int id, int param) {
+		TileEntity tileentity = worldIn.getTileEntity(pos);
+		TileRitualLauncher tilerituallauncher = (TileRitualLauncher) tileentity;
+
+		RitualCore.ActRitual(worldIn.getPlayerEntityByUUID(UUID.fromString(tilerituallauncher.Eplayer)), worldIn, pos);
+
+		return true;
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }

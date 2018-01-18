@@ -1,6 +1,10 @@
 package Item.Tools;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ExperienceApple.EAMain;
+import ExperienceApple.ITooltip;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -14,7 +18,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemWeakExperienceIronSword extends ItemSword {
+public class ItemWeakExperienceIronSword extends ItemSword implements ITooltip {
 	public ItemWeakExperienceIronSword() {
 		super(Item.ToolMaterial.IRON);
 	}
@@ -24,8 +28,8 @@ public class ItemWeakExperienceIronSword extends ItemSword {
 		for (int n = 0; n < 3; n++) {
 			if (!EAMain.particle) {
 				target.getEntityWorld().spawnParticle(EnumParticleTypes.VILLAGER_HAPPY,
-						target.posX + Math.random() - 0.5,
-						target.posY + Math.random() * 2, target.posZ + Math.random() - 0.5, 0.0D, 0.0D, 0.0D);
+						target.posX + Math.random() - 0.5, target.posY + Math.random() * 2,
+						target.posZ + Math.random() - 0.5, 0.0D, 0.0D, 0.0D);
 			}
 		}
 		stack.damageItem(1, attacker);
@@ -49,8 +53,8 @@ public class ItemWeakExperienceIronSword extends ItemSword {
 		for (int n = 0; n < 3; n++) {
 			if (!EAMain.particle) {
 				entity.getEntityWorld().spawnParticle(EnumParticleTypes.VILLAGER_HAPPY,
-						entity.posX + Math.random() - 0.5,
-						entity.posY + Math.random() * 2, entity.posZ + Math.random() - 0.5, 0.0D, 0.0D, 0.0D);
+						entity.posX + Math.random() - 0.5, entity.posY + Math.random() * 2,
+						entity.posZ + Math.random() - 0.5, 0.0D, 0.0D, 0.0D);
 			}
 		}
 		return false;
@@ -59,5 +63,17 @@ public class ItemWeakExperienceIronSword extends ItemSword {
 	@Override
 	public void onCreated(ItemStack stack, World world, EntityPlayer player) {
 		world.playSound(player, new BlockPos(player), SoundEvents.ENTITY_BLAZE_HURT, SoundCategory.PLAYERS, 1, 1);
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }

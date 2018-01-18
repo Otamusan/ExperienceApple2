@@ -1,6 +1,10 @@
 package Item.SpellPapers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ExperienceApple.EAMain;
+import ExperienceApple.ITooltip;
 import Util.ExperienceUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -12,7 +16,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 
-public class ItemFlyingSpellPaper extends Item {
+public class ItemFlyingSpellPaper extends Item implements ITooltip {
 	public final int COST = 5;
 
 	@Override
@@ -43,5 +47,17 @@ public class ItemFlyingSpellPaper extends Item {
 			EnumHand hand) {
 
 		return new ActionResult<ItemStack>(EnumActionResult.PASS, itemStackIn);
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }

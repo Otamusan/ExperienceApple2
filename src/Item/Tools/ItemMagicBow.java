@@ -1,5 +1,9 @@
 package Item.Tools;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ExperienceApple.ITooltip;
 import Util.ParticleUtil;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -17,7 +21,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemMagicBow extends ItemBow {
+public class ItemMagicBow extends ItemBow implements ITooltip {
 
 	public static int chargeTime = 0;
 
@@ -27,7 +31,7 @@ public class ItemMagicBow extends ItemBow {
 
 	@Override
 	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase entityLiving, int timeLeft) {
-		//if (!entityLiving.isSneaking()) {
+		// if (!entityLiving.isSneaking()) {
 		if (entityLiving instanceof EntityPlayer) {
 			EntityPlayer entityplayer = (EntityPlayer) entityLiving;
 			boolean flag = entityplayer.capabilities.isCreativeMode
@@ -35,8 +39,7 @@ public class ItemMagicBow extends ItemBow {
 			ItemStack itemstack = new ItemStack(Items.ARROW);
 
 			int i = this.getMaxItemUseDuration(stack) - timeLeft;
-			i = net.minecraftforge.event.ForgeEventFactory.onArrowLoose(stack, worldIn, entityplayer, i,
-					true);
+			i = net.minecraftforge.event.ForgeEventFactory.onArrowLoose(stack, worldIn, entityplayer, i, true);
 			if (i < 0)
 				return;
 
@@ -47,20 +50,20 @@ public class ItemMagicBow extends ItemBow {
 				if (f >= 0.1D) {
 					boolean flag1 = entityplayer.capabilities.isCreativeMode
 							|| (itemstack.getItem() instanceof ItemArrow
-									&& ((ItemArrow) itemstack.getItem()).isInfinite(itemstack, stack,
-											entityplayer));
-					//ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE, worldIn, entityplayer.posX,
-					//		entityplayer.posY + 1, entityplayer.posZ, 1.5, 60);
-					//ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE, worldIn, entityplayer.posX,
-					//		entityplayer.posY + 1.5, entityplayer.posZ, 2, 60);
-					//ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE, worldIn, entityplayer.posX,
-					//		entityplayer.posY + 2, entityplayer.posZ, 2.5, 60);
+									&& ((ItemArrow) itemstack.getItem()).isInfinite(itemstack, stack, entityplayer));
+					// ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE,
+					// worldIn, entityplayer.posX,
+					// entityplayer.posY + 1, entityplayer.posZ, 1.5, 60);
+					// ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE,
+					// worldIn, entityplayer.posX,
+					// entityplayer.posY + 1.5, entityplayer.posZ, 2, 60);
+					// ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE,
+					// worldIn, entityplayer.posX,
+					// entityplayer.posY + 2, entityplayer.posZ, 2.5, 60);
 
 					for (int j = 0; j < i / 5 + 1; j++) {
 						ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE, worldIn, entityplayer.posX,
-								entityplayer.posY + 0.3 * j, entityplayer.posZ,
-								0.5 * j + 1,
-								60);
+								entityplayer.posY + 0.3 * j, entityplayer.posZ, 0.5 * j + 1, 60);
 					}
 
 					if (!worldIn.isRemote) {
@@ -69,13 +72,12 @@ public class ItemMagicBow extends ItemBow {
 							EntityTippedArrow entityarrow = (EntityTippedArrow) new ItemArrow().createArrow(worldIn,
 									itemstack, entityplayer);
 
-							entityarrow.setAim(entityplayer, entityplayer.rotationPitch, entityplayer.rotationYaw,
-									0.0F,
+							entityarrow.setAim(entityplayer, entityplayer.rotationPitch, entityplayer.rotationYaw, 0.0F,
 									4.0F, i / 2 + 2);
 
-							//if (f == 1.0F) {
+							// if (f == 1.0F) {
 							entityarrow.setIsCritical(true);
-							//}
+							// }
 
 							int j1 = EnchantmentHelper.getEnchantmentLevel(Enchantments.POWER, stack);
 
@@ -93,18 +95,26 @@ public class ItemMagicBow extends ItemBow {
 								entityarrow.setFire(100);
 							}
 
-							//entityarrow
-							//		.addEffect(new PotionEffect(Potion.getPotionFromResourceLocation("wither"), 60,
-							//				5, false, false));
-							//entityarrow
-							//		.addEffect(new PotionEffect(Potion.getPotionFromResourceLocation("poison"), 60,
-							//				5, false, false));
-							//entityarrow.addEffect(
-							//		new PotionEffect(Potion.getPotionFromResourceLocation("slowness"), 60,
-							//				5, false, false));
-							//entityarrow.addEffect(
-							//		new PotionEffect(Potion.getPotionFromResourceLocation("weakness"), 60,
-							//				5, false, false));
+							// entityarrow
+							// .addEffect(new
+							// PotionEffect(Potion.getPotionFromResourceLocation("wither"),
+							// 60,
+							// 5, false, false));
+							// entityarrow
+							// .addEffect(new
+							// PotionEffect(Potion.getPotionFromResourceLocation("poison"),
+							// 60,
+							// 5, false, false));
+							// entityarrow.addEffect(
+							// new
+							// PotionEffect(Potion.getPotionFromResourceLocation("slowness"),
+							// 60,
+							// 5, false, false));
+							// entityarrow.addEffect(
+							// new
+							// PotionEffect(Potion.getPotionFromResourceLocation("weakness"),
+							// 60,
+							// 5, false, false));
 
 							entityarrow.pickupStatus = EntityArrow.PickupStatus.CREATIVE_ONLY;
 							entityarrow.arrowShake = 0;
@@ -131,6 +141,17 @@ public class ItemMagicBow extends ItemBow {
 		}
 	}
 
-	//}
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
+	}
+	// }
 
 }

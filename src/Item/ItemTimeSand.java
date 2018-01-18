@@ -1,8 +1,11 @@
 package Item;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 import ExperienceApple.EAMain;
+import ExperienceApple.ITooltip;
 import ExperienceApple.Register.BlockRegister;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -16,14 +19,14 @@ import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemTimeSand extends Item {
+public class ItemTimeSand extends Item implements ITooltip {
 	@Override
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand,
 			EnumFacing facing, float hitX, float hitY, float hitZ) {
 		TileEntity entity = world.getTileEntity(pos);
 
-		//if (world.isRemote)
-		//	return EnumActionResult.PASS;
+		// if (world.isRemote)
+		// return EnumActionResult.PASS;
 		if (world.getBlockState(pos).getBlock() == BlockRegister.accelerateStone)
 			return EnumActionResult.PASS;
 		if (world.getBlockState(pos).getBlock() == BlockRegister.advancedAccelerateStone)
@@ -56,5 +59,17 @@ public class ItemTimeSand extends Item {
 		player.getHeldItem(hand).stackSize--;
 
 		return EnumActionResult.SUCCESS;
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }

@@ -1,7 +1,11 @@
 package Item.Tools;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.google.common.collect.Sets;
 
+import ExperienceApple.ITooltip;
 import ExperienceApple.Register.ItemRegister;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -20,7 +24,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class ItemFeatherSword extends ItemTool {
+public class ItemFeatherSword extends ItemTool implements ITooltip {
 
 	public ItemFeatherSword() {
 		super(2, 114510, ItemRegister.FToolMaterial, Sets.newHashSet(new Block[] { Blocks.CAKE }));
@@ -33,8 +37,7 @@ public class ItemFeatherSword extends ItemTool {
 
 			for (EntityLivingBase entitylivingbase : player.worldObj.getEntitiesWithinAABB(EntityLivingBase.class,
 					entity.getEntityBoundingBox().expand(1.0D, 0.25D, 1.0D))) {
-				if (entitylivingbase != player && entitylivingbase != entity
-						&& !player.isOnSameTeam(entitylivingbase)
+				if (entitylivingbase != player && entitylivingbase != entity && !player.isOnSameTeam(entitylivingbase)
 						&& player.getDistanceSqToEntity(entitylivingbase) < 3000.0D) {
 
 					entitylivingbase.knockBack(player, 0.4F, MathHelper.sin(player.rotationYaw * 0.017453292F),
@@ -57,8 +60,7 @@ public class ItemFeatherSword extends ItemTool {
 
 		for (EntityLivingBase entitylivingbase : player.worldObj.getEntitiesWithinAABB(EntityLivingBase.class,
 				player.getEntityBoundingBox().expand(1.0D, 0.25D, 1.0D))) {
-			if (entitylivingbase != player
-					&& !player.isOnSameTeam(entitylivingbase)
+			if (entitylivingbase != player && !player.isOnSameTeam(entitylivingbase)
 					&& player.getDistanceSqToEntity(entitylivingbase) < 3000.0D) {
 
 				entitylivingbase.knockBack(player, 0.4F, MathHelper.sin(player.rotationYaw * 0.017453292F),
@@ -87,5 +89,17 @@ public class ItemFeatherSword extends ItemTool {
 			((EntityLivingBase) entity).addPotionEffect(
 					new PotionEffect(Potion.getPotionFromResourceLocation("speed"), 1, 2, false, false));
 		}
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }

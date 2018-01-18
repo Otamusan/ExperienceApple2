@@ -1,5 +1,9 @@
 package Item.Tools;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import ExperienceApple.ITooltip;
 import Item.ExperienceRepair;
 import Item.IExperienceRepair;
 import Util.ParticleUtil;
@@ -13,7 +17,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemExperienceIronSword extends ItemSword implements IExperienceRepair {
+public class ItemExperienceIronSword extends ItemSword implements IExperienceRepair, ITooltip {
 
 	public static int cooldown = 0;
 	private ExperienceRepair experienceRepair;
@@ -55,5 +59,17 @@ public class ItemExperienceIronSword extends ItemSword implements IExperienceRep
 	@Override
 	public int getItemEnchantability() {
 		return 0;
+	}
+
+	public List<String> Tooltip = new ArrayList<String>();
+
+	@Override
+	public List<String> getTooltip() {
+		return Tooltip;
+	}
+
+	@Override
+	public void addTooltip(String str) {
+		Tooltip.add(str);
 	}
 }
