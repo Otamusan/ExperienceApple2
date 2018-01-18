@@ -2,6 +2,8 @@ package ExperienceApple.Register;
 
 import static Rituals.RitualStones.*;
 
+import java.util.ArrayList;
+
 import Rituals.RitualRegistry;
 import Rituals.StonePosData;
 import Rituals.Rituals.Ritual;
@@ -10,6 +12,11 @@ import Rituals.Rituals.RitualCreateEI;
 import Rituals.Rituals.RitualCreateLava;
 import Rituals.Rituals.RitualCreateWater;
 import Rituals.Rituals.RitualExplode;
+import Rituals.Rituals.RitualCraft.RitualCraft;
+import Rituals.Rituals.RitualCraft.RitualCraftCore;
+import Rituals.Rituals.RitualCraft.RitualCraftRegister;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
 
 public class RitualRegister {
 	public static void init() {
@@ -56,5 +63,71 @@ public class RitualRegister {
 		ritualCreateEI.setStoneBlock(1, 0, 1, tier2);
 		ritualCreateEI.setStoneBlock(0, 0, 0, tier2);
 		RitualRegistry.register(ritualCreateEI);
+
+		Ritual ritualCraft = new RitualCraftCore(new StonePosData(), "RitualCraft");
+		ritualCraft.setStoneBlock(-1, 0, -1, tier2);
+		ritualCraft.setStoneBlock(-1, 0, 0, tier2);
+		ritualCraft.setStoneBlock(-1, 0, 1, tier2);
+		ritualCraft.setStoneBlock(0, 0, -1, tier2);
+		ritualCraft.setStoneBlock(0, 0, 0, tier2);
+		ritualCraft.setStoneBlock(0, 0, 1, tier2);
+		ritualCraft.setStoneBlock(1, 0, -1, tier2);
+		ritualCraft.setStoneBlock(1, 0, 0, tier2);
+		ritualCraft.setStoneBlock(1, 0, 1, tier2);
+		ritualCraft.setStoneBlock(-2, -1, -1, tier1);
+		ritualCraft.setStoneBlock(-2, -1, 1, tier1);
+		ritualCraft.setStoneBlock(2, -1, -1, tier1);
+		ritualCraft.setStoneBlock(2, -1, 1, tier1);
+		ritualCraft.setStoneBlock(-1, -1, -2, tier1);
+		ritualCraft.setStoneBlock(1, -1, -2, tier1);
+		ritualCraft.setStoneBlock(-1, -1, 2, tier1);
+		ritualCraft.setStoneBlock(1, -1, 2, tier1);
+		ritualCraft.setStoneBlock(2, 0, 2, tier1);
+		ritualCraft.setStoneBlock(2, 0, -2, tier1);
+		ritualCraft.setStoneBlock(-2, 0, 2, tier1);
+		ritualCraft.setStoneBlock(-2, 0, -2, tier1);
+		ritualCraft.setStoneBlock(2, 1, 2, tier1);
+		ritualCraft.setStoneBlock(2, 1, -2, tier1);
+		ritualCraft.setStoneBlock(-2, 1, 2, tier1);
+		ritualCraft.setStoneBlock(-2, 1, -2, tier1);
+		ritualCraft.setStoneBlock(2, 2, 2, tier1);
+		ritualCraft.setStoneBlock(2, 2, -2, tier1);
+		ritualCraft.setStoneBlock(-2, 2, 2, tier1);
+		ritualCraft.setStoneBlock(-2, 2, -2, tier1);
+		ritualCraft.setStoneBlock(-1, 3, -1, tier3);
+		ritualCraft.setStoneBlock(-1, 3, 1, tier3);
+		ritualCraft.setStoneBlock(1, 3, -1, tier3);
+		ritualCraft.setStoneBlock(1, 3, 1, tier3);
+		RitualRegistry.register(ritualCraft);
+
+		RitualCraft cabinetstone = new RitualCraft(new ArrayList<ItemStack>(),
+				new ItemStack(BlockRegister.cabinetStone));
+		cabinetstone.setIteminList(new ItemStack(Items.APPLE));
+		cabinetstone.setIteminList(new ItemStack(Items.GOLDEN_APPLE));
+		cabinetstone.setIteminList(new ItemStack(ItemRegister.experienceApple));
+		cabinetstone.setIteminList(new ItemStack(ItemRegister.warpStone));
+
+		RitualCraft pureexperience = new RitualCraft(new ArrayList<ItemStack>(),
+				new ItemStack(BlockRegister.pureExperienceBlock));
+		pureexperience.setIteminList(new ItemStack(BlockRegister.experienceIronBlock, 16));
+		pureexperience.setIteminList(new ItemStack(BlockRegister.ritualStoneTier4));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder));
+		pureexperience.setIteminList(new ItemStack(Items.NETHER_STAR, 32));
+		RitualCraftRegister.register("PureExperience", pureexperience);
 	}
 }

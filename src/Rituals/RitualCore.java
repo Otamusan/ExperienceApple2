@@ -10,8 +10,10 @@ import Blocks.BlockRitualStone;
 import ExperienceApple.Register.RecipeRegister;
 import Rituals.Rituals.Ritual;
 import Util.ExperienceUtil;
+import Util.ParticleUtil;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -51,6 +53,7 @@ public class RitualCore {
 			Block block = world.getBlockState(worldPos).getBlock();
 			if (block instanceof BlockRitualGlass) {
 				world.setBlockToAir(worldPos);
+				ParticleUtil.blockRemaining(EnumParticleTypes.FIREWORKS_SPARK, world, worldPos, 10);
 			}
 			if (block instanceof BlockRitualLauncher || block instanceof BlockRitualStone) {
 				BlockRitual blockRitual = (BlockRitual) block;
@@ -58,6 +61,8 @@ public class RitualCore {
 						RecipeRegister.ritualGlassCost * blockRitual.getTier().getMagnification(), world)) {
 					return false;
 				}
+				ParticleUtil.blockRemaining(EnumParticleTypes.FIREWORKS_SPARK, world, worldPos, 10);
+
 			}
 		}
 		return true;
