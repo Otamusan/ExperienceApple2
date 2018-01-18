@@ -10,10 +10,10 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class EntityItemUtil {
-	public static ItemListAnd getItemListFromPos(World world, BlockPos pos) {
+	public static ArrayList<ItemStack> getItemListFromPos(World world, BlockPos pos) {
 
 		List<Entity> entitylist = world.loadedEntityList;
-		ItemListAnd itemList = new ItemListAnd(new ArrayList<ItemStack>());
+		ArrayList<ItemStack> itemList = new ArrayList<ItemStack>();
 		for (Entity entity : entitylist) {
 			if (entity.getClass() == EntityItem.class) {
 				EntityItem entityItem = (EntityItem) entity;
@@ -21,7 +21,7 @@ public class EntityItemUtil {
 				if (entity.getPosition().getX() == pos.getX() && entity.getPosition().getY() == pos.getY()
 						&& entity.getPosition().getZ() == pos.getZ()) {
 					ItemStack newitem = entityItem.getEntityItem();
-					itemList.itemlist.add(newitem);
+					itemList.add(newitem);
 				}
 			}
 		}
