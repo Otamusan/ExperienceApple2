@@ -2,7 +2,7 @@ package ExperienceApple;
 
 import java.io.File;
 
-import Blocks.BlockLiquidXP;
+import Client.ParticleRegister;
 import Common.CommonProxy;
 import Crafting.EnchantCraft.EnchantCrafting;
 import Crafting.ExperienceAppleCrafting.ExperienceAppleCrafting;
@@ -15,7 +15,6 @@ import ExperienceApple.Register.RitualRegister;
 import World.ExperienceOreGenerator;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -45,12 +44,12 @@ public class EAMain {
 		} finally {
 			cfg.save();
 		}
-		FluidRegistry.registerFluid(BlockLiquidXP.liquidXPFluid);
 
 		ItemRegister.init(event.getSide());
 		BlockRegister.init(event.getSide());
 		RecipeRegister.init();
 		RitualRegister.init();
+		ParticleRegister.init();
 		EntityRegister.init(this);
 		GameRegistry.addRecipe(new ExperienceAppleCrafting());
 		GameRegistry.addRecipe(new RepairCrafting());
