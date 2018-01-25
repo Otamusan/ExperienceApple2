@@ -16,6 +16,12 @@ import net.minecraft.world.World;
 
 public class TileGrowthStone extends TileEntity implements ITickable {
 
+	private int acceleration;
+
+	public TileGrowthStone(int acceleration) {
+		this.acceleration = acceleration;
+	}
+
 	@Override
 	public void update() {
 		World world = this.worldObj;
@@ -40,7 +46,7 @@ public class TileGrowthStone extends TileEntity implements ITickable {
 
 		if (world.isRemote)
 			return;
-		for (int ix = 0; ix < 1; ix++) {
+		for (int ix = 0; ix < acceleration; ix++) {
 			world.getBlockState(new BlockPos(x, y, z)).getBlock().updateTick(world, new BlockPos(x, y, z),
 					world.getBlockState(new BlockPos(x, y, z)), new Random());
 		}

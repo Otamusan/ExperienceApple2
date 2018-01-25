@@ -14,6 +14,12 @@ import net.minecraft.world.World;
 
 public class TileAccelerateStone extends TileEntity implements ITickable {
 
+	private int acceleration;
+
+	public TileAccelerateStone(int acceleration) {
+		this.acceleration = acceleration;
+	}
+
 	@Override
 	public void update() {
 		World world = this.worldObj;
@@ -44,7 +50,7 @@ public class TileAccelerateStone extends TileEntity implements ITickable {
 		ParticleUtil.blockInjection(EnumParticleTypes.PORTAL, world, this.getPos(), new BlockPos(x, y, z), 10);
 		if (world.isRemote)
 			return;
-		for (int ix = 0; ix < 10; ix++) {
+		for (int ix = 0; ix < acceleration; ix++) {
 			((ITickable) entity).update();
 		}
 	}
