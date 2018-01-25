@@ -1,7 +1,5 @@
 package TileEntity;
 
-import com.sun.istack.internal.Nullable;
-
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -36,7 +34,6 @@ public class TileRitualLauncher extends TileEntity {
 		this.previousRedstoneState = par1NBTTagCompound.getBoolean("powered");
 	}
 
-	@Nullable
 	public SPacketUpdateTileEntity getUpdatePacket() {
 		return new SPacketUpdateTileEntity(this.pos, 0, this.getUpdateTag());
 	}

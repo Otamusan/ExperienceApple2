@@ -1,0 +1,45 @@
+#################################################
+         ForgeGradle 2.2-SNAPSHOT-d13a6c8        
+  https://github.com/MinecraftForge/ForgeGradle  
+#################################################
+               Powered by MCP unknown               
+             http://modcoderpack.com             
+         by: Searge, ProfMobius, Fesh0r,         
+         R4wk, ZeuX, IngisKahn, bspkrs           
+#################################################
+:deobfCompileDummyTask
+:deobfProvidedDummyTask
+:sourceApiJava UP-TO-DATE
+:compileApiJava UP-TO-DATE
+:processApiResources UP-TO-DATE
+:apiClasses UP-TO-DATE
+:sourceMainJava
+:compileJava注意:一部の入力ファイルは非推奨のAPIを使用またはオーバーライドしています。
+注意:詳細は、-Xlint:deprecationオプションを指定して再コンパイルしてください。
+
+:processResources
+:classes
+:jar
+:sourceTestJava
+:compileTestJava UP-TO-DATE
+:processTestResources UP-TO-DATE
+:testClasses UP-TO-DATE
+:test UP-TO-DATE
+:extractMcpData SKIPPED
+:extractMcpMappings SKIPPED
+:getVersionJson
+:extractUserdev UP-TO-DATE
+:genSrgs SKIPPED
+:reobfJar
+:extractRangemapReplacedMain
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2\build\sources\main\java
+:retromapReplacedMain
+remapping source...
+:sourceJar
+:assemble
+:check UP-TO-DATE
+:build
+
+BUILD SUCCESSFUL
+
+Total time: 20.708 secs
