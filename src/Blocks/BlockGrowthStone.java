@@ -18,9 +18,12 @@ import net.minecraft.world.World;
 
 public class BlockGrowthStone extends BlockGlass implements ITileEntityProvider, ITooltip {
 
-	public BlockGrowthStone(Material mate) {
+	private int acceleration;
+
+	public BlockGrowthStone(Material mate, int acceleration) {
 		super(mate, true);
 		isBlockContainer = true;
+		this.acceleration = acceleration;
 	}
 
 	public boolean hasTileEntity(int metadata) {
@@ -39,7 +42,7 @@ public class BlockGrowthStone extends BlockGlass implements ITileEntityProvider,
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
-		return new TileGrowthStone();
+		return new TileGrowthStone(acceleration);
 	}
 
 	public List<String> Tooltip = new ArrayList<String>();

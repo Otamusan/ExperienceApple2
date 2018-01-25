@@ -41,4 +41,5 @@ public class RitualCreateEI extends Ritual {
 
 		return true;
 	}
+
 }

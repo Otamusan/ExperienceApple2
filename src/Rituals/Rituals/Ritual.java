@@ -65,4 +65,5 @@ public class Ritual {
 	public Map<BlockPos, RitualStones> getStoneBlockData() {
 		return map;
 	}
+
 }

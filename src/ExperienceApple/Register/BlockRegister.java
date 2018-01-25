@@ -1,8 +1,6 @@
 package ExperienceApple.Register;
 
 import Blocks.BlockAccelerateStone;
-import Blocks.BlockAdvancedAccelerateStone;
-import Blocks.BlockAdvancedGrowthStone;
 import Blocks.BlockCabinetStone;
 import Blocks.BlockCodensedExperienceOre;
 import Blocks.BlockExperienceOre;
@@ -52,12 +50,11 @@ public class BlockRegister {
 
 	public static final Block cabinetStone = new BlockCabinetStone(Material.ROCK).setHardness(5.0F);
 
-	public static final Block accelerateStone = new BlockAccelerateStone(Material.ROCK).setHardness(5.0F);
-	public static final Block advancedAccelerateStone = new BlockAdvancedAccelerateStone(Material.ROCK)
-			.setHardness(5.0F);
+	public static final Block accelerateStone = new BlockAccelerateStone(Material.ROCK, 10).setHardness(5.0F);
+	public static final Block advancedAccelerateStone = new BlockAccelerateStone(Material.ROCK, 2000).setHardness(5.0F);
 
-	public static final Block growthStone = new BlockGrowthStone(Material.ROCK).setHardness(5.0F);
-	public static final Block advancedGrowthStone = new BlockAdvancedGrowthStone(Material.ROCK).setHardness(5.0F);
+	public static final Block growthStone = new BlockGrowthStone(Material.ROCK, 1).setHardness(5.0F);
+	public static final Block advancedGrowthStone = new BlockGrowthStone(Material.ROCK, 20).setHardness(5.0F);
 
 	public static final Block weakExperienceIronBlock = new Block(Material.IRON).setHardness(5.0F);
 	public static final Block experienceIronBlock = new Block(Material.IRON).setHardness(5.0F);
@@ -71,7 +68,6 @@ public class BlockRegister {
 	public static void init(Side side) {
 
 		Fside = side;
-		// ((ITooltip) ritualGlassTier1).addTooltip("testtest");
 		register(ritualGlassTier1, "ritualGlassTier1");
 		register(ritualGlassTier2, "ritualGlassTier2");
 		register(ritualGlassTier3, "ritualGlassTier3");

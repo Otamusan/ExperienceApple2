@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ExperienceApple.ITooltip;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,6 +23,7 @@ public class ItemWarpStone extends Item implements ITooltip {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World world, EntityPlayer player,
 			EnumHand hand) {
+
 		ItemStack itemStack = player.getHeldItem(hand);
 		NBTTagCompound nbt = itemStack.getTagCompound();
 		if (nbt == null) {
@@ -85,10 +88,13 @@ public class ItemWarpStone extends Item implements ITooltip {
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		NBTTagCompound nbt = stack.getTagCompound();
+		if (!GuiScreen.isShiftKeyDown())
+			return;
 		if (nbt != null) {
-			tooltip.add("X: " + (int) nbt.getDouble("setX") + " Y: " + (int) nbt.getDouble("setY") + " Z: "
-					+ (int) nbt.getDouble("setZ"));
-			tooltip.add("Dimension: " + nbt.getInteger("setDimention"));
+			tooltip.add(I18n.format("item.warpStone.x") + " : " + (int) nbt.getDouble("setX") + " "
+					+ I18n.format("item.warpStone.y") + " : " + (int) nbt.getDouble("setY") + " "
+					+ I18n.format("item.warpStone.z") + " : " + (int) nbt.getDouble("setZ"));
+			tooltip.add(I18n.format("item.warpStone.dimension") + " : " + nbt.getInteger("setDimention"));
 		}
 	}
 

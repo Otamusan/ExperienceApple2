@@ -9,7 +9,7 @@ public class PlayerUtil {
 
 		for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
 			if (player.inventory.getStackInSlot(i) == null)
-				return false;
+				continue;
 			if (player.inventory.getStackInSlot(i).getItem() == item) {
 				return true;
 			}
@@ -21,9 +21,9 @@ public class PlayerUtil {
 
 		for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
 			if (player.inventory.getStackInSlot(i) == null)
-				return null;
+				continue;
 			if (player.inventory.getStackInSlot(i).getItem() == item) {
-				return player.inventory.getItemStack();
+				return player.inventory.getStackInSlot(i);
 			}
 		}
 		return null;

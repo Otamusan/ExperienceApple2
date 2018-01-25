@@ -154,6 +154,9 @@ public class RecipeRegister {
 				Items.EXPERIENCE_BOTTLE);
 		GameRegistry.addSmelting(Items.GHAST_TEAR, new ItemStack(ItemRegister.ashOfEntropy, 1, 99), 1F);
 
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.ritualAssembler), Items.APPLE,
+				Items.EXPERIENCE_BOTTLE);
+
 		GameRegistry
 				.addSmelting(new ItemStack(ItemRegister.ashOfEntropy, 1, 0),
 						new ItemStack(ItemRegister.ashOfBalance, 1,

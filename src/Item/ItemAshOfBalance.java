@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ExperienceApple.ITooltip;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
@@ -19,6 +21,13 @@ public class ItemAshOfBalance extends Item implements ITooltip {
 	@Override
 	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
 		return false;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+		if (!GuiScreen.isShiftKeyDown())
+			return;
+		tooltip.add(I18n.format("item.ash.processing") + " : " + (this.getMaxDamage(stack) - this.getDamage(stack)));
 	}
 
 	@Override
@@ -44,12 +53,10 @@ public class ItemAshOfBalance extends Item implements ITooltip {
 
 	public List<String> Tooltip = new ArrayList<String>();
 
-	@Override
 	public List<String> getTooltip() {
 		return Tooltip;
 	}
 
-	@Override
 	public void addTooltip(String str) {
 		Tooltip.add(str);
 	}

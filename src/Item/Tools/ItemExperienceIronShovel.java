@@ -8,6 +8,8 @@ import Item.ExperienceRepair;
 import Item.IExperienceRepair;
 import Util.ParticleUtil;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,6 +18,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemExperienceIronShovel extends ItemSpade implements IExperienceRepair, ITooltip {
 	public static int cooldown;
@@ -43,6 +47,15 @@ public class ItemExperienceIronShovel extends ItemSpade implements IExperienceRe
 		ParticleUtil.verticalCircle(EnumParticleTypes.VILLAGER_HAPPY, entity.getEntityWorld(), entity.posX,
 				entity.posY + entity.getMaxFallHeight() / 2, entity.posZ, 1, 12);
 		return false;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+		if (!GuiScreen.isShiftKeyDown())
+			return;
+		tooltip.add(I18n.format("item.experienceIron.cooltime") + " : " + this.experienceRepair.getCooltime());
+		tooltip.add(I18n.format("item.experienceIron.cost") + " : " + this.experienceRepair.getCost());
+
 	}
 
 	@Override

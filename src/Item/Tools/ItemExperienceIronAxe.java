@@ -13,6 +13,8 @@ import Util.ParticleUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,6 +24,8 @@ import net.minecraft.item.ItemTool;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair, ITooltip {
 
@@ -38,6 +42,15 @@ public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair
 		this.damageVsEntity = mate.getDamageVsEntity();
 		this.attackSpeed = -3.2F;
 		this.experienceRepair = new ExperienceRepair(cooltime, cost);
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+		if (!GuiScreen.isShiftKeyDown())
+			return;
+		tooltip.add(I18n.format("item.experienceIron.cooltime") + " : " + this.experienceRepair.getCooltime());
+		tooltip.add(I18n.format("item.experienceIron.cost") + " : " + this.experienceRepair.getCost());
+
 	}
 
 	@Override

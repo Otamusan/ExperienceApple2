@@ -7,6 +7,8 @@ import java.util.Random;
 import ExperienceApple.EAMain;
 import ExperienceApple.ITooltip;
 import ExperienceApple.Register.BlockRegister;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -18,8 +20,23 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemTimeSand extends Item implements ITooltip {
+	private int acc;
+
+	public ItemTimeSand(int acc) {
+		this.acc = acc;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+		if (!GuiScreen.isShiftKeyDown())
+			return;
+		tooltip.add(I18n.format("item.tick.name") + " : " + this.acc);
+	}
+
 	@Override
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand,
 			EnumFacing facing, float hitX, float hitY, float hitZ) {
@@ -39,7 +56,7 @@ public class ItemTimeSand extends Item implements ITooltip {
 		if (!(entity instanceof ITickable))
 			return EnumActionResult.PASS;
 
-		for (int ix = 0; ix < 100; ix++) {
+		for (int ix = 0; ix < acc; ix++) {
 			((ITickable) entity).update();
 		}
 

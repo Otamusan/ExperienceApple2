@@ -6,6 +6,8 @@ import java.util.List;
 import ExperienceApple.EAMain;
 import ExperienceApple.ITooltip;
 import Util.ExperienceUtil;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -15,9 +17,22 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemFlyingSpellPaper extends Item implements ITooltip {
-	public final int COST = 5;
+	public int COST;
+
+	public ItemFlyingSpellPaper(int cost) {
+		this.COST = cost;
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+		if (!GuiScreen.isShiftKeyDown())
+			return;
+		tooltip.add(I18n.format("item.flyingSpellPaper.cost") + " : " + COST);
+	}
 
 	@Override
 	public void onUpdate(ItemStack stack, World world, Entity entity, int Slot, boolean isSelected) {

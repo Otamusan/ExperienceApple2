@@ -67,4 +67,5 @@ public class RitualCore {
 		}
 		return true;
 	}
+
 }

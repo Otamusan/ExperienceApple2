@@ -36,8 +36,8 @@ public class RepairCrafting implements IRecipe {
 	@Nonnull
 	@Override
 	public ItemStack getCraftingResult(@Nonnull InventoryCrafting inv) {
-		if (Oitem.getItemDamage() > 5) {
-			return new ItemStack(Oitem.getItem(), 1, Oitem.getItemDamage() - 5);
+		if (Oitem.getItemDamage() > 1) {
+			return new ItemStack(Oitem.getItem(), 1, Oitem.getItemDamage() - 1);
 		} else {
 			return new ItemStack(Oitem.getItem(), 1, 0);
 		}

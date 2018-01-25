@@ -17,10 +17,16 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class ItemUniversalNutrient extends Item implements ITooltip {
+	private int acc;
+
+	public ItemUniversalNutrient(int acc) {
+		this.acc = acc;
+	}
+
 	@Override
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer player, World world, BlockPos pos, EnumHand hand,
 			EnumFacing facing, float hitX, float hitY, float hitZ) {
-		for (int ix = 0; ix < 20; ix++) {
+		for (int ix = 0; ix < acc; ix++) {
 			world.getBlockState(pos).getBlock().updateTick(world, pos, world.getBlockState(pos), new Random());
 		}
 

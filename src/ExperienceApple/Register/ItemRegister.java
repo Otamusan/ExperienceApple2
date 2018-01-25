@@ -10,7 +10,9 @@ import Item.ItemExperienceApple;
 import Item.ItemFragmentOfTheBrain;
 import Item.ItemGravityCompressor;
 import Item.ItemMod;
+import Item.ItemModFood;
 import Item.ItemRegisteredExperienceApple;
+import Item.ItemRitualAssembler;
 import Item.ItemSuperDye;
 import Item.ItemTimeSand;
 import Item.ItemUniversalNutrient;
@@ -43,7 +45,6 @@ import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemFood;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.common.util.EnumHelper;
@@ -73,9 +74,8 @@ public class ItemRegister {
 	public static final Item ashOfBalance = new ItemAshOfBalance().setMaxStackSize(1).setMaxDamage(1000);;
 	public static final Item ashOfOrder = new ItemAshOfOrder().setMaxStackSize(1).setMaxDamage(10000);
 
-	public static final int flyingSpellPaperCost = 5;
-	public static final Item flyingSpellPaper = new ItemFlyingSpellPaper().setMaxStackSize(1);
-	public static final Item satietySpellPaper = new ItemSatietySpellPaper().setMaxStackSize(1);
+	public static final Item flyingSpellPaper = new ItemFlyingSpellPaper(5).setMaxStackSize(1);
+	public static final Item satietySpellPaper = new ItemSatietySpellPaper(50).setMaxStackSize(1);
 	public static final Item acceleratedSpellPaper = new ItemAcceleratedSpellPaper().setMaxStackSize(1);
 
 	public static final Item warpStone = new ItemWarpStone();
@@ -91,7 +91,7 @@ public class ItemRegister {
 	public static final Item weakExperienceIronPickaxe = new ItemWeakExperienceIronPickaxe();
 	public static final Item weakExperienceIronShovel = new ItemWeakExperienceIronShovel();
 	public static final Item weakExperienceIronSword = new ItemWeakExperienceIronSword();
-	public static final Item weakExperienceIronIngot = new Item();
+	public static final Item weakExperienceIronIngot = new ItemMod();
 
 	public static final Item weakExperienceIronHelmet = new ItemWeakExperienceIronArmor(WEIArmorMaterial, 0,
 			EntityEquipmentSlot.HEAD);
@@ -105,10 +105,10 @@ public class ItemRegister {
 	public static final Item pureExperienceIngot = new ItemMod();
 	public static final Item experienceIronIngot = new ItemMod();
 
-	public static final Item timeSand = new ItemTimeSand();
-	public static final Item universalNutrient = new ItemUniversalNutrient();
+	public static final Item timeSand = new ItemTimeSand(100);
+	public static final Item universalNutrient = new ItemUniversalNutrient(20);
 
-	public static final Item fragmentOfTheBrain = new ItemFragmentOfTheBrain();
+	public static final Item fragmentOfTheBrain = new ItemFragmentOfTheBrain(10000);
 
 	public static final Item superDye = new ItemSuperDye();
 
@@ -140,8 +140,9 @@ public class ItemRegister {
 	public static final Item advancedExperienceIronBoots = new ItemAdvancedExperienceIronArmor(AEIArmorMaterial, 0,
 			EntityEquipmentSlot.FEET, 80);
 
-	public static final Item bakedSeeds = new ItemFood(1, 0, true);
-	public static final Item infusedBakedSeeds = new ItemFood(1, 1, true);
+	public static final Item ritualAssembler = new ItemRitualAssembler();
+	public static final Item bakedSeeds = new ItemModFood(1, 0, true);
+	public static final Item infusedBakedSeeds = new ItemModFood(1, 1, true);
 
 	public static Side Fside;
 
@@ -216,6 +217,7 @@ public class ItemRegister {
 
 		register(infusedBakedSeeds, "infusedBakedSeeds");
 		register(bakedSeeds, "bakedSeeds");
+		register(ritualAssembler, "ritualAssembler");
 
 		register(debug, "debug");
 

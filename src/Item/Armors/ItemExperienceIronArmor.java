@@ -5,11 +5,16 @@ import java.util.List;
 
 import ExperienceApple.ITooltip;
 import Item.ExperienceRepair;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemExperienceIronArmor extends ItemArmor implements ITooltip {
 
@@ -20,6 +25,15 @@ public class ItemExperienceIronArmor extends ItemArmor implements ITooltip {
 			int cooltime, int cost) {
 		super(materialIn, renderIndexIn, equipmentSlotIn);
 		this.experienceRepair = new ExperienceRepair(cooltime, cost);
+
+	}
+
+	@SideOnly(Side.CLIENT)
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+		if (!GuiScreen.isShiftKeyDown())
+			return;
+		tooltip.add(I18n.format("item.experienceIron.cooltime") + " : " + this.experienceRepair.getCooltime());
+		tooltip.add(I18n.format("item.experienceIron.cost") + " : " + this.experienceRepair.getCost());
 
 	}
 

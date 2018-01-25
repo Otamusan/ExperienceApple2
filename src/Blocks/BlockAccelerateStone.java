@@ -18,9 +18,12 @@ import net.minecraft.world.World;
 
 public class BlockAccelerateStone extends BlockGlass implements ITileEntityProvider, ITooltip {
 
-	public BlockAccelerateStone(Material mate) {
+	private int acceleration;
+
+	public BlockAccelerateStone(Material mate, int acceleration) {
 		super(mate, true);
 		isBlockContainer = true;
+		this.acceleration = acceleration;
 	}
 
 	public boolean hasTileEntity(int metadata) {
@@ -39,7 +42,7 @@ public class BlockAccelerateStone extends BlockGlass implements ITileEntityProvi
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
-		return new TileAccelerateStone();
+		return new TileAccelerateStone(acceleration);
 	}
 
 	public List<String> Tooltip = new ArrayList<String>();

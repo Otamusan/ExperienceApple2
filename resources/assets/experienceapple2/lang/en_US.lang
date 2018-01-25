@@ -1,15 +1,26 @@
 item.experienceApple.name=Experience Apple
+
 item.registeredExperienceApple.name=Registered ExperienceApple
+item.registeredExperienceApple.registedPlayer=Registed Player
+item.registeredExperienceApple.notlogin=Registered players are not logged in
+item.registeredExperienceApple.exppoint=Experience Point
 
 item.weakExperienceIronAxe.name=WEI Axe
+
 item.weakExperienceIronIngot.name=Weak ExperienceIron Ingot
+
 item.weakExperienceIronPickaxe.name=WEI Pickaxe
+
 item.weakExperienceIronShovel.name=WEI Shovel
+
 item.weakExperienceIronSword.name=WEI Sword
 
 item.weakExperienceIronHelmet.name=WEI Helmet
+
 item.weakExperienceIronChestplate.name=WEI Chestplate
+
 item.weakExperienceIronLeggings.name=WEI Leggings
+
 item.weakExperienceIronBoots.name=WEI Boots
 
 item.gravityCompressor.name=Portable Compressor
@@ -17,40 +28,82 @@ item.gravityCompressor.name=Portable Compressor
 item.ashOfEntropy.name=Ash of Entropy
 item.ashOfBalance.name=Ash of Balance
 item.ashOfOrder.name=Ash of Order
+item.ash.processing=Processing
 
-item.flyingSpellPaper.name=Flying Spell Pape
+
+item.flyingSpellPaper.name=Flying Spell Paper
+item.flyingSpellPaper.cost=Cost
+
 item.satietySpellPaper.name=Satiety Spell Paper
+item.satietySpellPaper.cost=Cost
+
 
 item.enchantmentPearl.name=Enchantment Pearl
 
 item.featherSword.name=Feather Sword
+
 item.magicBow.name=Magic Bow
+
 item.unstableAxe.name=Unstable Axe
 
 item.pureExperienceIngot.name=Pure Experience Ingot
+
 item.experienceIronIngot.name=Experience Iron Ingot
 
 item.experienceIronAxe.name=EI Axe
 item.experienceIronPickaxe.name=EI Pickaxe
 item.experienceIronShovel.name=EI Shovel
 item.experienceIronSword.name=EI Sword
-
 item.experienceIronHelmet.name=EI Helmet
 item.experienceIronChestplate.name=EI Chestplate
 item.experienceIronLeggings.name=EI Leggings
 item.experienceIronBoots.name=EI Boots
+item.experienceIron.cooltime=Cooltime
+item.experienceIron.cost=Repair Cost
 
 item.advancedExperienceIronAxe.name=AEI Axe
+
 item.advancedExperienceIronPickaxe.name=AEI Pickaxe
+
 item.advancedExperienceIronShovel.name=AEI Shovel
+
 item.advancedExperienceIronSword.name=AEI Sword
 
 item.advancedExperienceIronHelmet.name=AEI Helmet
+
 item.advancedExperienceIronChestplate.name=AEI Chestplate
+
 item.advancedExperienceIronLeggings.name=AEI Leggings
+
 item.advancedExperienceIronBoots.name=AEI Boots
 
+
+
+
 item.fragmentOfTheBrain.name=Flagment of the Brain
+item.fragmentOfTheBrain.amountofExperience=Amount of Experience
+
+item.atomicCutter.name=Block Cutter
+
+item.superDye.name=Multi Dye
+
+item.timeSand.name=Time Sand
+item.universalNutrient.name=Multi Nutrient
+item.tick.name=Skip tick
+
+item.bakedSeeds.name=Baked Seed
+
+item.infusedBakedSeeds.name=Infused Baked Seed
+
+item.ritualAssembler.name=Ritual Placer
+item.ritualAssembler.ritualname=Ritual
+
+item.warpStone.name=Warp Stone
+item.warpStone.x=X
+item.warpStone.y=Y
+item.warpStone.z=Z
+item.warpStone.dimension=Dimension
+
 
 tile.ritualGlassTier1.name=Ritual Glass Tier1
 tile.ritualGlassTier2.name=Ritual Glass Tier2
@@ -62,18 +115,57 @@ tile.ritualStoneTier2.name=Ritual Stone Tier2
 tile.ritualStoneTier3.name=Ritual Stone Tier3
 tile.ritualStoneTier4.name=Ritual Stone Tier4
 
+tile.ritualLauncherTier1.name=Ritual Launcher Tier1
+tile.ritualLauncherTier2.name=Ritual Launcher Tier2
+tile.ritualLauncherTier3.name=Ritual Launcher Tier3
+tile.ritualLauncherTier4.name=Ritual Launcher Tier4
+
 tile.cabinetStone.name=Cabinet Stone
+
+tile.accelerateStone.name=Accelerate Stone
+tile.advancedAccelerateStone.name=Advanced Accelerate Stone
+
+tile.growthStone.name=Growth Stone
+tile.advancedGrowthStone.name=Advanced Growth Stone
 
 tile.experienceIronBlock.name=Block of Experience Iron
 
 tile.pureExperienceBlock.name=Block of Pure Experience
 
-
 tile.experienceOre.name=Experience Ore
+
 tile.condensedExperienceOre.name=Condensed Experience Ore
+
 tile.weakExperienceIronBlock.name=Block of Weak Experience Iron
 
-
-
-
 itemGroup.experienceApple=Experience Apple
+
+ea.ritual.explode.name=Ritual of Explode
+ea.ritual.explode.description=Cause a simple explosion
+
+ea.ritual.blockCut.name=Ritual of Block Cut
+ea.ritual.blockCut.description=Ritual taking the block under the center
+
+ea.ritual.createWater.name=Ritual of Create Water
+ea.ritual.createWater.description=Put 9 blocks of water
+
+ea.ritual.createLava.name=Ritual of Create Lava
+ea.ritual.createLava.description=Put 9 blocks of lava
+
+ea.ritual.createEI.name=Ritual of Craft EI
+ea.ritual.createEI.description=Ritual that when WEI Block is placed between the rituals and you start it you can create EI Block
+
+ea.ritual.ritualCraft.name=Ritual of Crafting
+ea.ritual.ritualCraft.description=Ritual that can create various items
+ea.ritual.ritualCraft.item.description=You can create this item using Ritual of Crafting
+
+
+ea.eacraft.description=This item will be created with consumption of experience with Registered Experience Apple
+ea.eacraft.expcost=Required Experience
+ea.eacraft.item=Required Item
+
+ea.repaircraft.description=The durability can be restored by craft
+
+ea.eccraft.description=When you craft it with Enchantment Pearl, that enchantment moves
+
+

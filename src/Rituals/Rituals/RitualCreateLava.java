@@ -33,4 +33,5 @@ public class RitualCreateLava extends Ritual {
 	public boolean canActivate(EntityPlayer player, World world, BlockPos pos) {
 		return true;
 	}
+
 }

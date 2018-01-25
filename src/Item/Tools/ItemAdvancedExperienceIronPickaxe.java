@@ -12,6 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Enchantments;
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
@@ -23,10 +24,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemAdvancedExperienceIronPickaxe extends ItemPickaxe implements ITooltip {
-
-	public static int cooldown = 0;
-	public Integer range = 3;
-
 	public ItemAdvancedExperienceIronPickaxe(ToolMaterial mate) {
 		super(mate);
 	}
@@ -46,8 +43,32 @@ public class ItemAdvancedExperienceIronPickaxe extends ItemPickaxe implements IT
 		stack.addEnchantment(Enchantments.UNBREAKING, 7);
 	}
 
+	public int getRange(ItemStack itemStack) {
+
+		NBTTagCompound nbt;
+		if (itemStack.getTagCompound() == null) {
+			nbt = new NBTTagCompound();
+			nbt.setInteger("range", 0);
+			itemStack.setTagCompound(nbt);
+			return 0;
+		} else {
+			nbt = itemStack.getTagCompound();
+			return nbt.getInteger("range");
+		}
+	}
+
+	public void setRange(ItemStack itemStack, int ritual) {
+		NBTTagCompound nbt = new NBTTagCompound();
+		nbt.setInteger("range", ritual);
+		itemStack.setTagCompound(nbt);
+	}
+
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn,
 			EnumHand hand) {
+		int range = getRange(itemStackIn);
+		if (worldIn.isRemote)
+			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
+
 		if (playerIn.isSneaking()) {
 			range--;
 		} else {
@@ -56,7 +77,8 @@ public class ItemAdvancedExperienceIronPickaxe extends ItemPickaxe implements IT
 		if (range < 0) {
 			range = 0;
 		}
-		playerIn.addChatMessage(new TextComponentTranslation(range.toString()));
+		playerIn.addChatMessage(new TextComponentTranslation(new Integer(range).toString()));
+		setRange(itemStackIn, range);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
 	}
 
@@ -67,18 +89,12 @@ public class ItemAdvancedExperienceIronPickaxe extends ItemPickaxe implements IT
 		ParticleUtil.blockRemaining(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 10);
 		if (!entityLiving.isSneaking())
 			return false;
+		int range = getRange(stack);
 		for (int ix = -range; ix < range; ix++) {
 			for (int iy = -range; iy < range; iy++) {
 				for (int iz = -range; iz < range; iz++) {
 					BlockPos xpPos = new BlockPos(ix + pos.getX(), iy + pos.getY(), iz + pos.getZ());
-					// state.getBlock().harvestBlock(world, (EntityPlayer)
-					// entityLiving, xpPos,
-					// world.getBlockState(xpPos).getBlock().getDefaultState(),
-					// world.getTileEntity(xpPos), stack);
 					world.destroyBlock(xpPos, true);
-					// state.getBlock().breakBlock(world, xpPos, state);
-					// world.setBlockToAir(xpPos);
-					// System.out.println(world.isRemote);
 				}
 			}
 		}
