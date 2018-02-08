@@ -38,7 +38,7 @@ public class BlockPureExperience extends BlockSlime implements ITooltip {
 
 	@Override
 	public boolean canCollideCheck(IBlockState state, boolean hitIfLiquid) {
-		return false;
+		return true;
 	}
 
 	@Override
@@ -52,7 +52,7 @@ public class BlockPureExperience extends BlockSlime implements ITooltip {
 
 	@Override
 	public boolean isFullCube(IBlockState state) {
-		return false;
+		return true;
 	}
 
 	public List<String> Tooltip = new ArrayList<String>();
