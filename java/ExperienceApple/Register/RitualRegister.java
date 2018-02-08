@@ -11,7 +11,9 @@ import Rituals.Rituals.RitualBlockCut;
 import Rituals.Rituals.RitualCreateEI;
 import Rituals.Rituals.RitualCreateLava;
 import Rituals.Rituals.RitualCreateWater;
+import Rituals.Rituals.RitualEggization;
 import Rituals.Rituals.RitualExplode;
+import Rituals.Rituals.RitualSpawnerActivation;
 import Rituals.Rituals.RitualCraft.RitualCraft;
 import Rituals.Rituals.RitualCraft.RitualCraftCore;
 import Rituals.Rituals.RitualCraft.RitualCraftRegister;
@@ -63,6 +65,32 @@ public class RitualRegister {
 		ritualCreateEI.setStoneBlock(1, 0, 1, tier2);
 		ritualCreateEI.setStoneBlock(0, 0, 0, tier2);
 		RitualRegistry.register(ritualCreateEI);
+
+		Ritual ritualEggization = new RitualEggization(new StonePosData(), "eggization");
+		ritualEggization.setStoneBlock(-1, 0, 1, tier1);
+		ritualEggization.setStoneBlock(1, 0, -1, tier1);
+		ritualEggization.setStoneBlock(-1, 0, -1, tier1);
+		ritualEggization.setStoneBlock(1, 0, 1, tier1);
+		ritualEggization.setStoneBlock(0, 0, 0, tier2);
+
+		ritualEggization.setStoneBlock(1, 1, 0, tier3);
+		ritualEggization.setStoneBlock(-1, 1, 0, tier3);
+		ritualEggization.setStoneBlock(0, 1, 1, tier3);
+		ritualEggization.setStoneBlock(0, 1, -1, tier3);
+
+		RitualRegistry.register(ritualEggization);
+
+		Ritual ritualSpawnerActivation = new RitualSpawnerActivation(new StonePosData(), "spawnerActivation");
+		ritualSpawnerActivation.setStoneBlock(-1, 2, 1, tier1);
+		ritualSpawnerActivation.setStoneBlock(1, 2, -1, tier1);
+		ritualSpawnerActivation.setStoneBlock(-1, 2, -1, tier1);
+		ritualSpawnerActivation.setStoneBlock(1, 2, 1, tier1);
+		ritualSpawnerActivation.setStoneBlock(0, 0, 0, tier2);
+		ritualSpawnerActivation.setStoneBlock(-1, 0, 1, tier1);
+		ritualSpawnerActivation.setStoneBlock(1, 0, -1, tier1);
+		ritualSpawnerActivation.setStoneBlock(-1, 0, -1, tier1);
+		ritualSpawnerActivation.setStoneBlock(1, 0, 1, tier1);
+		RitualRegistry.register(ritualSpawnerActivation);
 
 		Ritual ritualCraft = new RitualCraftCore(new StonePosData(), "ritualCraft");
 		ritualCraft.setStoneBlock(-1, 0, -1, tier2);
