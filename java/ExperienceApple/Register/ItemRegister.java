@@ -1,6 +1,7 @@
 package ExperienceApple.Register;
 
 import ExperienceApple.EAMain;
+import Item.ItemAshIngot;
 import Item.ItemAshOfBalance;
 import Item.ItemAshOfEntropy;
 import Item.ItemAshOfOrder;
@@ -71,8 +72,11 @@ public class ItemRegister {
 	public static final Item enchantmentPearl = new ItemEnchantmentPearl().setMaxStackSize(1);
 
 	public static final Item ashOfEntropy = new ItemAshOfEntropy().setMaxStackSize(1).setMaxDamage(100);
+	public static final Item entropyIngot = new ItemAshIngot();
 	public static final Item ashOfBalance = new ItemAshOfBalance().setMaxStackSize(1).setMaxDamage(1000);;
+	public static final Item balanceIngot = new ItemAshIngot();
 	public static final Item ashOfOrder = new ItemAshOfOrder().setMaxStackSize(1).setMaxDamage(10000);
+	public static final Item orderIngot = new ItemAshIngot();
 
 	public static final Item flyingSpellPaper = new ItemFlyingSpellPaper(5).setMaxStackSize(1);
 	public static final Item satietySpellPaper = new ItemSatietySpellPaper(50).setMaxStackSize(1);
@@ -141,8 +145,8 @@ public class ItemRegister {
 			EntityEquipmentSlot.FEET, 80);
 
 	public static final Item ritualAssembler = new ItemRitualAssembler();
-	public static final Item bakedSeeds = new ItemModFood(1, 0, true);
-	public static final Item infusedBakedSeeds = new ItemModFood(1, 1, true);
+	public static final Item bakedSeeds = new ItemModFood(1, 0, true, 4);
+	public static final Item infusedBakedSeeds = new ItemModFood(1, 1, true, 4);
 
 	public static Side Fside;
 
@@ -155,8 +159,11 @@ public class ItemRegister {
 
 		Fside = side;
 		register(ashOfEntropy, "ashOfEntropy");
+		register(entropyIngot, "entropyIngot");
 		register(ashOfBalance, "ashOfBalance");
+		register(balanceIngot, "balanceIngot");
 		register(ashOfOrder, "ashOfOrder");
+		register(orderIngot, "orderIngot");
 
 		register(flyingSpellPaper, "flyingSpellPaper");
 		register(satietySpellPaper, "satietySpellPaper");
