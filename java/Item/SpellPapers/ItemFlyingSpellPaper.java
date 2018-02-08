@@ -3,7 +3,6 @@ package Item.SpellPapers;
 import java.util.ArrayList;
 import java.util.List;
 
-import ExperienceApple.EAMain;
 import ExperienceApple.ITooltip;
 import Util.ExperienceUtil;
 import net.minecraft.client.gui.GuiScreen;
@@ -15,7 +14,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -36,22 +34,15 @@ public class ItemFlyingSpellPaper extends Item implements ITooltip {
 
 	@Override
 	public void onUpdate(ItemStack stack, World world, Entity entity, int Slot, boolean isSelected) {
-		if (entity instanceof EntityPlayer) {
-			if (((EntityPlayer) entity).capabilities.isFlying) {
-				if (!EAMain.particle) {
-					entity.worldObj.spawnParticle(EnumParticleTypes.FIREWORKS_SPARK, entity.posX + Math.random() - 0.5,
-							entity.posY, entity.posZ + Math.random() - 0.5, 0.0D, 0.0D, 0.0D);
-				}
-				if (ExperienceUtil.getExperiencePoints((EntityPlayer) entity) >= COST) {
-					ExperienceUtil.experiencePull((EntityPlayer) entity, COST, world);
-					((EntityPlayer) entity).capabilities.allowFlying = true;
-					((EntityPlayer) entity).sendPlayerAbilities();
+		entity.fallDistance = 0;
+		if (world.isRemote && ExperienceUtil.getExperiencePoints((EntityPlayer) entity) >= COST) {
+			if (entity.isSneaking()) {
 
-				} else {
-					((EntityPlayer) entity).capabilities.allowFlying = false;
-					((EntityPlayer) entity).capabilities.isFlying = false;
-					((EntityPlayer) entity).sendPlayerAbilities();
-
+				ExperienceUtil.experiencePull((EntityPlayer) entity, COST, world);
+				if (entity.motionY < 0.5) {
+					entity.motionY = entity.motionY + 0.2;
+					entity.motionX = entity.getForward().xCoord;
+					entity.motionZ = entity.getForward().zCoord;
 				}
 			}
 		}
