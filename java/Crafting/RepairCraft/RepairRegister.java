@@ -1,17 +1,16 @@
 package Crafting.RepairCraft;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
 import ExperienceApple.ITooltip;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
 
 public class RepairRegister {
-	public static List<Item> canRepiar = new ArrayList<Item>();
+	public static HashMap<Item, Integer> canRepiar = new HashMap<Item, Integer>();
 
-	public static void register(Item tool) {
-		canRepiar.add(tool);
+	public static void register(Item tool, int amount) {
+		canRepiar.put(tool, amount);
 		if (tool instanceof ITooltip) {
 			((ITooltip) tool).addTooltip(I18n.format("ea.repaircraft.description"));
 		}

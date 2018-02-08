@@ -26,7 +26,10 @@ public class RepairCrafting implements IRecipe {
 		}
 
 		if (EAFlag == 1) {
-			if (RepairRegister.canRepiar.contains(Oitem.getItem())) {
+			// if (RepairRegister.canRepiar.contains(Oitem.getItem())) {
+			// return true;
+			// }
+			if (RepairRegister.canRepiar.containsKey(Oitem.getItem())) {
 				return true;
 			}
 		}
@@ -36,8 +39,9 @@ public class RepairCrafting implements IRecipe {
 	@Nonnull
 	@Override
 	public ItemStack getCraftingResult(@Nonnull InventoryCrafting inv) {
-		if (Oitem.getItemDamage() > 1) {
-			return new ItemStack(Oitem.getItem(), 1, Oitem.getItemDamage() - 1);
+		if (Oitem.getItemDamage() > RepairRegister.canRepiar.get(Oitem.getItem())) {
+			return new ItemStack(Oitem.getItem(), 1,
+					Oitem.getItemDamage() - RepairRegister.canRepiar.get(Oitem.getItem()));
 		} else {
 			return new ItemStack(Oitem.getItem(), 1, 0);
 		}
