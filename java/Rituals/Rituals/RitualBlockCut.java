@@ -23,7 +23,7 @@ public class RitualBlockCut extends Ritual {
 		if (!world.isRemote) {
 			ItemStack itemstack = new ItemStack(
 					Item.getItemFromBlock(world.getBlockState(new BlockPos(x, y - 1, z)).getBlock()));
-			EntityItem itementity = new EntityItem(world, x, (double) y + 2, z, itemstack);
+			EntityItem itementity = new EntityItem(world, x, y - 1, z, itemstack);
 			world.spawnEntityInWorld(itementity);
 			world.setBlockToAir(new BlockPos(x, y - 1, z));
 		}
