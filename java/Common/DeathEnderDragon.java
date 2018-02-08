@@ -17,28 +17,16 @@ public class DeathEnderDragon {
 		if (entity.getClass() == EntityDragon.class && !entity.worldObj.isRemote) {
 
 			if (new Random().nextInt(11) == 0) {
-				entity.worldObj
-						.spawnEntityInWorld(
-								new EntityItem(entity.worldObj, entity.posX + 0.5, entity.posY + 0.5, entity.posZ + 0.5,
-										new ItemStack(ItemRegister.featherSword)));
+				entity.worldObj.spawnEntityInWorld(new EntityItem(entity.worldObj, entity.posX + 0.5, entity.posY + 0.5,
+						entity.posZ + 0.5, new ItemStack(ItemRegister.featherSword)));
 			}
 			if (new Random().nextInt(11) == 0) {
-				entity.worldObj
-						.spawnEntityInWorld(
-								new EntityItem(entity.worldObj, entity.posX + 0.5, entity.posY + 0.5, entity.posZ + 0.5,
-										new ItemStack(ItemRegister.magicBow)));
+				entity.worldObj.spawnEntityInWorld(new EntityItem(entity.worldObj, entity.posX + 0.5, entity.posY + 0.5,
+						entity.posZ + 0.5, new ItemStack(ItemRegister.magicBow)));
 			}
 			if (new Random().nextInt(11) == 0) {
-				entity.worldObj
-						.spawnEntityInWorld(
-								new EntityItem(entity.worldObj, entity.posX + 0.5, entity.posY + 0.5, entity.posZ + 0.5,
-										new ItemStack(ItemRegister.unstableAxe)));
-			}
-			if (new Random().nextInt(11) == 0) {
-				entity.worldObj
-						.spawnEntityInWorld(
-								new EntityItem(entity.worldObj, entity.posX + 0.5, entity.posY + 0.5, entity.posZ + 0.5,
-										new ItemStack(ItemRegister.atomicCutter)));
+				entity.worldObj.spawnEntityInWorld(new EntityItem(entity.worldObj, entity.posX + 0.5, entity.posY + 0.5,
+						entity.posZ + 0.5, new ItemStack(ItemRegister.unstableAxe)));
 			}
 		}
 	}

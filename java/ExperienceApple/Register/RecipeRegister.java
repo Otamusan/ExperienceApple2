@@ -20,17 +20,17 @@ public class RecipeRegister {
 		ExperienceAppleCraftingRegister.register(ItemRegister.bakedSeeds, ItemRegister.infusedBakedSeeds, 100);
 		ExperienceAppleCraftingRegister.register(Items.DRAGON_BREATH, ItemRegister.superDye, 10000);
 
-		RepairRegister.register(ItemRegister.weakExperienceIronPickaxe);
-		RepairRegister.register(ItemRegister.weakExperienceIronAxe);
-		RepairRegister.register(ItemRegister.weakExperienceIronShovel);
-		RepairRegister.register(ItemRegister.weakExperienceIronSword);
-		RepairRegister.register(ItemRegister.weakExperienceIronHelmet);
-		RepairRegister.register(ItemRegister.weakExperienceIronChestplate);
-		RepairRegister.register(ItemRegister.weakExperienceIronLeggings);
-		RepairRegister.register(ItemRegister.weakExperienceIronBoots);
-		RepairRegister.register(ItemRegister.ashOfEntropy);
-		RepairRegister.register(ItemRegister.ashOfBalance);
-		RepairRegister.register(ItemRegister.ashOfOrder);
+		RepairRegister.register(ItemRegister.weakExperienceIronPickaxe, 10);
+		RepairRegister.register(ItemRegister.weakExperienceIronAxe, 10);
+		RepairRegister.register(ItemRegister.weakExperienceIronShovel, 10);
+		RepairRegister.register(ItemRegister.weakExperienceIronSword, 10);
+		RepairRegister.register(ItemRegister.weakExperienceIronHelmet, 10);
+		RepairRegister.register(ItemRegister.weakExperienceIronChestplate, 10);
+		RepairRegister.register(ItemRegister.weakExperienceIronLeggings, 10);
+		RepairRegister.register(ItemRegister.weakExperienceIronBoots, 10);
+		RepairRegister.register(ItemRegister.ashOfEntropy, 1);
+		RepairRegister.register(ItemRegister.ashOfBalance, 1);
+		RepairRegister.register(ItemRegister.ashOfOrder, 1);
 
 		EnchantRegister.register(ItemRegister.advancedExperienceIronAxe);
 		EnchantRegister.register(ItemRegister.advancedExperienceIronPickaxe);
@@ -116,7 +116,8 @@ public class RecipeRegister {
 				BlockRegister.growthStone, 'C', BlockRegister.pureExperienceBlock);
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.experienceApple), Items.APPLE, Items.GOLD_INGOT);
-
+		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.atomicCutter), ItemRegister.entropyIngot,
+				Items.SHEARS, Items.BLAZE_ROD);
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.advancedExperienceIronAxe),
 				ItemRegister.experienceIronAxe, ItemRegister.pureExperienceIngot);
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.advancedExperienceIronPickaxe),
@@ -152,6 +153,14 @@ public class RecipeRegister {
 		GameRegistry.addShapedRecipe(new ItemStack(Item.getItemFromBlock(BlockRegister.condensedExperienceOre)), "EOE",
 				"OGO", "EOE", 'E', BlockRegister.experienceOre, 'G', ItemRegister.gravityCompressor, 'O',
 				Items.EXPERIENCE_BOTTLE);
+
+		GameRegistry.addShapedRecipe(new ItemStack(ItemRegister.balanceIngot), "WWW", "WGW", "WWW", 'W',
+				new ItemStack(ItemRegister.ashOfBalance, 1, 0), 'G', ItemRegister.experienceIronIngot);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemRegister.entropyIngot), "WWW", "WGW", "WWW", 'W',
+				new ItemStack(ItemRegister.ashOfEntropy, 1, 0), 'G', ItemRegister.experienceIronIngot);
+		GameRegistry.addShapedRecipe(new ItemStack(ItemRegister.orderIngot), "WWW", "WGW", "WWW", 'W',
+				new ItemStack(ItemRegister.ashOfOrder, 1, 0), 'G', ItemRegister.experienceIronIngot);
+
 		GameRegistry.addSmelting(Items.GHAST_TEAR, new ItemStack(ItemRegister.ashOfEntropy, 1, 99), 1F);
 
 		GameRegistry.addShapelessRecipe(new ItemStack(ItemRegister.ritualAssembler), Items.APPLE,
