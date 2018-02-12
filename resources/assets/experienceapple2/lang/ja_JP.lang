@@ -140,6 +140,8 @@ tile.condensedExperienceOre.name=濃縮された経験鉱石
 
 tile.weakExperienceIronBlock.name=弱い経験鉄ブロック
 
+tile.path.name=草の道
+
 itemGroup.experienceApple=経験値リンゴ
 
 ea.ritual.explode.name=爆破の儀式
@@ -154,8 +156,9 @@ ea.ritual.createWater.description=9ブロック分の水を生成する
 ea.ritual.createLava.name=溶岩生成の儀式
 ea.ritual.createLava.description=9ブロック分の溶岩を生成する
 
-ea.ritual.createEI.name=EI作成の儀式
-ea.ritual.createEI.description=儀式の隙間にWEIブロックを置いて起動しEIブロックを作成する儀式
+ea.ritual.injection.name=経験注入の儀式
+ea.ritual.injection.description=儀式の中心に対応するブロックを置いて経験を注入する儀式
+ea.ritual.injection.block.description=経験注入の儀式で作成できる
 
 ea.ritual.ritualCraft.name=作成の儀式
 ea.ritual.ritualCraft.description=様々なアイテムを作ることができる儀式

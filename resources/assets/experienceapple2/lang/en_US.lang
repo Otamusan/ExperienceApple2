@@ -141,6 +141,8 @@ tile.condensedExperienceOre.name=Condensed Experience Ore
 
 tile.weakExperienceIronBlock.name=Block of Weak Experience Iron
 
+tile.path.name=Path of Grass
+
 itemGroup.experienceApple=Experience Apple
 
 ea.ritual.explode.name=Ritual of Explode
@@ -155,8 +157,9 @@ ea.ritual.createWater.description=Put 9 blocks of water
 ea.ritual.createLava.name=Ritual of Create Lava
 ea.ritual.createLava.description=Put 9 blocks of lava
 
-ea.ritual.createEI.name=Ritual of Craft EI
-ea.ritual.createEI.description=Ritual that when WEI Block is placed between the rituals and you start it you can create EI Block
+ea.ritual.injection.name=Ritual of Experience Injection
+ea.ritual.injection.description=Ritual to place a block corresponding to the center of the ritual and inject experience
+ea.ritual.injection.block.description=You can create this block using Ritual of Experience Injection
 
 ea.ritual.ritualCraft.name=Ritual of Crafting
 ea.ritual.ritualCraft.description=Ritual that can create various items
