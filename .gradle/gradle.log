@@ -13,7 +13,7 @@
 :compileApiJava UP-TO-DATE
 :processApiResources UP-TO-DATE
 :apiClasses UP-TO-DATE
-:sourceMainJava UP-TO-DATE
+:sourceMainJava
 :compileJava注意:一部の入力ファイルは非推奨のAPIを使用またはオーバーライドしています。
 注意:詳細は、-Xlint:deprecationオプションを指定して再コンパイルしてください。
 
@@ -33,7 +33,8 @@
 :reobfJar
 :extractRangemapReplacedMain
 C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2\build\sources\main\java
-:retromapReplacedMain UP-TO-DATE
+:retromapReplacedMain
+remapping source...
 :sourceJar
 :assemble
 :check UP-TO-DATE
@@ -41,4 +42,4 @@ C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2\build\sources\main\java
 
 BUILD SUCCESSFUL
 
-Total time: 12.853 secs
+Total time: 31.779 secs

@@ -104,6 +104,9 @@ item.warpStone.y=Y
 item.warpStone.z=Z
 item.warpStone.dimension=Dimension
 
+item.entropyIngot.name=Entropy Ingot
+item.balanceIngot.name=Balance Ingot
+item.orderIngot.name=Order Ingot
 
 tile.ritualGlassTier1.name=Ritual Glass Tier1
 tile.ritualGlassTier2.name=Ritual Glass Tier2
@@ -159,6 +162,11 @@ ea.ritual.ritualCraft.name=Ritual of Crafting
 ea.ritual.ritualCraft.description=Ritual that can create various items
 ea.ritual.ritualCraft.item.description=You can create this item using Ritual of Crafting
 
+ea.ritual.eggization.name=Ritual of Eggization
+ea.ritual.eggization.description=Ritual to make eggs of surrounding mobs
+
+ea.ritual.spawnerActivation.name=Ritual of Spawner Activation
+ea.ritual.spawnerActivation.description=When spawner is placed in the center and started up, mob spawn
 
 ea.eacraft.description=This item will be created with consumption of experience with Registered Experience Apple
 ea.eacraft.expcost=Required Experience

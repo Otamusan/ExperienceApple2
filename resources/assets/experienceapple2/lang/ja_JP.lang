@@ -103,6 +103,9 @@ item.warpStone.y=Y
 item.warpStone.z=Z
 item.warpStone.dimension=ディメンション
 
+item.entropyIngot.name=無秩序インゴット
+item.balanceIngot.name=均等インゴット
+item.orderIngot.name=秩序インゴット
 
 tile.ritualGlassTier1.name=儀式ガラスTier1
 tile.ritualGlassTier2.name=儀式ガラスTier2
@@ -158,6 +161,11 @@ ea.ritual.ritualCraft.name=作成の儀式
 ea.ritual.ritualCraft.description=様々なアイテムを作ることができる儀式
 ea.ritual.ritualCraft.item.description=作成の儀式で作成できる
 
+ea.ritual.eggization.name=タマゴ化の儀式
+ea.ritual.eggization.description=周囲のmobをタマゴにする儀式
+
+ea.ritual.spawnerActivation.name=スポナー起動の儀式
+ea.ritual.spawnerActivation.description=スポナーを中心に設置して起動するとmobがスポーンする儀式
 
 ea.eacraft.description=登録済みの経験リンゴと一緒にクラフトし、経験値を消費してクラフトする
 ea.eacraft.expcost=要求経験値
