@@ -9,6 +9,8 @@ import com.google.common.collect.Sets;
 import ExperienceApple.ITooltip;
 import Util.ParticleUtil;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -51,23 +53,83 @@ public class ItemAdvancedExperienceIronAxe extends ItemTool implements ITooltip 
 			EntityLivingBase entityLiving) {
 		if (!entityLiving.isSneaking())
 			return false;
-
+		if (!(world.getBlockState(pos).getBlock() instanceof BlockLog)
+				&& !(world.getBlockState(pos).getBlock() instanceof BlockLeaves))
+			return false;
 		ParticleUtil.blockSurface(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 5);
 		ParticleUtil.blockRemaining(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 5);
-		for (int ix = -range; ix < range; ix++) {
-			for (int iy = -range; iy < range; iy++) {
-				for (int iz = -range; iz < range; iz++) {
-					BlockPos xpPos = new BlockPos(ix + pos.getX(), iy + pos.getY(), iz + pos.getZ());
-					if (world.getBlockState(xpPos) != state)
-						continue;
-					state.getBlock().harvestBlock(world, (EntityPlayer) entityLiving, xpPos, state,
-							world.getTileEntity(xpPos), stack);
-					state.getBlock().breakBlock(world, xpPos, state);
-					world.setBlockToAir(xpPos);
-				}
-			}
-		}
+		cheinDestruction(pos, world, (EntityPlayer) entityLiving, world.getBlockState(pos).getBlock());
 		return false;
+	}
+
+	public static void cheinDestruction(BlockPos pos, World world, EntityPlayer player, Block block) {
+		world.destroyBlock(pos, true);
+		world.getBlockState(pos).getBlock().onBlockDestroyedByPlayer(world, pos, world.getBlockState(pos));
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		if (world.getBlockState(new BlockPos(x, y, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x, y, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x, y + 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y + 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x, y + 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y + 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x, y + 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y + 1, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x, y - 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y - 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x, y - 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y - 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x, y - 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y - 1, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x + 1, y, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x + 1, y + 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y + 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y + 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y + 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y + 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y + 1, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x + 1, y - 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y - 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y - 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y - 1, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x - 1, y, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x - 1, y + 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y + 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y + 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y + 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y + 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y + 1, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x - 1, y - 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y - 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y - 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y - 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y - 1, z - 1), world, player, block);
+
+		return;
 	}
 
 	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {

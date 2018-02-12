@@ -7,6 +7,7 @@ import ExperienceApple.ITooltip;
 import Item.ExperienceRepair;
 import Item.IExperienceRepair;
 import Util.ParticleUtil;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -25,6 +26,7 @@ public class ItemExperienceIronPickaxe extends ItemPickaxe implements IExperienc
 
 	public static int cooldown = 0;
 	private ExperienceRepair experienceRepair;
+	private int range = 1;
 
 	public ItemExperienceIronPickaxe(ToolMaterial mate, int cooltime, int cost) {
 		super(mate);
@@ -36,9 +38,24 @@ public class ItemExperienceIronPickaxe extends ItemPickaxe implements IExperienc
 			EntityLivingBase entityLiving) {
 		ParticleUtil.blockSurface(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
 		ParticleUtil.blockRemaining(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
-
 		if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0D) {
 			stack.damageItem(1, entityLiving);
+		}
+		if (!entityLiving.isSneaking())
+			return false;
+		if (world.isRemote)
+			return false;
+		for (int ix = -range; ix < range + 1; ix++) {
+			for (int iy = -range; iy < range + 1; iy++) {
+				for (int iz = -range; iz < range + 1; iz++) {
+					BlockPos xpPos = new BlockPos(ix + pos.getX(), iy + pos.getY(), iz + pos.getZ());
+					Block block = world.getBlockState(xpPos).getBlock();
+					block.onBlockDestroyedByPlayer(world, xpPos, world.getBlockState(xpPos));
+					block.dropXpOnBlockBreak(world, pos, block.getExpDrop(world.getBlockState(xpPos), world, xpPos, 0));
+					world.destroyBlock(xpPos, true);
+
+				}
+			}
 		}
 		return false;
 	}

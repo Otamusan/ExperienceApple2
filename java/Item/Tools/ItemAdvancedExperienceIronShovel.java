@@ -4,17 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ExperienceApple.ITooltip;
+import ExperienceApple.Register.BlockRegister;
 import Util.ParticleUtil;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Enchantments;
-import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -34,47 +40,29 @@ public class ItemAdvancedExperienceIronShovel extends ItemSpade implements ITool
 		stack.addEnchantment(Enchantments.UNBREAKING, 5);
 	}
 
-	@Override
-	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
-			EntityLivingBase entityLiving) {
-		if (!entityLiving.isSneaking())
-			return false;
-		ParticleUtil.blockSurface(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 10);
-		ParticleUtil.blockRemaining(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 10);
-		for (int ix = -range; ix < range; ix++) {
-			for (int iy = -range; iy < range; iy++) {
-				for (int iz = -range; iz < range; iz++) {
+	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World worldIn, BlockPos pos,
+			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
+		if (!playerIn.canPlayerEdit(pos.offset(facing), facing, stack)) {
+			return EnumActionResult.FAIL;
+		} else {
+			IBlockState iblockstate = worldIn.getBlockState(pos);
+			Block block = iblockstate.getBlock();
 
-					BlockPos xpPos = new BlockPos(ix + pos.getX(), iy + pos.getY(), iz + pos.getZ());
-					if (world.getBlockState(xpPos) != state)
-						continue;
-					state.getBlock().harvestBlock(world, (EntityPlayer) entityLiving, xpPos, state,
-							world.getTileEntity(xpPos), stack);
-					state.getBlock().breakBlock(world, xpPos, state);
-					world.setBlockToAir(xpPos);
+			if (facing != EnumFacing.DOWN && worldIn.getBlockState(pos.up()).getMaterial() == Material.AIR
+					&& ((block == Blocks.GRASS) || (block == Blocks.GRASS_PATH) || (block == Blocks.DIRT))) {
+				IBlockState iblockstate1 = BlockRegister.path.getDefaultState();
+				worldIn.playSound(playerIn, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+				if (!worldIn.isRemote) {
+					worldIn.setBlockState(pos, iblockstate1, 11);
+					stack.damageItem(1, playerIn);
 				}
-			}
-		}
-		return false;
-	}
 
-	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
-		if (!isSelected)
-			return;
-		if (!(entityIn instanceof EntityLivingBase))
-			return;
-		List<Entity> entities = worldIn.loadedEntityList;
-		for (Entity entity : entities) {
-			if (entityIn.getDistanceToEntity(entity) < 50 && (entity instanceof EntityLivingBase)) {
-				// System.out.println(entity);
-				// if (worldIn.isRemote) {
-				PotionEffect potioneffect = new PotionEffect(MobEffects.GLOWING, 10, 0, true, false);
-				((EntityLivingBase) entity).addPotionEffect(potioneffect);
-				// }
+				return EnumActionResult.SUCCESS;
+			} else {
+				return EnumActionResult.PASS;
 			}
 		}
-		PotionEffect potioneffect = new PotionEffect(MobEffects.INVISIBILITY, 10, 0, true, false);
-		((EntityLivingBase) entityIn).addPotionEffect(potioneffect);
 	}
 
 	@Override

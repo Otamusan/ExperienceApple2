@@ -1,5 +1,6 @@
 package Item.Tools;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +14,12 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -43,10 +47,30 @@ public class ItemExperienceIronSword extends ItemSword implements IExperienceRep
 		return false;
 	}
 
-	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
-		ParticleUtil.verticalCircle(EnumParticleTypes.VILLAGER_HAPPY, entity.getEntityWorld(), entity.posX,
-				entity.posY + entity.getMaxFallHeight() / 2, entity.posZ, 1, 12);
+		Entity newentity = null;
+		if (entity.hurtResistantTime != 0)
+			return true;
+		if (entity.isDead)
+			return true;
+		try {
+			newentity = entity.getClass().getConstructor(World.class).newInstance(entity.worldObj);
+		} catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException
+				| NoSuchMethodException | SecurityException e) {
+			e.printStackTrace();
+		}
+		if (newentity == null)
+			return false;
+		if (!entity.worldObj.isRemote) {
+			entity.worldObj.spawnEntityInWorld(newentity);
+		}
+		newentity.setPosition(entity.posX, entity.posY, entity.posZ);
+		newentity.onKillCommand();
+		newentity.setDead();
+		entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 2);
+		player.worldObj.playSound(entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SHEEP_SHEAR,
+				SoundCategory.PLAYERS, 1, 1, false);
+		ParticleUtil.ball(EnumParticleTypes.END_ROD, entity.worldObj, entity.posX, entity.posY, entity.posZ, 2, 50);
 		return false;
 	}
 

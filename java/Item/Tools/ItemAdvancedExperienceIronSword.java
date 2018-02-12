@@ -61,44 +61,6 @@ public class ItemAdvancedExperienceIronSword extends ItemSword implements IToolt
 		return false;
 	}
 
-	// public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player,
-	// Entity entity) {
-	/*
-	 * Entity newentity = null; try { newentity =
-	 * entity.getClass().getConstructor(World.class).newInstance(entity.
-	 * worldObj); } catch (InstantiationException | IllegalAccessException |
-	 * IllegalArgumentException | InvocationTargetException |
-	 * NoSuchMethodException | SecurityException e) { e.printStackTrace(); } if
-	 * (newentity == null) return false;
-	 * entity.worldObj.loadedEntityList.add(newentity);
-	 * newentity.setPosition(entity.posX, entity.posY, entity.posZ);
-	 * entity.onKillCommand();
-	 * 
-	 * System.out.println(player.worldObj.isRemote);
-	 */
-	/*
-	 * if (!(entity instanceof EntityLivingBase)) return false; EntityLivingBase
-	 * living = (EntityLivingBase) entity; ArrayList<EntityItem> list =
-	 * (ArrayList<EntityItem>) (living.capturedDrops.clone()); int i =
-	 * net.minecraftforge.common.ForgeHooks.getLootingLevel(entity, player, new
-	 * EntityDamageSource("player", player));
-	 * 
-	 * net.minecraftforge.common.ForgeHooks.onLivingDrops(living, new
-	 * EntityDamageSource("player", player), list, i, true);
-	 */
-	/*
-	 * if (!(entity instanceof EntityLivingBase)) return false; EntityLivingBase
-	 * living = (EntityLivingBase) entity; EntityDamageSource cause = new
-	 * EntityDamageSource("player", player);
-	 * System.out.println(living.capturedDrops); living.onDeath(cause);
-	 * System.out.println(living.capturedDrops);
-	 * 
-	 * ArrayList<EntityItem> list = null; try { list =
-	 * deepcopy(living.capturedDrops); } catch (ClassNotFoundException |
-	 * IOException e) { e.printStackTrace(); } living.capturedDrops = list;
-	 * living.isDead = false; return false;
-	 */
-	// }
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
 		Entity newentity = null;
 		if (entity.hurtResistantTime != 0)
@@ -120,10 +82,8 @@ public class ItemAdvancedExperienceIronSword extends ItemSword implements IToolt
 		newentity.onKillCommand();
 		newentity.setDead();
 		entity.attackEntityFrom(DamageSource.causePlayerDamage(player), 2);
-		// entity.hurtResistantTime = 0;
 		player.worldObj.playSound(entity.posX, entity.posY, entity.posZ, SoundEvents.ENTITY_SHEEP_SHEAR,
 				SoundCategory.PLAYERS, 1, 1, false);
-		// System.out.println(player.worldObj.isRemote);
 		ParticleUtil.ball(EnumParticleTypes.END_ROD, entity.worldObj, entity.posX, entity.posY, entity.posZ, 2, 50);
 		return false;
 	}

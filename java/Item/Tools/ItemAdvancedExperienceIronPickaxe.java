@@ -5,6 +5,7 @@ import java.util.List;
 
 import ExperienceApple.ITooltip;
 import Util.ParticleUtil;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -90,10 +91,13 @@ public class ItemAdvancedExperienceIronPickaxe extends ItemPickaxe implements IT
 		if (!entityLiving.isSneaking())
 			return false;
 		int range = getRange(stack);
-		for (int ix = -range; ix < range; ix++) {
-			for (int iy = -range; iy < range; iy++) {
-				for (int iz = -range; iz < range; iz++) {
+		for (int ix = -range; ix < range + 1; ix++) {
+			for (int iy = -range; iy < range + 1; iy++) {
+				for (int iz = -range; iz < range + 1; iz++) {
 					BlockPos xpPos = new BlockPos(ix + pos.getX(), iy + pos.getY(), iz + pos.getZ());
+					Block block = world.getBlockState(xpPos).getBlock();
+					block.onBlockDestroyedByPlayer(world, xpPos, world.getBlockState(xpPos));
+					block.dropXpOnBlockBreak(world, pos, block.getExpDrop(world.getBlockState(xpPos), world, xpPos, 0));
 					world.destroyBlock(xpPos, true);
 				}
 			}

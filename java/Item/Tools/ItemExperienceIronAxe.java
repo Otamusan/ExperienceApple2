@@ -11,6 +11,8 @@ import Item.ExperienceRepair;
 import Item.IExperienceRepair;
 import Util.ParticleUtil;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockLeaves;
+import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.gui.GuiScreen;
@@ -31,6 +33,8 @@ public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair
 
 	int cooldown = 60;
 	int cost = 5;
+	public int range = 3;
+
 	private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(new Block[] { Blocks.PLANKS, Blocks.BOOKSHELF,
 			Blocks.LOG, Blocks.LOG2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN, Blocks.MELON_BLOCK,
 			Blocks.LADDER, Blocks.WOODEN_BUTTON, Blocks.WOODEN_PRESSURE_PLATE });
@@ -63,13 +67,92 @@ public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair
 	@Override
 	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
 			EntityLivingBase entityLiving) {
-		ParticleUtil.blockSurface(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
-		ParticleUtil.blockRemaining(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
-
+		if (!entityLiving.isSneaking())
+			return false;
+		if (!(world.getBlockState(pos).getBlock() instanceof BlockLog)
+				&& !(world.getBlockState(pos).getBlock() instanceof BlockLeaves))
+			return false;
+		ParticleUtil.blockSurface(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 5);
+		ParticleUtil.blockRemaining(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 5);
+		cheinDestruction(pos, world, (EntityPlayer) entityLiving, world.getBlockState(pos).getBlock());
 		if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0D) {
 			stack.damageItem(1, entityLiving);
 		}
 		return false;
+	}
+
+	public static void cheinDestruction(BlockPos pos, World world, EntityPlayer player, Block block) {
+		world.destroyBlock(pos, true);
+		world.getBlockState(pos).getBlock().onBlockDestroyedByPlayer(world, pos, world.getBlockState(pos));
+		int x = pos.getX();
+		int y = pos.getY();
+		int z = pos.getZ();
+		if (world.getBlockState(new BlockPos(x, y, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x, y, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x, y + 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y + 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x, y + 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y + 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x, y + 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y + 1, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x, y - 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y - 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x, y - 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y - 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x, y - 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x, y - 1, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x + 1, y, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x + 1, y + 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y + 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y + 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y + 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y + 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y + 1, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x + 1, y - 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y - 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y - 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y - 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x + 1, y - 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x + 1, y - 1, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x - 1, y, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x - 1, y + 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y + 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y + 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y + 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y + 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y + 1, z - 1), world, player, block);
+
+		if (world.getBlockState(new BlockPos(x - 1, y - 1, z)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y - 1, z), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y - 1, z + 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y - 1, z + 1), world, player, block);
+		if (world.getBlockState(new BlockPos(x - 1, y - 1, z - 1)).getBlock() == block)
+			cheinDestruction(new BlockPos(x - 1, y - 1, z - 1), world, player, block);
+
+		return;
+	}
+
+	public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+		this.experienceRepair.onUpdate(stack, worldIn, entityIn, itemSlot, isSelected);
 	}
 
 	@Override
@@ -77,11 +160,6 @@ public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair
 		ParticleUtil.verticalCircle(EnumParticleTypes.VILLAGER_HAPPY, entity.getEntityWorld(), entity.posX,
 				entity.posY + entity.getMaxFallHeight() / 2, entity.posZ, 1, 12);
 		return false;
-	}
-
-	@Override
-	public void onUpdate(ItemStack stack, World worldIn, Entity entity, int itemSlot, boolean isSelected) {
-		this.experienceRepair.onUpdate(stack, worldIn, entity, itemSlot, isSelected);
 	}
 
 	@Override
