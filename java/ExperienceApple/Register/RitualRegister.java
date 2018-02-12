@@ -8,7 +8,6 @@ import Rituals.RitualRegistry;
 import Rituals.StonePosData;
 import Rituals.Rituals.Ritual;
 import Rituals.Rituals.RitualBlockCut;
-import Rituals.Rituals.RitualCreateEI;
 import Rituals.Rituals.RitualCreateLava;
 import Rituals.Rituals.RitualCreateWater;
 import Rituals.Rituals.RitualEggization;
@@ -16,7 +15,8 @@ import Rituals.Rituals.RitualExplode;
 import Rituals.Rituals.RitualSpawnerActivation;
 import Rituals.Rituals.RitualCraft.RitualCraft;
 import Rituals.Rituals.RitualCraft.RitualCraftCore;
-import Rituals.Rituals.RitualCraft.RitualCraftRegister;
+import Rituals.Rituals.RitualInjection.RitualInjection;
+import Rituals.Rituals.RitualInjection.RitualInjectionCore;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
@@ -58,13 +58,17 @@ public class RitualRegister {
 		ritualCreateLava.setStoneBlock(-1, -1, 0, tier1);
 		RitualRegistry.register(ritualCreateLava);
 
-		Ritual ritualCreateEI = new RitualCreateEI(new StonePosData(), "createEI");
-		ritualCreateEI.setStoneBlock(-1, 0, 1, tier2);
-		ritualCreateEI.setStoneBlock(1, 0, -1, tier2);
-		ritualCreateEI.setStoneBlock(-1, 0, -1, tier2);
-		ritualCreateEI.setStoneBlock(1, 0, 1, tier2);
-		ritualCreateEI.setStoneBlock(0, 0, 0, tier2);
-		RitualRegistry.register(ritualCreateEI);
+		Ritual ritualInjection = new RitualInjectionCore(new StonePosData(), "injection");
+		ritualInjection.setStoneBlock(0, 0, 0, tier2);
+		ritualInjection.setStoneBlock(1, 1, 0, tier2);
+		ritualInjection.setStoneBlock(0, 1, 1, tier2);
+		ritualInjection.setStoneBlock(-1, 1, 0, tier2);
+		ritualInjection.setStoneBlock(0, 1, -1, tier2);
+		ritualInjection.setStoneBlock(0, 2, 0, tier2);
+		RitualRegistry.register(ritualInjection);
+
+		((RitualInjectionCore) ritualInjection).register.register("EI",
+				new RitualInjection(BlockRegister.weakExperienceIronBlock, BlockRegister.experienceIronBlock));
 
 		Ritual ritualEggization = new RitualEggization(new StonePosData(), "eggization");
 		ritualEggization.setStoneBlock(-1, 0, 1, tier1);
@@ -134,7 +138,7 @@ public class RitualRegister {
 		cabinetstone.setIteminList(new ItemStack(Items.GOLDEN_APPLE));
 		cabinetstone.setIteminList(new ItemStack(ItemRegister.experienceApple));
 		cabinetstone.setIteminList(new ItemStack(ItemRegister.warpStone));
-		RitualCraftRegister.register("Cabinetstone", cabinetstone);
+		((RitualCraftCore) ritualCraft).register.register("Cabinetstone", cabinetstone);
 
 		RitualCraft pureexperience = new RitualCraft(new ArrayList<ItemStack>(),
 				new ItemStack(BlockRegister.pureExperienceBlock));
@@ -142,6 +146,7 @@ public class RitualRegister {
 		pureexperience.setIteminList(new ItemStack(BlockRegister.ritualStoneTier4));
 		pureexperience.setIteminList(new ItemStack(ItemRegister.ashOfOrder, 1, 0));
 		pureexperience.setIteminList(new ItemStack(Items.NETHER_STAR, 32));
-		RitualCraftRegister.register("PureExperience", pureexperience);
+		((RitualCraftCore) ritualCraft).register.register("PureExperience", pureexperience);
+
 	}
 }

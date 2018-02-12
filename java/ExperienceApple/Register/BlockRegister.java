@@ -5,6 +5,8 @@ import Blocks.BlockCabinetStone;
 import Blocks.BlockCodensedExperienceOre;
 import Blocks.BlockExperienceOre;
 import Blocks.BlockGrowthStone;
+import Blocks.BlockMod;
+import Blocks.BlockPath;
 import Blocks.BlockPureExperience;
 import Blocks.BlockRitualGlass;
 import Blocks.BlockRitualLauncher;
@@ -56,12 +58,13 @@ public class BlockRegister {
 	public static final Block growthStone = new BlockGrowthStone(Material.ROCK, 1).setHardness(5.0F);
 	public static final Block advancedGrowthStone = new BlockGrowthStone(Material.ROCK, 20).setHardness(5.0F);
 
-	public static final Block weakExperienceIronBlock = new Block(Material.IRON).setHardness(5.0F);
-	public static final Block experienceIronBlock = new Block(Material.IRON).setHardness(5.0F);
+	public static final Block weakExperienceIronBlock = new BlockMod(Material.IRON).setHardness(5.0F);
+	public static final Block experienceIronBlock = new BlockMod(Material.IRON).setHardness(5.0F);
 	public static final Block experienceOre = new BlockExperienceOre(Material.ROCK).setHardness(50);
 	public static final Block condensedExperienceOre = new BlockCodensedExperienceOre(Material.ROCK).setHardness(5.0F)
 			.setHardness(364);
 	public static final Block pureExperienceBlock = new BlockPureExperience().setLightLevel(114514);
+	public static final Block path = new BlockPath().setLightLevel(15);
 
 	public static Side Fside;
 
@@ -94,6 +97,7 @@ public class BlockRegister {
 		register(condensedExperienceOre, "condensedExperienceOre");
 		register(experienceIronBlock, "experienceIronBlock");
 		register(pureExperienceBlock, "pureExperienceBlock");
+		register(path, "path");
 
 	}
 

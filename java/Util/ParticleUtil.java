@@ -37,7 +37,19 @@ public class ParticleUtil {
 		randomSquare(part, world, x + 0, y + 1, z + 0, x + 0, y + 1, z - 1, amount);
 		randomSquare(part, world, x + 1, y + 1, z + 1, x + 2, y + 1, z + 1, amount);
 		randomSquare(part, world, x + 1, y + 1, z + 1, x + 1, y + 1, z + 2, amount);
+	}
 
+	public static void flow(EnumParticleTypes part, World world, double y, double sx, double sz, double ex, double ez,
+			int amount) {
+		if (EAMain.particle)
+			return;
+
+		for (int i = 0; i < amount; i++) {
+			Random random = new Random();
+			double x = sx + ((sx - ex) * random.nextDouble());
+			double z = sz + ((sz - ez) * random.nextDouble());
+			world.spawnParticle(part, x, y, z, 0.0D, -1.0D, 0.0D);
+		}
 	}
 
 	public static void playerRemaining(EnumParticleTypes part, Entity entity, int amount) {

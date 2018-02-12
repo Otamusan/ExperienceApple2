@@ -8,11 +8,10 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 public class RitualCraftRegister {
-	private static HashMap<String, RitualCraft> list = new HashMap<String, RitualCraft>();
+	private HashMap<String, RitualCraft> list = new HashMap<String, RitualCraft>();
 
-	public static void register(String name, RitualCraft ritualCraft) {
+	public void register(String name, RitualCraft ritualCraft) {
 		list.put(name, ritualCraft);
-		System.out.println(ritualCraft.item);
 		if (ritualCraft.item.getItem() instanceof ITooltip) {
 			((ITooltip) ritualCraft.item.getItem()).addTooltip(I18n.format("ea.ritual.ritualCraft.item.description"));
 			String string = "";
@@ -37,11 +36,11 @@ public class RitualCraftRegister {
 
 	}
 
-	public static HashMap<String, RitualCraft> getList() {
+	public HashMap<String, RitualCraft> getList() {
 		return list;
 	}
 
-	public static void setList(HashMap<String, RitualCraft> list) {
-		RitualCraftRegister.list = list;
+	public void setList(HashMap<String, RitualCraft> list) {
+		this.list = list;
 	}
 }
