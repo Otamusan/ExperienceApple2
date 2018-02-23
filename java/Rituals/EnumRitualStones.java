@@ -3,9 +3,9 @@ package Rituals;
 import Blocks.BlockRitual;
 import net.minecraft.block.Block;
 
-public enum RitualStones {
+public enum EnumRitualStones {
 	tier1(1), tier2(8), tier3(64), tier4(512);
-	public static RitualStones getRitualStones(Block block) {
+	public static EnumRitualStones getRitualStones(Block block) {
 		if (block instanceof BlockRitual) {
 			BlockRitual blockRitual = (BlockRitual) block;
 			return blockRitual.getTier();
@@ -15,7 +15,7 @@ public enum RitualStones {
 
 	private final int magnification;
 
-	private RitualStones(final int magnification) {
+	private EnumRitualStones(final int magnification) {
 		this.magnification = magnification;
 	}
 

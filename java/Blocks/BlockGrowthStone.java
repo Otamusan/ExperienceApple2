@@ -6,11 +6,13 @@ import java.util.Random;
 
 import ExperienceApple.ITooltip;
 import TileEntity.TileGrowthStone;
+import Util.ParticleUtil;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -23,7 +25,7 @@ public class BlockGrowthStone extends BlockGlass implements ITileEntityProvider,
 	public BlockGrowthStone(Material mate, int acceleration) {
 		super(mate, true);
 		isBlockContainer = true;
-		this.acceleration = acceleration;
+		this.setAcceleration(acceleration);
 	}
 
 	public boolean hasTileEntity(int metadata) {
@@ -40,9 +42,14 @@ public class BlockGrowthStone extends BlockGlass implements ITileEntityProvider,
 		return 1;
 	}
 
+	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rnd) {
+		ParticleUtil.ball(EnumParticleTypes.DRIP_WATER, world, pos.getX() + 0.6, pos.getY() + 0.6, pos.getZ() + 0.6,
+				1.7, 1);
+	}
+
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
-		return new TileGrowthStone(acceleration);
+		return new TileGrowthStone();
 	}
 
 	public List<String> Tooltip = new ArrayList<String>();
@@ -55,5 +62,13 @@ public class BlockGrowthStone extends BlockGlass implements ITileEntityProvider,
 	@Override
 	public void addTooltip(String str) {
 		Tooltip.add(str);
+	}
+
+	public int getAcceleration() {
+		return acceleration;
+	}
+
+	public void setAcceleration(int acceleration) {
+		this.acceleration = acceleration;
 	}
 }

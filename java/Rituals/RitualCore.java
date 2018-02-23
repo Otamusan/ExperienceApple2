@@ -22,14 +22,14 @@ public class RitualCore {
 		ArrayList<Ritual> rituallist = RitualRegistry.list;
 		out: for (Ritual ritualBase : rituallist) {
 			boolean flag = true;
-			Map<BlockPos, RitualStones> posDatas = ritualBase.getStoneBlockData();
+			Map<BlockPos, EnumRitualStones> posDatas = ritualBase.getStoneBlockData();
 
-			for (Map.Entry<BlockPos, RitualStones> dataPosEntry : posDatas.entrySet()) {
+			for (Map.Entry<BlockPos, EnumRitualStones> dataPosEntry : posDatas.entrySet()) {
 				BlockPos dataPos = dataPosEntry.getKey();
 				BlockPos worldPos = new BlockPos(dataPos.getX() + pos.getX(), dataPos.getY() + pos.getY(),
 						dataPos.getZ() + pos.getZ());
 				Block block = world.getBlockState(worldPos).getBlock();
-				RitualStones tier = RitualStones.getRitualStones(block);
+				EnumRitualStones tier = EnumRitualStones.getRitualStones(block);
 				if (tier == posDatas.get(dataPos)) {
 
 				} else {
@@ -45,8 +45,8 @@ public class RitualCore {
 		}
 	}
 
-	public static boolean BlockRemove(EntityPlayer player, World world, Map<BlockPos, RitualStones> map, BlockPos pos) {
-		for (Map.Entry<BlockPos, RitualStones> dataPosEntry : map.entrySet()) {
+	public static boolean BlockRemove(EntityPlayer player, World world, Map<BlockPos, EnumRitualStones> map, BlockPos pos) {
+		for (Map.Entry<BlockPos, EnumRitualStones> dataPosEntry : map.entrySet()) {
 			BlockPos dataPos = dataPosEntry.getKey();
 			BlockPos worldPos = new BlockPos(dataPos.getX() + pos.getX(), dataPos.getY() + pos.getY(),
 					dataPos.getZ() + pos.getZ());

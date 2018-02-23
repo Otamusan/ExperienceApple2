@@ -8,7 +8,7 @@ import javax.annotation.Nullable;
 
 import ExperienceApple.ITooltip;
 import Rituals.RitualCore;
-import Rituals.RitualStones;
+import Rituals.EnumRitualStones;
 import TileEntity.TileRitualLauncher;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
@@ -25,7 +25,7 @@ import net.minecraft.world.World;
 
 public class BlockRitualLauncher extends BlockRitual implements ITileEntityProvider, ITooltip {
 
-	public BlockRitualLauncher(Material materialIn, int particleAmount, RitualStones tier) {
+	public BlockRitualLauncher(Material materialIn, int particleAmount, EnumRitualStones tier) {
 		super(materialIn, particleAmount, tier);
 	}
 

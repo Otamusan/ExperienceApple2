@@ -3,7 +3,7 @@ package Rituals.Rituals;
 import java.util.HashMap;
 import java.util.Map;
 
-import Rituals.RitualStones;
+import Rituals.EnumRitualStones;
 import Rituals.StonePosData;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 public class Ritual {
 	private String name;
 	private StonePosData posData;
-	private Map<BlockPos, RitualStones> map = new HashMap<BlockPos, RitualStones>();
+	private Map<BlockPos, EnumRitualStones> map = new HashMap<BlockPos, EnumRitualStones>();
 
 	public Ritual(StonePosData posData, String name) {
 		this.posData = posData;
@@ -42,15 +42,15 @@ public class Ritual {
 		return false;
 	}
 
-	public void setStoneBlock(BlockPos pos, RitualStones stone) {
+	public void setStoneBlock(BlockPos pos, EnumRitualStones stone) {
 		map.put(pos, stone);
 	}
 
-	public void setStoneBlock(int x, int y, int z, RitualStones stone) {
+	public void setStoneBlock(int x, int y, int z, EnumRitualStones stone) {
 		map.put(new BlockPos(x, y, z), stone);
 	}
 
-	public RitualStones getStoneBlock(BlockPos pos) {
+	public EnumRitualStones getStoneBlock(BlockPos pos) {
 		if (map.containsKey(pos)) {
 			return map.get(pos);
 		} else {
@@ -58,11 +58,11 @@ public class Ritual {
 		}
 	}
 
-	public void setStoneBlockData(Map<BlockPos, RitualStones> map) {
+	public void setStoneBlockData(Map<BlockPos, EnumRitualStones> map) {
 		this.map = map;
 	}
 
-	public Map<BlockPos, RitualStones> getStoneBlockData() {
+	public Map<BlockPos, EnumRitualStones> getStoneBlockData() {
 		return map;
 	}
 

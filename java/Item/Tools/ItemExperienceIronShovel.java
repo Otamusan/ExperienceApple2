@@ -91,10 +91,28 @@ public class ItemExperienceIronShovel extends ItemSpade implements IExperienceRe
 				}
 
 				return EnumActionResult.SUCCESS;
-			} else {
-				return EnumActionResult.PASS;
+			} else if (facing != EnumFacing.DOWN && worldIn.getBlockState(pos.up()).getMaterial() == Material.AIR
+					&& block == BlockRegister.path) {
+				IBlockState iblockstate1 = BlockRegister.enrichedFarmLand.getDefaultState();
+				worldIn.playSound(playerIn, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+				if (!worldIn.isRemote) {
+					worldIn.setBlockState(pos, iblockstate1, 11);
+					stack.damageItem(5, playerIn);
+				}
+			} else if (facing != EnumFacing.DOWN && worldIn.getBlockState(pos.up()).getMaterial() == Material.AIR
+					&& block == BlockRegister.enrichedFarmLand) {
+				IBlockState iblockstate1 = BlockRegister.rottenDirt.getDefaultState();
+				worldIn.playSound(playerIn, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+
+				if (!worldIn.isRemote) {
+					worldIn.setBlockState(pos, iblockstate1, 11);
+					stack.damageItem(10, playerIn);
+				}
 			}
 		}
+		return EnumActionResult.PASS;
+
 	}
 
 	@Override

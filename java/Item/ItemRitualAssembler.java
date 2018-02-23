@@ -8,7 +8,7 @@ import java.util.UUID;
 import ExperienceApple.ITooltip;
 import ExperienceApple.Register.BlockRegister;
 import Rituals.RitualRegistry;
-import Rituals.RitualStones;
+import Rituals.EnumRitualStones;
 import Util.PlayerUtil;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.GuiScreen;
@@ -74,7 +74,7 @@ public class ItemRitualAssembler extends Item implements ITooltip {
 		NBTTagCompound nbt = entityItem.getEntityItem().getTagCompound();
 		nbt = checknbt(nbt);
 
-		Map<BlockPos, RitualStones> posDatas = RitualRegistry.list.get(nbt.getInteger("ritual")).getStoneBlockData();
+		Map<BlockPos, EnumRitualStones> posDatas = RitualRegistry.list.get(nbt.getInteger("ritual")).getStoneBlockData();
 
 		if (entityItem.worldObj.isRemote)
 			return false;
@@ -88,7 +88,7 @@ public class ItemRitualAssembler extends Item implements ITooltip {
 		if (!entityItem.onGround)
 			return false;
 		EntityPlayer player = entityItem.worldObj.getPlayerEntityByUUID(UUID.fromString(nbt.getString("player")));
-		for (Map.Entry<BlockPos, RitualStones> dataPosEntry : posDatas.entrySet()) {
+		for (Map.Entry<BlockPos, EnumRitualStones> dataPosEntry : posDatas.entrySet()) {
 			BlockPos dataPos = dataPosEntry.getKey();
 			// entityItem.worldObj
 			// .setBlockState(
@@ -133,7 +133,7 @@ public class ItemRitualAssembler extends Item implements ITooltip {
 		return true;
 	}
 
-	public Block getRitualBlock(RitualStones ritualenum) {
+	public Block getRitualBlock(EnumRitualStones ritualenum) {
 		switch (ritualenum) {
 		case tier1:
 			return BlockRegister.ritualGlassTier1;

@@ -2,16 +2,16 @@ package Blocks;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 import ExperienceApple.ITooltip;
-import Rituals.EnumRitualStones;
-import Util.ParticleUtil;
+import TileEntity.TileHighFrequencyRedStone;
 import net.minecraft.block.Block;
+import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -19,34 +19,14 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockRitual extends Block implements ITooltip {
-	private int particleAmount;
-	private EnumRitualStones tier;
+public class BlockHighFrequencyRedStone extends Block implements ITileEntityProvider, ITooltip {
 
-	public BlockRitual(Material materialIn, int particleAmount, EnumRitualStones tier) {
-		super(materialIn);
-		this.particleAmount = particleAmount;
-		this.tier = tier;
+	public BlockHighFrequencyRedStone(Material mate) {
+		super(mate);
 	}
 
-	public EnumRitualStones getTier() {
-		return tier;
-	}
-
-	public void setTier(EnumRitualStones tier) {
-		this.tier = tier;
-	}
-
-	@Override
-	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rnd) {
-
-		ParticleUtil.blockRemaining(EnumParticleTypes.VILLAGER_HAPPY, world, pos, particleAmount);
-
-	}
-
-	@Override
-	public int quantityDropped(Random random) {
-		return 1;
+	public boolean hasTileEntity(int metadata) {
+		return true;
 	}
 
 	@Override
@@ -70,6 +50,11 @@ public class BlockRitual extends Block implements ITooltip {
 		return BlockRenderLayer.CUTOUT;
 	}
 
+	@Override
+	public TileEntity createNewTileEntity(World world, int meta) {
+		return new TileHighFrequencyRedStone();
+	}
+
 	public List<String> Tooltip = new ArrayList<String>();
 
 	@Override
@@ -81,4 +66,23 @@ public class BlockRitual extends Block implements ITooltip {
 	public void addTooltip(String str) {
 		Tooltip.add(str);
 	}
+
+	public boolean canConnectRedstone(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) {
+		return true;
+	}
+
+	@Override
+	public int getWeakPower(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, EnumFacing side) {
+		TileHighFrequencyRedStone hStone = (TileHighFrequencyRedStone) blockAccess.getTileEntity(pos);
+		if (hStone.isPower) {
+			return 15;
+		} else {
+			return 0;
+		}
+	}
+
+	public boolean canProvidePower(IBlockState state) {
+		return true;
+	}
+
 }

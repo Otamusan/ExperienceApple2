@@ -2,26 +2,18 @@ package TileEntity;
 
 import java.util.Random;
 
+import Blocks.BlockGrowthStone;
 import ExperienceApple.Register.BlockRegister;
-import Util.ParticleUtil;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class TileGrowthStone extends TileEntity implements ITickable {
-
-	private int acceleration;
-
-	public TileGrowthStone(int acceleration) {
-		this.acceleration = acceleration;
-	}
-
 	@Override
 	public void update() {
 		World world = this.worldObj;
@@ -37,8 +29,7 @@ public class TileGrowthStone extends TileEntity implements ITickable {
 	}
 
 	public void accelerate(TileEntity entity, World world, int x, int y, int z) {
-		ParticleUtil.ball(EnumParticleTypes.DRIP_WATER, world, pos.getX() + 0.6, pos.getY() + 0.6, pos.getZ() + 0.6,
-				1.7, 1);
+
 		if (world.getBlockState(new BlockPos(x, y, z)).getBlock() == BlockRegister.accelerateStone)
 			return;
 		if (world.getBlockState(new BlockPos(x, y, z)).getBlock() == BlockRegister.advancedAccelerateStone)
@@ -46,7 +37,7 @@ public class TileGrowthStone extends TileEntity implements ITickable {
 
 		if (world.isRemote)
 			return;
-		for (int ix = 0; ix < acceleration; ix++) {
+		for (int ix = 0; ix < ((BlockGrowthStone) getBlockType()).getAcceleration(); ix++) {
 			world.getBlockState(new BlockPos(x, y, z)).getBlock().updateTick(world, new BlockPos(x, y, z),
 					world.getBlockState(new BlockPos(x, y, z)), new Random());
 		}

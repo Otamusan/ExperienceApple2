@@ -23,11 +23,14 @@ public class BlockAccelerateStone extends BlockGlass implements ITileEntityProvi
 	public BlockAccelerateStone(Material mate, int acceleration) {
 		super(mate, true);
 		isBlockContainer = true;
-		this.acceleration = acceleration;
+		this.setAcceleration(acceleration);
 	}
 
 	public boolean hasTileEntity(int metadata) {
 		return true;
+	}
+
+	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rnd) {
 	}
 
 	@Override
@@ -42,7 +45,7 @@ public class BlockAccelerateStone extends BlockGlass implements ITileEntityProvi
 
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
-		return new TileAccelerateStone(acceleration);
+		return new TileAccelerateStone();
 	}
 
 	public List<String> Tooltip = new ArrayList<String>();
@@ -55,5 +58,13 @@ public class BlockAccelerateStone extends BlockGlass implements ITileEntityProvi
 	@Override
 	public void addTooltip(String str) {
 		Tooltip.add(str);
+	}
+
+	public int getAcceleration() {
+		return acceleration;
+	}
+
+	public void setAcceleration(int acceleration) {
+		this.acceleration = acceleration;
 	}
 }

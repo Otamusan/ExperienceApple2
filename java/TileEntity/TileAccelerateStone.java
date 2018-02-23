@@ -1,5 +1,6 @@
 package TileEntity;
 
+import Blocks.BlockAccelerateStone;
 import ExperienceApple.Register.BlockRegister;
 import Util.ParticleUtil;
 import net.minecraft.block.state.IBlockState;
@@ -13,13 +14,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class TileAccelerateStone extends TileEntity implements ITickable {
-
-	private int acceleration;
-
-	public TileAccelerateStone(int acceleration) {
-		this.acceleration = acceleration;
-	}
-
 	@Override
 	public void update() {
 		World world = this.worldObj;
@@ -47,10 +41,10 @@ public class TileAccelerateStone extends TileEntity implements ITickable {
 
 		if (!(entity instanceof ITickable))
 			return;
-		ParticleUtil.blockInjection(EnumParticleTypes.PORTAL, world, this.getPos(), new BlockPos(x, y, z), 10);
+		ParticleUtil.blockInjection(EnumParticleTypes.PORTAL, world, this.getPos(), new BlockPos(x, y, z), 1);
 		if (world.isRemote)
 			return;
-		for (int ix = 0; ix < acceleration; ix++) {
+		for (int ix = 0; ix < ((BlockAccelerateStone) getBlockType()).getAcceleration(); ix++) {
 			((ITickable) entity).update();
 		}
 	}

@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ExperienceApple.ITooltip;
-import Rituals.RitualStones;
+import Rituals.EnumRitualStones;
 import net.minecraft.block.material.Material;
 
 public class BlockRitualStone extends BlockRitual implements ITooltip {
 
-	public BlockRitualStone(Material materialIn, int particleAmount, RitualStones tier) {
+	public BlockRitualStone(Material materialIn, int particleAmount, EnumRitualStones tier) {
 		super(materialIn, particleAmount, tier);
 	}
 

@@ -1,8 +1,8 @@
 package Rituals.Rituals;
 
-import java.util.Random;
-
+import ExperienceApple.Register.BlockRegister;
 import Rituals.StonePosData;
+import TileEntity.TileAwakenedSpawner;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,15 +22,12 @@ public class RitualSpawnerActivation extends Ritual {
 		BlockPos spawnerpos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
 		if (world.getBlockState(spawnerpos).getBlock() == Blocks.MOB_SPAWNER) {
 			TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getTileEntity(spawnerpos);
-			String entityname = EntityList.getEntityString(spawner.getSpawnerBaseLogic().getCachedEntity());
+			Entity entity = spawner.getSpawnerBaseLogic().getCachedEntity();
+			String entityname = EntityList.getEntityString(entity);
 			System.out.println(entityname);
-			Entity entity = EntityList.createEntityByName(entityname, world);
-			System.out.println(entity);
-			entity.setPosition(pos.getX() + new Random().nextFloat(), pos.getY() + 2,
-					pos.getZ() + new Random().nextFloat());
-			if (!world.isRemote) {
-				world.spawnEntityInWorld(entity);
-			}
+			world.setBlockState(spawnerpos, BlockRegister.awakenedSpawner.getDefaultState());
+			TileAwakenedSpawner spawnerlate = (TileAwakenedSpawner) world.getTileEntity(spawnerpos);
+			spawnerlate.getSpawnerBaseLogic().setEntityName(entityname);
 		}
 	}
 
