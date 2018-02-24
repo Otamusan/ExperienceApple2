@@ -4,10 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ExperienceApple.ITooltip;
-import Util.ExperienceUtil;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -32,22 +30,17 @@ public class ItemFlyingSpellPaper extends Item implements ITooltip {
 		tooltip.add(I18n.format("item.flyingSpellPaper.cost") + " : " + COST);
 	}
 
-	@Override
-	public void onUpdate(ItemStack stack, World world, Entity entity, int Slot, boolean isSelected) {
-		entity.fallDistance = 0;
-		if (world.isRemote && ExperienceUtil.getExperiencePoints((EntityPlayer) entity) >= COST) {
-			if (entity.isSneaking()) {
-
-				ExperienceUtil.experiencePull((EntityPlayer) entity, COST, world);
-				if (entity.motionY < 0.5) {
-					entity.motionY = entity.motionY + 0.2;
-					entity.motionX = entity.getForward().xCoord;
-					entity.motionZ = entity.getForward().zCoord;
-				}
-			}
-		}
-	}
-
+	/*
+	 * @Override public void onUpdate(ItemStack stack, World world, Entity
+	 * entity, int Slot, boolean isSelected) { entity.fallDistance = 0; if
+	 * (world.isRemote && ExperienceUtil.getExperiencePoints((EntityPlayer)
+	 * entity) >= COST) { if (entity.isSneaking()) {
+	 * 
+	 * ExperienceUtil.experiencePull((EntityPlayer) entity, COST, world); if
+	 * (entity.motionY < 0.5) { entity.motionY = entity.motionY + 0.2;
+	 * entity.motionX = entity.getForward().xCoord; entity.motionZ =
+	 * entity.getForward().zCoord; } } } }
+	 */
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn,
 			EnumHand hand) {
