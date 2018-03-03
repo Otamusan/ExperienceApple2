@@ -3,11 +3,13 @@ package Rituals.Rituals;
 import ExperienceApple.Register.BlockRegister;
 import Rituals.StonePosData;
 import TileEntity.TileAwakenedSpawner;
+import Util.ParticleUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.tileentity.TileEntityMobSpawner;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -19,20 +21,23 @@ public class RitualSpawnerActivation extends Ritual {
 
 	@Override
 	public void activate(EntityPlayer player, World world, BlockPos pos) {
+		ParticleUtil.blockInjection(EnumParticleTypes.PORTAL, world, pos.up(), pos.up(), 40);
 		BlockPos spawnerpos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
-		if (world.getBlockState(spawnerpos).getBlock() == Blocks.MOB_SPAWNER) {
-			TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getTileEntity(spawnerpos);
-			Entity entity = spawner.getSpawnerBaseLogic().getCachedEntity();
-			String entityname = EntityList.getEntityString(entity);
-			System.out.println(entityname);
-			world.setBlockState(spawnerpos, BlockRegister.awakenedSpawner.getDefaultState());
-			TileAwakenedSpawner spawnerlate = (TileAwakenedSpawner) world.getTileEntity(spawnerpos);
-			spawnerlate.getSpawnerBaseLogic().setEntityName(entityname);
-		}
+		TileEntityMobSpawner spawner = (TileEntityMobSpawner) world.getTileEntity(spawnerpos);
+		Entity entity = spawner.getSpawnerBaseLogic().getCachedEntity();
+		String entityname = EntityList.getEntityString(entity);
+		System.out.println(entityname);
+		world.setBlockState(spawnerpos, BlockRegister.awakenedSpawner.getDefaultState());
+		TileAwakenedSpawner spawnerlate = (TileAwakenedSpawner) world.getTileEntity(spawnerpos);
+		spawnerlate.getSpawnerBaseLogic().setEntityName(entityname);
 	}
 
 	@Override
 	public boolean canActivate(EntityPlayer player, World world, BlockPos pos) {
-		return true;
+		BlockPos spawnerpos = new BlockPos(pos.getX(), pos.getY() + 1, pos.getZ());
+
+		if (world.getBlockState(spawnerpos).getBlock() == Blocks.MOB_SPAWNER)
+			return true;
+		return false;
 	}
 }

@@ -143,6 +143,14 @@ tile.weakExperienceIronBlock.name=Block of Weak Experience Iron
 
 tile.path.name=Path of Grass
 
+tile.rottenDirt.name=Rotten Dirt
+
+tile.enrichedFarmLand.name=Enriched Farm Land
+
+tile.awakenedSpawner.name=Awakened Spawner
+
+tile.highFrequencyRedStone.name=Block of High Frequency Red Stone
+
 itemGroup.experienceApple=Experience Apple
 
 ea.ritual.explode.name=Ritual of Explode
@@ -170,6 +178,9 @@ ea.ritual.eggization.description=Ritual to make eggs of surrounding mobs
 
 ea.ritual.spawnerActivation.name=Ritual of Spawner Activation
 ea.ritual.spawnerActivation.description=When spawner is placed in the center and started up, mob spawn
+
+ea.ritual.collection.name=Ritual of Collection
+ea.ritual.collection.description=Ritual to store nearby items and experience orb in the upper chest
 
 ea.eacraft.description=This item will be created with consumption of experience with Registered Experience Apple
 ea.eacraft.expcost=Required Experience

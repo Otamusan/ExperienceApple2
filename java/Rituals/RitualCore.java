@@ -13,7 +13,9 @@ import Util.ExperienceUtil;
 import Util.ParticleUtil;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -40,12 +42,15 @@ public class RitualCore {
 			if (flag) {
 				if (ritualBase.canActivate(player, world, pos) && BlockRemove(player, world, posDatas, pos)) {
 					ritualBase.activate(player, world, pos);
+					world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_PLAYER_LEVELUP,
+							SoundCategory.BLOCKS, 0.1f, 1, true);
 				}
 			}
 		}
 	}
 
-	public static boolean BlockRemove(EntityPlayer player, World world, Map<BlockPos, EnumRitualStones> map, BlockPos pos) {
+	public static boolean BlockRemove(EntityPlayer player, World world, Map<BlockPos, EnumRitualStones> map,
+			BlockPos pos) {
 		for (Map.Entry<BlockPos, EnumRitualStones> dataPosEntry : map.entrySet()) {
 			BlockPos dataPos = dataPosEntry.getKey();
 			BlockPos worldPos = new BlockPos(dataPos.getX() + pos.getX(), dataPos.getY() + pos.getY(),

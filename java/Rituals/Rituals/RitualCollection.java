@@ -3,13 +3,17 @@ package Rituals.Rituals;
 import java.util.ArrayList;
 
 import Rituals.StonePosData;
+import Util.ParticleUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -29,6 +33,10 @@ public class RitualCollection extends Ritual {
 			if (entity.getDistanceSq(pos.add(.5, .5, .5)) <= 40) {
 				if (entity instanceof EntityItem) {
 					ItemStack newitemstack = setItemStack(inventory, ((EntityItem) entity).getEntityItem());
+					ParticleUtil.randomSquare(EnumParticleTypes.SMOKE_LARGE, world, entity.posX, entity.posY,
+							entity.posZ, entity.posX, entity.posY, entity.posZ, 10);
+					world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_LAVA_POP,
+							SoundCategory.BLOCKS, 0.4f, 1, true);
 					if (newitemstack.stackSize <= 0) {
 						entity.setDead();
 					} else {

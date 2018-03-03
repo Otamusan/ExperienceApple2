@@ -4,14 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ExperienceApple.ITooltip;
+import Util.ExperienceUtil;
+import Util.ParticleUtil;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -41,6 +45,19 @@ public class ItemFlyingSpellPaper extends Item implements ITooltip {
 	 * entity.motionX = entity.getForward().xCoord; entity.motionZ =
 	 * entity.getForward().zCoord; } } } }
 	 */
+
+	@Override
+	public void onUpdate(ItemStack stack, World world, Entity entity, int Slot, boolean isSelected) {
+		if (entity instanceof EntityPlayer) {
+			EntityPlayer player = (EntityPlayer) entity;
+			if (player.capabilities.isFlying) {
+				ExperienceUtil.experiencePull(player, COST, world);
+				ParticleUtil.randomCircle(EnumParticleTypes.FIREWORKS_SPARK, world, entity.posX, entity.posY,
+						entity.posZ, 1.5, 1);
+			}
+		}
+	}
+
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn,
 			EnumHand hand) {

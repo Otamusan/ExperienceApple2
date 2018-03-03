@@ -1,11 +1,13 @@
 package Common;
 
+import Common.FlyingSpellPaper.HasItemUpdate;
 import ExperienceApple.EAMain;
 import TileEntity.TileAccelerateStone;
 import TileEntity.TileAwakenedSpawner;
 import TileEntity.TileGrowthStone;
 import TileEntity.TileHighFrequencyRedStone;
 import TileEntity.TileRitualLauncher;
+import TileEntity.TileStorageRack;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -21,12 +23,14 @@ public class CommonProxy {
 		GameRegistry.registerTileEntity(TileRitualLauncher.class, EAMain.MOD_ID + "tileRitualLauncher");
 		GameRegistry.registerTileEntity(TileHighFrequencyRedStone.class, EAMain.MOD_ID + "tileHighFrequencyRedStone");
 		GameRegistry.registerTileEntity(TileAwakenedSpawner.class, EAMain.MOD_ID + "tileAwakenedSpawner");
+		GameRegistry.registerTileEntity(TileStorageRack.class, EAMain.MOD_ID + "tileStorageRack");
 
 	}
 
 	public void registerEventHandlers() {
 		FMLCommonHandler.instance().bus().register(new DeathEnderDragon());
 		FMLCommonHandler.instance().bus().register(new DeathVillager());
+		FMLCommonHandler.instance().bus().register(new HasItemUpdate());
 
 	}
 }

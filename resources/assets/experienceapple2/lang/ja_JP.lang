@@ -142,6 +142,15 @@ tile.weakExperienceIronBlock.name=弱い経験鉄ブロック
 
 tile.path.name=草の道
 
+tile.rottenDirt.name=腐った土
+
+tile.enrichedFarmLand.name=豊かな耕地
+
+tile.awakenedSpawner.name=覚醒スポナー
+
+tile.highFrequencyRedStone.name=高周波レッドストーンブロック
+
+
 itemGroup.experienceApple=経験値リンゴ
 
 ea.ritual.explode.name=爆破の儀式
@@ -169,6 +178,9 @@ ea.ritual.eggization.description=周囲のmobをタマゴにする儀式
 
 ea.ritual.spawnerActivation.name=スポナー起動の儀式
 ea.ritual.spawnerActivation.description=スポナーを中心に設置して起動するとmobがスポーンする儀式
+
+ea.ritual.collection.name=収集の儀式
+ea.ritual.collection.description=近くのアイテムと経験値を上のチェストに収納する儀式
 
 ea.eacraft.description=登録済みの経験リンゴと一緒にクラフトし、経験値を消費してクラフトする
 ea.eacraft.expcost=要求経験値

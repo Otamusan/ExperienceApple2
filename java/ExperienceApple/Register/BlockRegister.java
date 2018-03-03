@@ -12,6 +12,7 @@ import Blocks.BlockPureExperience;
 import Blocks.BlockRitualGlass;
 import Blocks.BlockRitualLauncher;
 import Blocks.BlockRitualStone;
+import Blocks.BlockStorageRack;
 import Blocks.Dirt.BlockEnrichedFarmLand;
 import Blocks.Dirt.BlockPath;
 import Blocks.Dirt.BlockRottenDirt;
@@ -75,6 +76,8 @@ public class BlockRegister {
 	public static final Block highFrequencyRedStone = new BlockHighFrequencyRedStone(Material.GROUND);
 	public static final Block awakenedSpawner = new BlockAwakenedSpawner();
 
+	public static final Block storageRack = new BlockStorageRack(Material.IRON).setHardness(5.0F);
+
 	public static Side Fside;
 
 	public static void init(Side side) {
@@ -112,6 +115,8 @@ public class BlockRegister {
 
 		register(highFrequencyRedStone, "highFrequencyRedStone");
 		register(awakenedSpawner, "awakenedSpawner");
+
+		register(storageRack, "storageRack");
 
 	}
 

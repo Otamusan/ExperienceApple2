@@ -84,6 +84,19 @@ public class ParticleUtil {
 		world.spawnParticle(part, x + hx, y, z + hy, 0.0D, 0.0D, 0.0D);
 	}
 
+	public static void randomCircle(EnumParticleTypes part, World world, double x, double y, double z, double r,
+			int n) {
+		if (EAMain.particle)
+			return;
+		for (int i = 0; i < n; i++) {
+			double rad = new Random().nextInt(360) * Math.PI / 180;
+			double hx = Math.cos(rad) * new Random().nextFloat() * r;
+			double hy = Math.sin(rad) * new Random().nextFloat() * r;
+			world.spawnParticle(part, x + hx, y, z + hy, 0.0D, 0.0D, 0.0D);
+		}
+
+	}
+
 	public static void partofBall(EnumParticleTypes part, World world, double x, double y, double z, double r,
 			double angle, double angle2) {
 		if (EAMain.particle)

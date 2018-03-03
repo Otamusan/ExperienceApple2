@@ -1,10 +1,15 @@
 package Rituals.Rituals;
 
+import java.util.Random;
+
 import Rituals.StonePosData;
+import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -19,14 +24,25 @@ public class RitualBlockCut extends Ritual {
 		int x = pos.getX();
 		int y = pos.getY();
 		int z = pos.getZ();
-
 		if (!world.isRemote) {
+
 			ItemStack itemstack = new ItemStack(
 					Item.getItemFromBlock(world.getBlockState(new BlockPos(x, y - 1, z)).getBlock()));
 			EntityItem itementity = new EntityItem(world, x, y - 1, z, itemstack);
 			world.spawnEntityInWorld(itementity);
-			world.setBlockToAir(new BlockPos(x, y - 1, z));
 		}
+		for (int i = 0; i < 50; i++) {
+			Random r = new Random();
+			System.out.println(world.isRemote);
+			world.spawnParticle(EnumParticleTypes.BLOCK_CRACK, pos.getX() + r.nextFloat(),
+					pos.getY() + r.nextFloat() - 1, pos.getZ() + r.nextFloat(), 0, 0, 0,
+					Block.getStateId(world.getBlockState(pos.down())));
+		}
+		world.playSound(x, y, z,
+				world.getBlockState(pos.down()).getBlock()
+						.getSoundType(world.getBlockState(pos.down()), world, pos, player).getBreakSound(),
+				SoundCategory.BLOCKS, 0.5f, 1, true);
+		world.setBlockToAir(new BlockPos(x, y - 1, z));
 	}
 
 	@Override

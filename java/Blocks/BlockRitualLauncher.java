@@ -7,8 +7,8 @@ import java.util.UUID;
 import javax.annotation.Nullable;
 
 import ExperienceApple.ITooltip;
-import Rituals.RitualCore;
 import Rituals.EnumRitualStones;
+import Rituals.RitualCore;
 import TileEntity.TileRitualLauncher;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
