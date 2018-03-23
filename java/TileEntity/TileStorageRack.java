@@ -2,8 +2,8 @@ package TileEntity;
 
 import javax.annotation.Nullable;
 
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
@@ -13,8 +13,6 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 
 public class TileStorageRack extends TileEntity implements ITickable, IInventory {
 	public ItemStack[] chestContents = new ItemStack[1024];
@@ -26,6 +24,8 @@ public class TileStorageRack extends TileEntity implements ITickable, IInventory
 
 	@Nullable
 	public ItemStack getStackInSlot(int index) {
+		markDirty();
+
 		return this.chestContents[index];
 	}
 
@@ -93,6 +93,7 @@ public class TileStorageRack extends TileEntity implements ITickable, IInventory
 				nbttaglist.appendTag(nbttagcompound);
 			}
 		}
+
 		if (this.conteinitem != null) {
 			NBTTagCompound nbttagcompound = new NBTTagCompound();
 			this.conteinitem.writeToNBT(nbttagcompound);
@@ -100,6 +101,8 @@ public class TileStorageRack extends TileEntity implements ITickable, IInventory
 		}
 
 		compound.setTag("Items", nbttaglist);
+
+		// System.out.println(compound);
 
 		return compound;
 	}
@@ -113,13 +116,23 @@ public class TileStorageRack extends TileEntity implements ITickable, IInventory
 	}
 
 	public void update() {
+		for (EntityPlayer player : worldObj.playerEntities) {
+			if (player instanceof EntityPlayerMP) {
+				EntityPlayerMP entityPlayer = (EntityPlayerMP) player;
+				entityPlayer.connection.sendPacket(this.getUpdatePacket());
+			}
+		}
 	}
 
 	public boolean isItemValidForSlot(int index, ItemStack stack) {
-		if (conteinitem == null)
+		if (conteinitem == null) {
+
 			return true;
+
+		}
 		if (canCombine(stack, conteinitem)) {
 			return true;
+
 		} else {
 			return false;
 		}
@@ -148,12 +161,10 @@ public class TileStorageRack extends TileEntity implements ITickable, IInventory
 		}
 	}
 
-	@Override
 	public void openInventory(EntityPlayer player) {
 
 	}
 
-	@Override
 	public void closeInventory(EntityPlayer player) {
 
 	}
@@ -181,24 +192,37 @@ public class TileStorageRack extends TileEntity implements ITickable, IInventory
 		return conteinitem.copy();
 	}
 
-	public NBTTagCompound getUpdateTag() {
-		return this.writeToNBT(new NBTTagCompound());
+	public boolean canItemChange() {
+		System.out.println(getItemAmount());
+		System.out.println(getItemStack());
+		if (getItemAmount() == 0)
+			return true;
+		else
+			return false;
 	}
 
 	@Override
+	public void handleUpdateTag(NBTTagCompound tag) {
+		super.handleUpdateTag(tag);
+		this.readFromNBT(tag);
+	}
+
+	@Override
+	@Nullable
 	public SPacketUpdateTileEntity getUpdatePacket() {
-		return new SPacketUpdateTileEntity(pos, -1, getUpdateTag());
+		int metadata = getBlockMetadata();
+		return new SPacketUpdateTileEntity(this.pos, metadata, getUpdateTag());
 	}
 
 	@Override
-	public void onDataPacket(NetworkManager manager, SPacketUpdateTileEntity packet) {
-		readFromNBT(packet.getNbtCompound());
+	public void onDataPacket(NetworkManager net, SPacketUpdateTileEntity pkt) {
+		readFromNBT(pkt.getNbtCompound());
 	}
 
 	@Override
-	public boolean shouldRefresh(final World world, final BlockPos pos, final IBlockState oldState,
-			final IBlockState newState) {
-		return oldState.getBlock() != newState.getBlock();
+	public NBTTagCompound getUpdateTag() {
+		NBTTagCompound tag = super.getUpdateTag();
+		writeToNBT(tag);
+		return tag;
 	}
-
 }

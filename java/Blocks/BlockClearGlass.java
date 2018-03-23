@@ -2,35 +2,32 @@ package Blocks;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
+
+import javax.annotation.Nonnull;
 
 import ExperienceApple.ITooltip;
-import Util.ParticleUtil;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
-import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockCabinetStone extends BlockGlass implements ITooltip {
-	public BlockCabinetStone(Material materialIn) {
+public class BlockClearGlass extends BlockGlass implements ITooltip {
+
+	public BlockClearGlass(Material materialIn) {
 		super(materialIn, true);
 	}
 
+	@SideOnly(Side.CLIENT)
+	@Nonnull
 	@Override
-	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rnd) {
-		ParticleUtil.blockRemaining(EnumParticleTypes.ENCHANTMENT_TABLE, world, pos, 9);
-	}
-
-	@Override
-	public int quantityDropped(Random random) {
-		return 1;
+	public BlockRenderLayer getBlockLayer() {
+		return BlockRenderLayer.TRANSLUCENT;
 	}
 
 	@Override
@@ -43,15 +40,21 @@ public class BlockCabinetStone extends BlockGlass implements ITooltip {
 		return false;
 	}
 
-	@Override
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-		return new AxisAlignedBB(0.125, 0.125, 0.125, 0.875, 0.875, 0.875);
-	}
-
-	@Override
 	@SideOnly(Side.CLIENT)
-	public BlockRenderLayer getBlockLayer() {
-		return BlockRenderLayer.CUTOUT;
+	public boolean shouldSideBeRendered(IBlockState blockState, IBlockAccess blockAccess, BlockPos pos,
+			EnumFacing side) {
+		IBlockState iblockstate = blockAccess.getBlockState(pos.offset(side));
+		Block block = iblockstate.getBlock();
+
+		if (blockState != iblockstate) {
+			return true;
+		}
+
+		if (block == this) {
+			return false;
+		}
+
+		return super.shouldSideBeRendered(blockState, blockAccess, pos, side);
 	}
 
 	public List<String> Tooltip = new ArrayList<String>();
@@ -65,4 +68,5 @@ public class BlockCabinetStone extends BlockGlass implements ITooltip {
 	public void addTooltip(String str) {
 		Tooltip.add(str);
 	}
+
 }

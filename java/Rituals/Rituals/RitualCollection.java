@@ -61,7 +61,7 @@ public class RitualCollection extends Ritual {
 		return true;
 	}
 
-	public ItemStack setItemStack(IInventory inventory, ItemStack itemStack) {
+	public static ItemStack setItemStack(IInventory inventory, ItemStack itemStack) {
 		for (int i = 0; i < inventory.getSizeInventory(); i++) {
 			ItemStack invitem = inventory.getStackInSlot(i);
 			if (invitem == null) {
@@ -88,7 +88,7 @@ public class RitualCollection extends Ritual {
 		return itemStack;
 	}
 
-	public boolean isItemStackEqual(ItemStack stackA, ItemStack stackB) {
+	public static boolean isItemStackEqual(ItemStack stackA, ItemStack stackB) {
 		if (stackA.getItem() != stackB.getItem())
 			return false;
 		if (stackA.getItemDamage() != stackB.getItemDamage())

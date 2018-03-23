@@ -131,22 +131,7 @@ public class ParticleUtil {
 
 	public static void blockInjection(EnumParticleTypes part, World world, BlockPos Supplier, BlockPos consumer,
 			int amount) {
-		/*
-		 * Random random = new Random(); double sx = Supplier.getX() +
-		 * random.nextFloat(); double sy = Supplier.getY() - 1 +
-		 * random.nextFloat(); double sz = Supplier.getZ() + random.nextFloat();
-		 * // world.spawnParticle(part, sx, sy, sz, 0, 0, 0); //
-		 * ParticleUtil.blockSurface(EnumParticleTypes.VILLAGER_HAPPY, world, //
-		 * Supplier, 1);
-		 * 
-		 * double ex = sx - consumer.getX(); double ey = sy - consumer.getY();
-		 * double ez = sz - consumer.getZ(); //
-		 * ParticleUtil.blockSurface(EnumParticleTypes.VILLAGER_HAPPY, world, //
-		 * consumer, 1);
-		 * 
-		 * world.spawnParticle(part, sx, sy, sz, 0, 0, 0); //
-		 * world.spawnParticle(part, sx, sy, sz, 0, 0, 0);
-		 */
+
 		for (int i = 0; i < amount; i++) {
 
 			Random rnd = new Random();
@@ -158,6 +143,21 @@ public class ParticleUtil {
 			double sz = rnd.nextFloat() * 3 - 1.5;
 			world.spawnParticle(part, rx, ry, rz, sx, sy, sz);
 		}
+
+		for (int i = 0; i < amount; i++) {
+
+			Random rnd = new Random();
+			double rx = Supplier.getX() + 0.5;
+			double ry = Supplier.getY() + 0.5;
+			double rz = Supplier.getZ() + 0.5;
+			double sx = rnd.nextFloat() * 3 - 1.5;
+			double sy = rnd.nextFloat() * 2 - 1.5;
+			double sz = rnd.nextFloat() * 3 - 1.5;
+			world.spawnParticle(part, sx, sy, sz, rx, ry, rz);
+			// world.spawnParticle(part, rx, ry, rz, sx, sy, sz);
+
+		}
+
 	}
 
 }

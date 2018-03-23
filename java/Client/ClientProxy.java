@@ -17,6 +17,7 @@ public class ClientProxy extends CommonProxy {
 	public void registerTileEntity() {
 		super.registerTileEntity();
 		ClientRegistry.bindTileEntitySpecialRenderer(TileStorageRack.class, new TileStorageRackRenderer());
+
 	}
 
 	@Override

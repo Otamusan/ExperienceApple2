@@ -2,7 +2,6 @@ package ExperienceApple;
 
 import java.io.File;
 
-import Client.ParticleRegister;
 import Common.CommonProxy;
 import Crafting.EnchantCraft.EnchantCrafting;
 import Crafting.ExperienceAppleCrafting.ExperienceAppleCrafting;
@@ -49,7 +48,6 @@ public class EAMain {
 		BlockRegister.init(event.getSide());
 		RecipeRegister.init();
 		RitualRegister.init();
-		ParticleRegister.init();
 		EntityRegister.init(this);
 		GameRegistry.addRecipe(new ExperienceAppleCrafting());
 		GameRegistry.addRecipe(new RepairCrafting());

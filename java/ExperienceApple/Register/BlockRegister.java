@@ -3,6 +3,7 @@ package ExperienceApple.Register;
 import Blocks.BlockAccelerateStone;
 import Blocks.BlockAwakenedSpawner;
 import Blocks.BlockCabinetStone;
+import Blocks.BlockClearGlass;
 import Blocks.BlockCodensedExperienceOre;
 import Blocks.BlockExperienceOre;
 import Blocks.BlockGrowthStone;
@@ -19,6 +20,7 @@ import Blocks.Dirt.BlockRottenDirt;
 import ExperienceApple.EAMain;
 import Rituals.EnumRitualStones;
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSlime;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -78,6 +80,26 @@ public class BlockRegister {
 
 	public static final Block storageRack = new BlockStorageRack(Material.IRON).setHardness(5.0F);
 
+	public static final Block faceBlock = new BlockSlime();
+
+	public static final Block largeRitualGlass1 = new BlockClearGlass(Material.GLASS);
+	public static final Block largeRitualGlass2 = new BlockClearGlass(Material.GLASS);
+	public static final Block largeRitualGlass3 = new BlockClearGlass(Material.GLASS);
+	public static final Block largeRitualGlass4 = new BlockClearGlass(Material.GLASS);
+
+	public static final Block largeRitualStone1 = new Block(Material.ROCK);
+	public static final Block largeRitualStone2 = new Block(Material.ROCK);
+	public static final Block largeRitualStone3 = new Block(Material.ROCK);
+	public static final Block largeRitualStone4 = new Block(Material.ROCK);
+
+	public static final Block largeCabinetStone = new Block(Material.ROCK);
+
+	public static final Block largeAccelerateStone = new Block(Material.ROCK);
+	public static final Block largeAdvancedAccelerateStone = new Block(Material.ROCK);
+
+	public static final Block largeGrowthStone = new Block(Material.ROCK);
+	public static final Block largeAdvancedGrowthStone = new Block(Material.ROCK);
+
 	public static Side Fside;
 
 	public static void init(Side side) {
@@ -118,6 +140,21 @@ public class BlockRegister {
 
 		register(storageRack, "storageRack");
 
+		register(faceBlock, "faceBlock");
+		register(largeRitualGlass1, "largeRitualGlass1");
+		register(largeRitualGlass2, "largeRitualGlass2");
+		register(largeRitualGlass3, "largeRitualGlass3");
+		register(largeRitualGlass4, "largeRitualGlass4");
+		register(largeRitualStone1, "largeRitualStone1");
+		register(largeRitualStone2, "largeRitualStone2");
+		register(largeRitualStone3, "largeRitualStone3");
+		register(largeRitualStone4, "largeRitualStone4");
+		register(largeCabinetStone, "largeCabinetStone");
+		register(largeAccelerateStone, "largeAccelerateStone");
+		register(largeAdvancedAccelerateStone, "largeAdvancedAccelerateStone");
+		register(largeGrowthStone, "largeGrowthStone");
+		register(largeAdvancedGrowthStone, "largeAdvancedGrowthStone");
+
 	}
 
 	public static void register(Block block, String str) {
@@ -131,12 +168,16 @@ public class BlockRegister {
 		item.setCreativeTab(EAMain.tabAdd);
 
 		if (Fside == Side.CLIENT) {
-			modelRegister(item, str);
+			modelRegister(block, str);
 		}
 	}
 
 	@SideOnly(Side.CLIENT)
-	public static void modelRegister(Item item, String str) {
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(EAMain.MOD_ID + ":" + str));
+	public static void modelRegister(Block block, String str) {
+		// ModelLoader.setCustomModelResourceLocation(item, 0, new
+		// ModelResourceLocation(EAMain.MOD_ID + ":" + str));
+		ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0,
+				new ModelResourceLocation(EAMain.MOD_ID + ":" + str));
+
 	}
 }
