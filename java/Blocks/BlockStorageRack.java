@@ -6,13 +6,14 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import ExperienceApple.ITooltip;
-import Rituals.Rituals.RitualCollection;
 import TileEntity.TileStorageRack;
+import Util.InventoryUtil;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
@@ -25,7 +26,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockStorageRack extends BlockContainer implements ITileEntityProvider, ITooltip {
+public class BlockStorageRack extends BlockContainer implements ITileEntityProvider, ITooltip, ILeftClick {
 	// public class BlockStorageRack extends Block implements ITooltip {
 
 	public BlockStorageRack(Material mate) {
@@ -42,9 +43,55 @@ public class BlockStorageRack extends BlockContainer implements ITileEntityProvi
 		return new TileStorageRack();
 	}
 
+	public void onLeftClick(EntityPlayer player, BlockPos pos, World world, EnumFacing facing) {
+		TileStorageRack storageRack = (TileStorageRack) world.getTileEntity(pos);
+		if (storageRack.conteinitem == null)
+			return;
+		if (player.isSneaking()) {
+			ItemStack newitemStack = storageRack.conteinitem.copy();
+
+			InventoryUtil.decreaseItem(storageRack.conteinitem, storageRack, storageRack.conteinitem.getMaxStackSize());
+
+			if (storageRack.getItemAmount() >= newitemStack.getMaxStackSize()) {
+				newitemStack.stackSize = newitemStack.getMaxStackSize();
+			} else {
+				newitemStack.stackSize = storageRack.getItemAmount();
+			}
+
+			InventoryUtil.putStackInInventoryAllSlots(player.inventory, newitemStack, facing);
+		} else {
+			ItemStack newitemStack = storageRack.conteinitem.copy();
+			InventoryUtil.decreaseItem(storageRack.conteinitem, storageRack, 1);
+
+			if (storageRack.getItemAmount() >= 1) {
+				newitemStack.stackSize = 1;
+			} else {
+				newitemStack.stackSize = storageRack.getItemAmount();
+			}
+			InventoryUtil.putStackInInventoryAllSlots(player.inventory, newitemStack, facing);
+		}
+	}
+
 	public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand,
 			@Nullable ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
 		TileStorageRack storageRack = (TileStorageRack) world.getTileEntity(pos);
+
+		if (heldItem == null) {
+			if (storageRack.getItemStack() != null) {
+				IInventory inventory = player.inventory;
+				for (int i = 0; i < player.inventory.getSizeInventory(); i++) {
+					ItemStack outitem = InventoryUtil.putStackInInventoryAllSlots(storageRack,
+							inventory.getStackInSlot(i), side);
+					inventory.setInventorySlotContents(i, outitem);
+				}
+			}
+		} else {
+			if (storageRack.canItemChange()) {
+				storageRack.setItemStack(heldItem);
+			}
+			ItemStack outitem = InventoryUtil.putStackInInventoryAllSlots(storageRack, heldItem, side);
+			player.setHeldItem(hand, outitem);
+		}
 		if (!world.isRemote) {
 			if (storageRack.getItemStack() != null) {
 				player.addChatMessage(
@@ -52,17 +99,6 @@ public class BlockStorageRack extends BlockContainer implements ITileEntityProvi
 				player.addChatMessage(new TextComponentTranslation("Amount : " + storageRack.getItemAmount()));
 			}
 		}
-		if (heldItem != null && storageRack.canItemChange()) {
-			storageRack.setItemStack(heldItem);
-		}
-
-		if (heldItem == null) {
-
-		} else {
-			RitualCollection.setItemStack(storageRack, heldItem);
-
-		}
-
 		return true;
 	}
 

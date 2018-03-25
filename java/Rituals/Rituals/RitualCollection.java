@@ -3,6 +3,7 @@ package Rituals.Rituals;
 import java.util.ArrayList;
 
 import Rituals.StonePosData;
+import Util.InventoryUtil;
 import Util.ParticleUtil;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -12,6 +13,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
@@ -37,7 +39,7 @@ public class RitualCollection extends Ritual {
 							entity.posZ, entity.posX, entity.posY, entity.posZ, 10);
 					world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_LAVA_POP,
 							SoundCategory.BLOCKS, 0.4f, 1, true);
-					if (newitemstack.stackSize <= 0) {
+					if (newitemstack == null) {
 						entity.setDead();
 					} else {
 						((EntityItem) entity).setEntityItemStack(newitemstack);
@@ -62,30 +64,21 @@ public class RitualCollection extends Ritual {
 	}
 
 	public static ItemStack setItemStack(IInventory inventory, ItemStack itemStack) {
-		for (int i = 0; i < inventory.getSizeInventory(); i++) {
-			ItemStack invitem = inventory.getStackInSlot(i);
-			if (invitem == null) {
-				inventory.setInventorySlotContents(i, itemStack.copy());
-				itemStack.stackSize = 0;
-				return itemStack;
-			} else {
-				if (isItemStackEqual(invitem, itemStack)) {
-					int maxstack = itemStack.getMaxStackSize();
-					if (maxstack - invitem.stackSize != 0) {
-						if (itemStack.stackSize > maxstack - invitem.stackSize) {
-							itemStack.stackSize -= maxstack - invitem.stackSize;
-							invitem.stackSize = maxstack;
-						} else {
-							invitem.stackSize += itemStack.stackSize;
-							itemStack.stackSize = 0;
-						}
-					}
-				}
-			}
-			if (itemStack.stackSize <= 0)
-				return itemStack;
-		}
-		return itemStack;
+		/*
+		 * for (int i = 0; i < inventory.getSizeInventory(); i++) { ItemStack
+		 * invitem = inventory.getStackInSlot(i); if (invitem == null) {
+		 * inventory.setInventorySlotContents(i, itemStack.copy());
+		 * itemStack.stackSize = 0; return itemStack; } else { if
+		 * (inventory.isItemValidForSlot(i, itemStack)) { if
+		 * (isItemStackEqual(invitem, itemStack)) { int maxstack =
+		 * itemStack.getMaxStackSize(); if (maxstack - invitem.stackSize != 0) {
+		 * if (itemStack.stackSize > maxstack - invitem.stackSize) {
+		 * itemStack.stackSize -= maxstack - invitem.stackSize;
+		 * invitem.stackSize = maxstack; } else { invitem.stackSize +=
+		 * itemStack.stackSize; itemStack.stackSize = 0; } } } } } if
+		 * (itemStack.stackSize <= 0) return itemStack; } return itemStack;
+		 */
+		return InventoryUtil.putStackInInventoryAllSlots(inventory, itemStack, EnumFacing.DOWN);
 	}
 
 	public static boolean isItemStackEqual(ItemStack stackA, ItemStack stackB) {

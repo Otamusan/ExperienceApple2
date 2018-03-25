@@ -183,7 +183,11 @@ public class TileStorageRack extends TileEntity implements ITickable, IInventory
 	}
 
 	public void setItemStack(ItemStack itemStack) {
-		conteinitem = itemStack.copy();
+		if (itemStack == null) {
+			conteinitem = null;
+		} else {
+			conteinitem = itemStack.copy();
+		}
 	}
 
 	public ItemStack getItemStack() {
@@ -193,8 +197,6 @@ public class TileStorageRack extends TileEntity implements ITickable, IInventory
 	}
 
 	public boolean canItemChange() {
-		System.out.println(getItemAmount());
-		System.out.println(getItemStack());
 		if (getItemAmount() == 0)
 			return true;
 		else
@@ -225,4 +227,5 @@ public class TileStorageRack extends TileEntity implements ITickable, IInventory
 		writeToNBT(tag);
 		return tag;
 	}
+
 }

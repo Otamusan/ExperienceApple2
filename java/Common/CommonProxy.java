@@ -31,6 +31,7 @@ public class CommonProxy {
 		FMLCommonHandler.instance().bus().register(new DeathEnderDragon());
 		FMLCommonHandler.instance().bus().register(new DeathVillager());
 		FMLCommonHandler.instance().bus().register(new HasItemUpdate());
+		FMLCommonHandler.instance().bus().register(new BlockLeftClick());
 
 	}
 }
