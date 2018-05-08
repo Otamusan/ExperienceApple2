@@ -51,15 +51,6 @@ public class ItemMagicBow extends ItemBow implements ITooltip {
 					boolean flag1 = entityplayer.capabilities.isCreativeMode
 							|| (itemstack.getItem() instanceof ItemArrow
 									&& ((ItemArrow) itemstack.getItem()).isInfinite(itemstack, stack, entityplayer));
-					// ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE,
-					// worldIn, entityplayer.posX,
-					// entityplayer.posY + 1, entityplayer.posZ, 1.5, 60);
-					// ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE,
-					// worldIn, entityplayer.posX,
-					// entityplayer.posY + 1.5, entityplayer.posZ, 2, 60);
-					// ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE,
-					// worldIn, entityplayer.posX,
-					// entityplayer.posY + 2, entityplayer.posZ, 2.5, 60);
 
 					for (int j = 0; j < i / 5 + 1; j++) {
 						ParticleUtil.verticalCircle(EnumParticleTypes.ENCHANTMENT_TABLE, worldIn, entityplayer.posX,
@@ -71,8 +62,7 @@ public class ItemMagicBow extends ItemBow implements ITooltip {
 						for (int j = 0; j < (i ^ 2) / 1 + 3; j++) {
 							EntityTippedArrow entityarrow = (EntityTippedArrow) new ItemArrow().createArrow(worldIn,
 									itemstack, entityplayer);
-
-							entityarrow.setAim(entityplayer, entityplayer.rotationPitch, entityplayer.rotationYaw, 0.0F,
+							entityarrow.shoot(entityplayer, entityplayer.rotationPitch, entityplayer.rotationYaw, 0.0F,
 									4.0F, i / 2 + 2);
 
 							// if (f == 1.0F) {
@@ -95,31 +85,10 @@ public class ItemMagicBow extends ItemBow implements ITooltip {
 								entityarrow.setFire(100);
 							}
 
-							// entityarrow
-							// .addEffect(new
-							// PotionEffect(Potion.getPotionFromResourceLocation("wither"),
-							// 60,
-							// 5, false, false));
-							// entityarrow
-							// .addEffect(new
-							// PotionEffect(Potion.getPotionFromResourceLocation("poison"),
-							// 60,
-							// 5, false, false));
-							// entityarrow.addEffect(
-							// new
-							// PotionEffect(Potion.getPotionFromResourceLocation("slowness"),
-							// 60,
-							// 5, false, false));
-							// entityarrow.addEffect(
-							// new
-							// PotionEffect(Potion.getPotionFromResourceLocation("weakness"),
-							// 60,
-							// 5, false, false));
-
 							entityarrow.pickupStatus = EntityArrow.PickupStatus.CREATIVE_ONLY;
 							entityarrow.arrowShake = 0;
 
-							worldIn.spawnEntityInWorld(entityarrow);
+							worldIn.spawnEntity(entityarrow);
 						}
 
 					}
@@ -128,7 +97,7 @@ public class ItemMagicBow extends ItemBow implements ITooltip {
 							SoundEvents.ENTITY_SHULKER_SHOOT, SoundCategory.PLAYERS, 1.0F,
 							1.0F / (itemRand.nextFloat() * 0.4F + 1.2F) + f * 0.5F);
 					if (!flag1 && !entityplayer.capabilities.isCreativeMode) {
-						itemstack.stackSize--;
+						itemstack.shrink(1);
 
 						if (itemstack != null) {
 							entityplayer.inventory.deleteStack(itemstack);

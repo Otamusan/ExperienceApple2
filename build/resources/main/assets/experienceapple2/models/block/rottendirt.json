@@ -1,0 +1,10 @@
+{
+    "parent": "block/grass",
+    "textures": {
+        "particle": "experienceapple2:blocks/rottendirttop",
+        "bottom": "experienceapple2:blocks/rottendirt",
+        "top": "experienceapple2:blocks/rottendirttop",
+        "side": "experienceapple2:blocks/rottendirtside",
+        "overlay": "experienceapple2:blocks/rottendirtside"
+    }
+}

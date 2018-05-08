@@ -1,0 +1,8 @@
+{
+    "parent": "experienceapple2:block/storagerack_all",
+    "textures": {
+        "particle": "experienceapple2:blocks/experienceironblock",
+        "iron": "experienceapple2:blocks/weakexperienceironblock",
+        "glass": "experienceapple2:blocks/ritualglasstier1"
+    }
+}

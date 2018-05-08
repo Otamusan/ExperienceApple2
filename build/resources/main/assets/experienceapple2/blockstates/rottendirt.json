@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "normal": [
+            { "model": "experienceapple2:rottendirt" },
+            { "model": "experienceapple2:rottendirt", "y": 90 },
+            { "model": "experienceapple2:rottendirt", "y": 180 },
+            { "model": "experienceapple2:rottendirt", "y": 270 }
+        ]
+    }
+}
