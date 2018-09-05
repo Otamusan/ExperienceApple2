@@ -1,16 +1,14 @@
 package Item.Tools;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import ExperienceApple.ITooltip;
 import Item.ExperienceRepair;
 import Item.IExperienceRepair;
 import Util.ParticleUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,9 +22,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemExperienceIronPickaxe extends ItemPickaxe implements IExperienceRepair, ITooltip {
+public class ItemExperienceIronPickaxe extends ItemPickaxe implements IExperienceRepair {
 
-	public static int cooldown = 0;
 	private ExperienceRepair experienceRepair;
 	private int range = 1;
 
@@ -38,7 +35,6 @@ public class ItemExperienceIronPickaxe extends ItemPickaxe implements IExperienc
 	@Override
 	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
 			EntityLivingBase entityLiving) {
-		ParticleUtil.blockSurface(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
 		ParticleUtil.blockRemaining(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
 		if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0D) {
 			stack.damageItem(1, entityLiving);
@@ -66,9 +62,8 @@ public class ItemExperienceIronPickaxe extends ItemPickaxe implements IExperienc
 	}
 
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-		if (!GuiScreen.isShiftKeyDown())
-			return;
+	@Override
+	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(I18n.format("item.experienceIron.cooltime") + " : " + this.experienceRepair.getCooltime());
 		tooltip.add(I18n.format("item.experienceIron.cost") + " : " + this.experienceRepair.getCost());
 
@@ -96,15 +91,4 @@ public class ItemExperienceIronPickaxe extends ItemPickaxe implements IExperienc
 		return 0;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

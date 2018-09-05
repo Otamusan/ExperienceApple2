@@ -1,17 +1,14 @@
 package Item;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
-import ExperienceApple.ITooltip;
 import ExperienceApple.Register.BlockRegister;
 import Rituals.EnumRitualStones;
 import Rituals.RitualRegistry;
 import Util.PlayerUtil;
 import net.minecraft.block.Block;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -28,11 +25,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
-public class ItemRitualAssembler extends Item implements ITooltip {
+public class ItemRitualAssembler extends Item {
 	@Override
 	public void addInformation(ItemStack itemstack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-		if (!GuiScreen.isShiftKeyDown())
-			return;
 		NBTTagCompound nbt = itemstack.getTagCompound();
 		nbt = checknbt(nbt);
 		String str = "ea.ritual." + RitualRegistry.list.get(nbt.getInteger("ritual")).getName() + ".name";
@@ -160,15 +155,4 @@ public class ItemRitualAssembler extends Item implements ITooltip {
 		return nbt;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

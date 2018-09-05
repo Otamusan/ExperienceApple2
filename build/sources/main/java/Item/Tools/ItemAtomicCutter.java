@@ -1,10 +1,6 @@
 package Item.Tools;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import ExperienceApple.EAMain;
-import ExperienceApple.ITooltip;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -18,7 +14,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemAtomicCutter extends Item implements ITooltip {
+public class ItemAtomicCutter extends Item {
 	@Override
 
 	public EnumActionResult onItemUse(EntityPlayer player, World world, BlockPos pos, EnumHand hand, EnumFacing facing,
@@ -44,15 +40,4 @@ public class ItemAtomicCutter extends Item implements ITooltip {
 		return EnumActionResult.SUCCESS;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

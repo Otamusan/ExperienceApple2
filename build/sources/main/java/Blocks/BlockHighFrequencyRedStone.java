@@ -1,9 +1,5 @@
 package Blocks;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ExperienceApple.ITooltip;
 import TileEntity.TileHighFrequencyRedStone;
 import net.minecraft.block.Block;
 import net.minecraft.block.ITileEntityProvider;
@@ -19,7 +15,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockHighFrequencyRedStone extends Block implements ITileEntityProvider, ITooltip {
+public class BlockHighFrequencyRedStone extends Block implements ITileEntityProvider {
 
 	public BlockHighFrequencyRedStone(Material mate) {
 		super(mate);
@@ -53,18 +49,6 @@ public class BlockHighFrequencyRedStone extends Block implements ITileEntityProv
 	@Override
 	public TileEntity createNewTileEntity(World world, int meta) {
 		return new TileHighFrequencyRedStone();
-	}
-
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
 	}
 
 	public boolean canConnectRedstone(IBlockState state, IBlockAccess world, BlockPos pos, EnumFacing side) {

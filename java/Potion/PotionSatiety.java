@@ -6,12 +6,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
 
-public class PotionFoodSupply extends Potion {
+public class PotionSatiety extends Potion {
 	public ResourceLocation resourceLocation;
 
-	public PotionFoodSupply(ResourceLocation resourceLocation) {
+	public PotionSatiety(ResourceLocation resourceLocation) {
 		super(false, 0xEEEEFF);
-		setPotionName("effect.foodSupply");
+		setPotionName("effect.satiety");
 		this.resourceLocation = resourceLocation;
 	}
 
@@ -36,6 +36,6 @@ public class PotionFoodSupply extends Potion {
 
 	@Override
 	public boolean hasStatusIcon() {
-		return false;
+		return true;
 	}
 }

@@ -1,9 +1,5 @@
 package Item.Tools;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ExperienceApple.ITooltip;
 import ExperienceApple.Register.BlockRegister;
 import Util.ParticleUtil;
 import net.minecraft.block.Block;
@@ -27,10 +23,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemAdvancedExperienceIronShovel extends ItemSpade implements ITooltip {
-	public static int cooldown;
-	public int range = 3;
-
+public class ItemAdvancedExperienceIronShovel extends ItemSpade {
 	public ItemAdvancedExperienceIronShovel(ToolMaterial mate) {
 		super(mate);
 	}
@@ -44,7 +37,6 @@ public class ItemAdvancedExperienceIronShovel extends ItemSpade implements ITool
 	@Override
 	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
 			EntityLivingBase entityLiving) {
-		ParticleUtil.blockSurface(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
 		ParticleUtil.blockRemaining(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 10);
 
 		if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0D) {
@@ -112,15 +104,4 @@ public class ItemAdvancedExperienceIronShovel extends ItemSpade implements ITool
 		return true;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

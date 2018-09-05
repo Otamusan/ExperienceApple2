@@ -1,10 +1,7 @@
 package Blocks;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
-import ExperienceApple.ITooltip;
 import Rituals.EnumRitualStones;
 import Rituals.RitualCore;
 import TileEntity.TileRitualLauncher;
@@ -20,7 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 
-public class BlockRitualLauncher extends BlockRitual implements ITileEntityProvider, ITooltip {
+public class BlockRitualLauncher extends BlockRitual implements ITileEntityProvider {
 
 	public BlockRitualLauncher(Material materialIn, int particleAmount, EnumRitualStones tier) {
 		super(materialIn, particleAmount, tier);
@@ -88,15 +85,4 @@ public class BlockRitualLauncher extends BlockRitual implements ITileEntityProvi
 		return true;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

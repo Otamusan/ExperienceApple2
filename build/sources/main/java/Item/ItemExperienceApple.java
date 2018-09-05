@@ -1,9 +1,5 @@
 package Item;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ExperienceApple.ITooltip;
 import ExperienceApple.Register.ItemRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -14,7 +10,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemExperienceApple extends Item implements ITooltip {
+public class ItemExperienceApple extends Item {
 	@Override
 	@SideOnly(Side.CLIENT)
 	public boolean hasEffect(ItemStack itemstack) {
@@ -31,15 +27,4 @@ public class ItemExperienceApple extends Item implements ITooltip {
 		player.inventory.setInventorySlotContents(itemSlot, itemstack);
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

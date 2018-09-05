@@ -1,12 +1,9 @@
 package Item.Armors;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 import com.google.common.collect.Multimap;
 
-import ExperienceApple.ITooltip;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -15,9 +12,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemAdvancedExperienceIronArmor extends ItemArmor implements ITooltip {
-
-	public static int cooldown = 0;
+public class ItemAdvancedExperienceIronArmor extends ItemArmor {
+	static int cooldown = 0;
 	private static final UUID[] ARMOR_MODIFIERS = new UUID[] { UUID.fromString("845DB27C-C624-495F-8C9F-6020A9A58B6B"),
 			UUID.fromString("D8499B04-0E66-4726-AB29-64469D734E0D"),
 			UUID.fromString("9F3D476D-C118-4544-8365-64846904B48E"),
@@ -48,15 +44,4 @@ public class ItemAdvancedExperienceIronArmor extends ItemArmor implements IToolt
 		return true;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

@@ -3,10 +3,10 @@ package Item.Tools;
 import java.util.ArrayList;
 import java.util.List;
 
-import ExperienceApple.ITooltip;
 import Util.ParticleUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -26,7 +26,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemAdvancedExperienceIronPickaxe extends ItemPickaxe implements ITooltip {
+public class ItemAdvancedExperienceIronPickaxe extends ItemPickaxe {
 	public ItemAdvancedExperienceIronPickaxe(ToolMaterial mate) {
 		super(mate);
 	}
@@ -80,7 +80,8 @@ public class ItemAdvancedExperienceIronPickaxe extends ItemPickaxe implements IT
 		if (range < 0) {
 			range = 0;
 		}
-		playerIn.sendMessage(new TextComponentTranslation(new Integer(range).toString()));
+		playerIn.sendMessage(new TextComponentTranslation(
+				I18n.format("item.advancedExperienceIronPickaxe.range") + " : " + new Integer(range).toString()));
 		setRange(itemStackIn, range);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
 	}
@@ -88,7 +89,6 @@ public class ItemAdvancedExperienceIronPickaxe extends ItemPickaxe implements IT
 	@Override
 	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
 			EntityLivingBase entityLiving) {
-		ParticleUtil.blockSurface(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 10);
 		ParticleUtil.blockRemaining(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 10);
 		if (!entityLiving.isSneaking())
 			return false;
@@ -125,14 +125,4 @@ public class ItemAdvancedExperienceIronPickaxe extends ItemPickaxe implements IT
 	}
 
 	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

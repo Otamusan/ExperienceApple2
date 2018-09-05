@@ -5,6 +5,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.SoundCategory;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
@@ -41,7 +42,8 @@ public class RepairCraftingEvent {
 	}
 
 	private static boolean contain(ItemStack item) {
-		for (ItemStack item1 : RecipeRegister.repaiableItem) {
+		for (IRecipe recipe : RecipeRegister.repaiableItem) {
+			ItemStack item1 = recipe.getRecipeOutput();
 			if (item1.getItem() == item.getItem()) {
 				return true;
 			}

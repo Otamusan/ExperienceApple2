@@ -1,9 +1,5 @@
 package Blocks;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ExperienceApple.ITooltip;
 import TileEntity.TileStorageRack;
 import Util.InventoryUtil;
 import net.minecraft.block.BlockContainer;
@@ -24,7 +20,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockStorageRack extends BlockContainer implements ITileEntityProvider, ITooltip, ILeftClick {
+public class BlockStorageRack extends BlockContainer implements ITileEntityProvider, ILeftClick {
 	// public class BlockStorageRack extends Block implements ITooltip {
 
 	public BlockStorageRack(Material mate) {
@@ -105,21 +101,9 @@ public class BlockStorageRack extends BlockContainer implements ITileEntityProvi
 		return BlockRenderLayer.TRANSLUCENT;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
 	@Override
 	public EnumBlockRenderType getRenderType(IBlockState iBlockState) {
 		return EnumBlockRenderType.MODEL;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
 	}
 
 }

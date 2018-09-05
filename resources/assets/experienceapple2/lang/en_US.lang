@@ -30,12 +30,14 @@ item.ashOfBalance.name=Ash of Balance
 item.ashOfOrder.name=Ash of Order
 item.ash.processing=Processing
 
+item.spellPaper.cost=Cost
+item.spellPaper.enable=Enable
+item.spellPaper.disable=Disable
+item.spellPaper.state=State
 
 item.flyingSpellPaper.name=Flying Spell Paper
-item.flyingSpellPaper.cost=Cost
 
 item.satietySpellPaper.name=Satiety Spell Paper
-item.satietySpellPaper.cost=Cost
 
 
 item.enchantmentPearl.name=Enchantment Pearl
@@ -64,6 +66,7 @@ item.experienceIron.cost=Repair Cost
 item.advancedExperienceIronAxe.name=AEI Axe
 
 item.advancedExperienceIronPickaxe.name=AEI Pickaxe
+item.advancedExperienceIronPickaxe.range=Range
 
 item.advancedExperienceIronShovel.name=AEI Shovel
 
@@ -155,24 +158,24 @@ tile.storageRack.name=Storage Rack
 
 tile.faceBlock.name=Block of Superficial
 
-tile.largeRitualGlass1.name=Large Ritual Glass Tier1
-tile.largeRitualGlass2.name=Large Ritual Glass Tier2
-tile.largeRitualGlass3.name=Large Ritual Glass Tier3
-tile.largeRitualGlass4.name=Large Ritual Glass Tier4
+tile.largeRitualGlass1.name=Spurious Ritual Glass Tier1
+tile.largeRitualGlass2.name=Spurious Ritual Glass Tier2
+tile.largeRitualGlass3.name=Spurious Ritual Glass Tier3
+tile.largeRitualGlass4.name=Spurious Ritual Glass Tier4
 
-tile.largeRitualStone1.name=Large Ritual Stone Tier1
-tile.largeRitualStone2.name=Large Ritual Stone Tier2
-tile.largeRitualStone3.name=Large Ritual Stone Tier3
-tile.largeRitualStone4.name=Large Ritual Stone Tier4
+tile.largeRitualStone1.name=Spurious Ritual Stone Tier1
+tile.largeRitualStone2.name=Spurious Ritual Stone Tier2
+tile.largeRitualStone3.name=Spurious Ritual Stone Tier3
+tile.largeRitualStone4.name=Spurious Ritual Stone Tier4
 
-tile.largeCabinetStone.name=Large Cabinet Stone
+tile.largeCabinetStone.name=Spurious Cabinet Stone
 
-tile.largeAccelerateStone.name=Large Accelerate Stone
-tile.largeAdvancedAccelerateStone.name=Large Advanced Accelerate Stone
+tile.largeAccelerateStone.name=Spurious Accelerate Stone
+tile.largeAdvancedAccelerateStone.name=Spurious Advanced Accelerate Stone
 
-tile.largeGrowthStone.name=Large Growth Stone
+tile.largeGrowthStone.name=Spurious Growth Stone
 
-tile.largeAdvancedGrowthStone.name=Large Advanced Growth Stone
+tile.largeAdvancedGrowthStone.name=Spurious Advanced Growth Stone
 
 tile.wEIHopper.name=WEI Hopper
 tile.eIHopper.name=EI Hopper
@@ -181,7 +184,8 @@ tile.rackManager.name=Rack Manager
 
 effect.retention=Effect Protection
 effect.stateProtection=Maintaining Health
-
+effect.fly=Fly
+effect.satiety=Satiety
 
 potion.effect.retention=Potion of Effect Protection
 potion.effect.retentionLong=Potion of Effect Protection

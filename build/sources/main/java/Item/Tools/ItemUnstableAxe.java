@@ -1,12 +1,11 @@
 package Item.Tools;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
 
-import ExperienceApple.ITooltip;
+import ExperienceApple.EAMain;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -20,12 +19,13 @@ import net.minecraft.item.ItemTool;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import scala.util.Random;
 
-public class ItemUnstableAxe extends ItemTool implements ITooltip {
+public class ItemUnstableAxe extends ItemTool {
 
 	private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(new Block[] { Blocks.PLANKS, Blocks.BOOKSHELF,
 			Blocks.LOG, Blocks.LOG2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN, Blocks.MELON_BLOCK,
@@ -70,24 +70,26 @@ public class ItemUnstableAxe extends ItemTool implements ITooltip {
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) {
 		List<Entity> entities = worldIn.loadedEntityList;
 		for (Entity entity : entities) {
-			if (playerIn.getDistance(entity) < 50) {
-				entity.setPosition(playerIn.posX, playerIn.posY, playerIn.posZ);
+			if (playerIn.getDistance(entity) < 50 && entity instanceof EntityLivingBase && entity != playerIn) {
+
+				double x = (-entity.posX + playerIn.posX) / 5;
+				double y = (-entity.posY + playerIn.posY) / 5;
+				double z = (-entity.posZ + playerIn.posZ) / 5;
+				entity.setVelocity(x, y, z);
+				if (!EAMain.particle) {
+					for (int i = 0; i < 10; i++) {
+						Random random = new Random();
+						worldIn.spawnParticle(EnumParticleTypes.END_ROD, entity.posX + random.nextFloat(),
+								entity.posY + random.nextFloat(), entity.posZ + random.nextFloat(),
+								0.5 - random.nextFloat(), 0.5 - random.nextFloat(), 0.5 - random.nextFloat());
+					}
+				}
 			}
 		}
 		worldIn.playSound(playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_ENDERMEN_TELEPORT,
 				SoundCategory.PLAYERS, 1, 1, true);
+
 		return new ActionResult<ItemStack>(EnumActionResult.PASS, playerIn.getHeldItem(handIn));
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

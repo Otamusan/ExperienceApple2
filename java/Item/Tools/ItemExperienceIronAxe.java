@@ -1,12 +1,10 @@
 package Item.Tools;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
 
-import ExperienceApple.ITooltip;
 import Item.ExperienceRepair;
 import Item.IExperienceRepair;
 import Util.ParticleUtil;
@@ -15,8 +13,8 @@ import net.minecraft.block.BlockLeaves;
 import net.minecraft.block.BlockLog;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,7 +29,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair, ITooltip {
+public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair {
 
 	int cooldown = 60;
 	int cost = 5;
@@ -51,12 +49,10 @@ public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair
 	}
 
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-		if (!GuiScreen.isShiftKeyDown())
-			return;
+	@Override
+	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(I18n.format("item.experienceIron.cooltime") + " : " + this.experienceRepair.getCooltime());
 		tooltip.add(I18n.format("item.experienceIron.cost") + " : " + this.experienceRepair.getCost());
-
 	}
 
 	@Override
@@ -69,13 +65,13 @@ public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair
 	@Override
 	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
 			EntityLivingBase entityLiving) {
+		ParticleUtil.blockRemaining(EnumParticleTypes.VILLAGER_HAPPY, world, pos, 5);
+
 		if (!entityLiving.isSneaking())
 			return false;
 		if (!(world.getBlockState(pos).getBlock() instanceof BlockLog)
 				&& !(world.getBlockState(pos).getBlock() instanceof BlockLeaves))
 			return false;
-		ParticleUtil.blockSurface(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 5);
-		ParticleUtil.blockRemaining(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 5);
 		cheinDestruction(pos, world, (EntityPlayer) entityLiving, world.getBlockState(pos).getBlock());
 		if (!world.isRemote && state.getBlockHardness(world, pos) != 0.0D) {
 			stack.damageItem(1, entityLiving);
@@ -177,15 +173,4 @@ public class ItemExperienceIronAxe extends ItemTool implements IExperienceRepair
 		return 0;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

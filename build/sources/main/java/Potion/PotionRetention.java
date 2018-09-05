@@ -19,7 +19,6 @@ public class PotionRetention extends Potion {
 
 	@Override
 	public void performEffect(EntityLivingBase entityLivingBaseIn, int p_76394_2_) {
-
 		Collection<PotionEffect> map = (Collection<PotionEffect>) entityLivingBaseIn.getActivePotionEffects();
 		int du = 0;
 		for (PotionEffect potionEffect : map) {

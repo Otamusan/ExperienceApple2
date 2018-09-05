@@ -23,8 +23,17 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 
 public class RitualRegister {
+	public static Ritual ritualExplode = new RitualExplode(new StonePosData(), "explode");
+	public static Ritual ritualBlockCut = new RitualBlockCut(new StonePosData(), "blockCut");
+	public static Ritual ritualCreateWater = new RitualCreateWater(new StonePosData(), "createWater");
+	public static Ritual ritualCreateLava = new RitualCreateLava(new StonePosData(), "createLava");
+	public static Ritual ritualInjection = new RitualInjectionCore(new StonePosData(), "injection");
+	public static Ritual ritualEggization = new RitualEggization(new StonePosData(), "eggization");
+	public static Ritual ritualSpawnerActivation = new RitualSpawnerActivation(new StonePosData(), "spawnerActivation");
+	public static Ritual ritualCollection = new RitualCollection(new StonePosData(), "collection");
+	public static Ritual ritualCraft = new RitualCraftCore(new StonePosData(), "ritualCraft");
+
 	public static void init() {
-		Ritual ritualExplode = new RitualExplode(new StonePosData(), "explode");
 		ritualExplode.setStoneBlock(0, 0, 0, tier1);
 		ritualExplode.setStoneBlock(0, 0, 1, tier1);
 		ritualExplode.setStoneBlock(0, 0, -1, tier1);
@@ -32,7 +41,6 @@ public class RitualRegister {
 		ritualExplode.setStoneBlock(1, 0, 0, tier1);
 		RitualRegistry.register(ritualExplode);
 
-		Ritual ritualBlockCut = new RitualBlockCut(new StonePosData(), "blockCut");
 		ritualBlockCut.setStoneBlock(0, -1, 1, tier1);
 		ritualBlockCut.setStoneBlock(1, -1, 0, tier1);
 		ritualBlockCut.setStoneBlock(0, -1, -1, tier1);
@@ -40,7 +48,6 @@ public class RitualRegister {
 		ritualBlockCut.setStoneBlock(0, 0, 0, tier1);
 		RitualRegistry.register(ritualBlockCut);
 
-		Ritual ritualCreateWater = new RitualCreateWater(new StonePosData(), "createWater");
 		ritualCreateWater.setStoneBlock(-1, 0, 1, tier1);
 		ritualCreateWater.setStoneBlock(1, 0, -1, tier1);
 		ritualCreateWater.setStoneBlock(-1, 0, -1, tier1);
@@ -48,7 +55,6 @@ public class RitualRegister {
 		ritualCreateWater.setStoneBlock(0, 0, 0, tier1);
 		RitualRegistry.register(ritualCreateWater);
 
-		Ritual ritualCreateLava = new RitualCreateLava(new StonePosData(), "createLava");
 		ritualCreateLava.setStoneBlock(-1, 0, 1, tier2);
 		ritualCreateLava.setStoneBlock(1, 0, -1, tier2);
 		ritualCreateLava.setStoneBlock(-1, 0, -1, tier2);
@@ -60,7 +66,6 @@ public class RitualRegister {
 		ritualCreateLava.setStoneBlock(-1, -1, 0, tier1);
 		RitualRegistry.register(ritualCreateLava);
 
-		Ritual ritualInjection = new RitualInjectionCore(new StonePosData(), "injection");
 		ritualInjection.setStoneBlock(0, 0, 0, tier2);
 		ritualInjection.setStoneBlock(1, 1, 0, tier2);
 		ritualInjection.setStoneBlock(0, 1, 1, tier2);
@@ -76,7 +81,6 @@ public class RitualRegister {
 		((RitualInjectionCore) ritualInjection).register.register("cabinetStone",
 				new RitualInjection(Blocks.END_STONE, BlockRegister.cabinetStone));
 
-		Ritual ritualEggization = new RitualEggization(new StonePosData(), "eggization");
 		ritualEggization.setStoneBlock(-1, 0, 1, tier1);
 		ritualEggization.setStoneBlock(1, 0, -1, tier1);
 		ritualEggization.setStoneBlock(-1, 0, -1, tier1);
@@ -90,7 +94,6 @@ public class RitualRegister {
 
 		RitualRegistry.register(ritualEggization);
 
-		Ritual ritualSpawnerActivation = new RitualSpawnerActivation(new StonePosData(), "spawnerActivation");
 		ritualSpawnerActivation.setStoneBlock(-1, 2, 1, tier2);
 		ritualSpawnerActivation.setStoneBlock(1, 2, -1, tier2);
 		ritualSpawnerActivation.setStoneBlock(-1, 2, -1, tier2);
@@ -102,7 +105,6 @@ public class RitualRegister {
 		ritualSpawnerActivation.setStoneBlock(1, 0, 1, tier3);
 		RitualRegistry.register(ritualSpawnerActivation);
 
-		Ritual ritualCollection = new RitualCollection(new StonePosData(), "collection");
 		ritualCollection.setStoneBlock(0, 0, 0, tier1);
 		ritualCollection.setStoneBlock(-2, -1, 2, tier1);
 		ritualCollection.setStoneBlock(-2, 1, 2, tier1);
@@ -117,7 +119,6 @@ public class RitualRegister {
 		ritualCollection.setStoneBlock(2, 1, 2, tier1);
 		RitualRegistry.register(ritualCollection);
 
-		Ritual ritualCraft = new RitualCraftCore(new StonePosData(), "ritualCraft");
 		ritualCraft.setStoneBlock(-1, 0, -1, tier2);
 		ritualCraft.setStoneBlock(-1, 0, 0, tier2);
 		ritualCraft.setStoneBlock(-1, 0, 1, tier2);
@@ -185,5 +186,62 @@ public class RitualRegister {
 		growthStone.setIteminList(new ItemStack(ItemRegister.ashOfOrder, 1, 0));
 		growthStone.setIteminList(new ItemStack(ItemRegister.universalNutrient, 4, 0));
 		((RitualCraftCore) ritualCraft).register.register("GrowthStone", growthStone);
+
+		RitualCraft AEIAxe = new RitualCraft(new ArrayList<ItemStack>(),
+				new ItemStack(ItemRegister.advancedExperienceIronAxe, 1));
+		AEIAxe.setIteminList(new ItemStack(ItemRegister.pureExperienceIngot, 1));
+		AEIAxe.setIteminList(new ItemStack(ItemRegister.fragmentOfTheBrain, 1));
+		AEIAxe.setIteminList(new ItemStack(ItemRegister.experienceIronAxe, 1));
+		((RitualCraftCore) ritualCraft).register.register("AEIAxe", AEIAxe);
+
+		RitualCraft AEIPickaxe = new RitualCraft(new ArrayList<ItemStack>(),
+				new ItemStack(ItemRegister.advancedExperienceIronPickaxe, 1));
+		AEIPickaxe.setIteminList(new ItemStack(ItemRegister.pureExperienceIngot, 1));
+		AEIPickaxe.setIteminList(new ItemStack(ItemRegister.fragmentOfTheBrain, 1));
+		AEIPickaxe.setIteminList(new ItemStack(ItemRegister.experienceIronPickaxe, 1));
+		((RitualCraftCore) ritualCraft).register.register("AEIPickaxe", AEIPickaxe);
+
+		RitualCraft AEISword = new RitualCraft(new ArrayList<ItemStack>(),
+				new ItemStack(ItemRegister.advancedExperienceIronSword, 1));
+		AEISword.setIteminList(new ItemStack(ItemRegister.pureExperienceIngot, 1));
+		AEISword.setIteminList(new ItemStack(ItemRegister.fragmentOfTheBrain, 1));
+		AEISword.setIteminList(new ItemStack(ItemRegister.experienceIronSword, 1));
+		((RitualCraftCore) ritualCraft).register.register("AEISword", AEISword);
+
+		RitualCraft AEIShovel = new RitualCraft(new ArrayList<ItemStack>(),
+				new ItemStack(ItemRegister.advancedExperienceIronShovel, 1));
+		AEIShovel.setIteminList(new ItemStack(ItemRegister.pureExperienceIngot, 1));
+		AEIShovel.setIteminList(new ItemStack(ItemRegister.fragmentOfTheBrain, 1));
+		AEIShovel.setIteminList(new ItemStack(ItemRegister.experienceIronShovel, 1));
+		((RitualCraftCore) ritualCraft).register.register("AEIShovel", AEIShovel);
+
+		RitualCraft AEIHelmet = new RitualCraft(new ArrayList<ItemStack>(),
+				new ItemStack(ItemRegister.advancedExperienceIronHelmet, 1));
+		AEIHelmet.setIteminList(new ItemStack(ItemRegister.pureExperienceIngot, 1));
+		AEIHelmet.setIteminList(new ItemStack(ItemRegister.fragmentOfTheBrain, 1));
+		AEIHelmet.setIteminList(new ItemStack(ItemRegister.experienceIronHelmet, 1));
+		((RitualCraftCore) ritualCraft).register.register("AEIHelmet", AEIHelmet);
+
+		RitualCraft AEIChestplate = new RitualCraft(new ArrayList<ItemStack>(),
+				new ItemStack(ItemRegister.advancedExperienceIronChestplate, 1));
+		AEIChestplate.setIteminList(new ItemStack(ItemRegister.pureExperienceIngot, 1));
+		AEIChestplate.setIteminList(new ItemStack(ItemRegister.fragmentOfTheBrain, 1));
+		AEIChestplate.setIteminList(new ItemStack(ItemRegister.experienceIronChestplate, 1));
+		((RitualCraftCore) ritualCraft).register.register("AEIChestplate", AEIChestplate);
+
+		RitualCraft AEILeggings = new RitualCraft(new ArrayList<ItemStack>(),
+				new ItemStack(ItemRegister.advancedExperienceIronLeggings, 1));
+		AEILeggings.setIteminList(new ItemStack(ItemRegister.pureExperienceIngot, 1));
+		AEILeggings.setIteminList(new ItemStack(ItemRegister.fragmentOfTheBrain, 1));
+		AEILeggings.setIteminList(new ItemStack(ItemRegister.experienceIronLeggings, 1));
+		((RitualCraftCore) ritualCraft).register.register("AEILeggings", AEILeggings);
+
+		RitualCraft AEIBoots = new RitualCraft(new ArrayList<ItemStack>(),
+				new ItemStack(ItemRegister.advancedExperienceIronBoots, 1));
+		AEIBoots.setIteminList(new ItemStack(ItemRegister.pureExperienceIngot, 1));
+		AEIBoots.setIteminList(new ItemStack(ItemRegister.fragmentOfTheBrain, 1));
+		AEIBoots.setIteminList(new ItemStack(ItemRegister.experienceIronBoots, 1));
+		((RitualCraftCore) ritualCraft).register.register("AEIBoots", AEIBoots);
+
 	}
 }

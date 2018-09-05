@@ -1,12 +1,9 @@
 package Item;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import ExperienceApple.ITooltip;
 import Util.ExperienceUtil;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +14,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemRegisteredExperienceApple extends Item implements ITooltip {
+public class ItemRegisteredExperienceApple extends Item {
 
 	@Override
 	@SideOnly(Side.CLIENT)
@@ -27,8 +24,6 @@ public class ItemRegisteredExperienceApple extends Item implements ITooltip {
 
 	@Override
 	public void addInformation(ItemStack itemstack, World world, List<String> tooltip, ITooltipFlag flagIn) {
-		if (!GuiScreen.isShiftKeyDown())
-			return;
 		NBTTagCompound nbt = itemstack.getTagCompound();
 		if (nbt != null) {
 			if (nbt.getString("registedPlayer") == "") {
@@ -47,18 +42,6 @@ public class ItemRegisteredExperienceApple extends Item implements ITooltip {
 								world.getPlayerEntityByUUID(UUID.fromString(nbt.getString("registedPlayer")))));
 			}
 		}
-	}
-
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
 	}
 
 	public static EntityPlayer getPlayer(World world, ItemStack stack) {

@@ -1,11 +1,7 @@
 package Blocks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Nonnull;
 
-import ExperienceApple.ITooltip;
 import ExperienceApple.Register.RecipeRegister;
 import Rituals.EnumRitualStones;
 import Rituals.RitualCore;
@@ -24,7 +20,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockRitualGlass extends BlockRitual implements ITooltip {
+public class BlockRitualGlass extends BlockRitual {
 
 	public BlockRitualGlass(Material materialIn, int particleAmount, EnumRitualStones tier) {
 		super(materialIn, particleAmount, tier);
@@ -59,18 +55,6 @@ public class BlockRitualGlass extends BlockRitual implements ITooltip {
 	@Override
 	public BlockRenderLayer getBlockLayer() {
 		return BlockRenderLayer.TRANSLUCENT;
-	}
-
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
 	}
 
 }

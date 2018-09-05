@@ -1,11 +1,7 @@
 package Item.Tools;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.common.collect.Sets;
 
-import ExperienceApple.ITooltip;
 import ExperienceApple.Register.ItemRegister;
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
@@ -24,7 +20,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class ItemFeatherSword extends ItemTool implements ITooltip {
+public class ItemFeatherSword extends ItemTool {
 
 	public ItemFeatherSword() {
 		super(2, 114510, ItemRegister.FToolMaterial, Sets.newHashSet(new Block[] { Blocks.CAKE }));
@@ -34,7 +30,6 @@ public class ItemFeatherSword extends ItemTool implements ITooltip {
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
 		{
-
 			for (EntityLivingBase entitylivingbase : player.world.getEntitiesWithinAABB(EntityLivingBase.class,
 					entity.getEntityBoundingBox().expand(1.0D, 0.25D, 1.0D))) {
 				if (entitylivingbase != player && entitylivingbase != entity && !player.isOnSameTeam(entitylivingbase)
@@ -46,7 +41,6 @@ public class ItemFeatherSword extends ItemTool implements ITooltip {
 					entity.hurtResistantTime = 0;
 				}
 			}
-
 			player.world.playSound((EntityPlayer) null, player.posX, player.posY, player.posZ,
 					SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, player.getSoundCategory(), 1.0F, 1.0F);
 			player.spawnSweepParticles();
@@ -90,15 +84,4 @@ public class ItemFeatherSword extends ItemTool implements ITooltip {
 		}
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

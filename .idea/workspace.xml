@@ -1,12 +1,243 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4c11da15-f372-47f0-8c91-0c5ba76b8765" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/java/Util/ItemUtil.java" afterPath="" />
+    <list default="true" id="513189ba-1ec7-4dc7-9046-be85a0d45826" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/ExperienceApple/ITooltip.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/Item/SpellPapers/ItemAcceleratedSpellPaper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/Item/SpellPapers/ItemFlyingSpellPaper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/classes/main/Item/SpellPapers/ItemSatietySpellPaper.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/libs/modid-1.0-sources.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/ITooltip.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/SpellPapers/ItemAcceleratedSpellPaper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/SpellPapers/ItemFlyingSpellPaper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/SpellPapers/ItemSatietySpellPaper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/java/ExperienceApple/ITooltip.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/java/Item/SpellPapers/ItemAcceleratedSpellPaper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/java/Item/SpellPapers/ItemFlyingSpellPaper.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/java/Item/SpellPapers/ItemSatietySpellPaper.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/java/Potion/PotionFoodSupply.java" afterPath="$PROJECT_DIR$/java/Potion/PotionSatiety.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/fileSnapshotsToTreeSnapshotsIndex.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/treeSnapshotUsage.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/treeSnapshotUsage.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/treeSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.14/taskArtifacts/treeSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockAccelerateStone.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockAccelerateStone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockAwakenedSpawner.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockAwakenedSpawner.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockCabinetStone.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockCabinetStone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockClearGlass.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockClearGlass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockCodensedExperienceOre.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockCodensedExperienceOre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockExperienceOre.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockExperienceOre.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockGrowthStone.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockGrowthStone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockHighFrequencyRedStone.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockHighFrequencyRedStone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockMod.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockMod.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockPureExperience.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockPureExperience.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockRackManager.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockRackManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockRitual.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockRitual.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockRitualGlass.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockRitualGlass.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockRitualLauncher.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockRitualLauncher.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockRitualStone.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockRitualStone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Blocks/BlockStorageRack.class" afterPath="$PROJECT_DIR$/build/classes/main/Blocks/BlockStorageRack.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Client/RepairCraftingEvent.class" afterPath="$PROJECT_DIR$/build/classes/main/Client/RepairCraftingEvent.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Client/TooltipHandler.class" afterPath="$PROJECT_DIR$/build/classes/main/Client/TooltipHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Common/DeathEnderDragon.class" afterPath="$PROJECT_DIR$/build/classes/main/Common/DeathEnderDragon.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Common/FlyingSpellPaper/HasItemUpdate.class" afterPath="$PROJECT_DIR$/build/classes/main/Common/FlyingSpellPaper/HasItemUpdate.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ExperienceApple/EAMain.class" afterPath="$PROJECT_DIR$/build/classes/main/ExperienceApple/EAMain.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ExperienceApple/Register/ItemRegister.class" afterPath="$PROJECT_DIR$/build/classes/main/ExperienceApple/Register/ItemRegister.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ExperienceApple/Register/PotionRegister.class" afterPath="$PROJECT_DIR$/build/classes/main/ExperienceApple/Register/PotionRegister.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ExperienceApple/Register/RecipeRegister.class" afterPath="$PROJECT_DIR$/build/classes/main/ExperienceApple/Register/RecipeRegister.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/ExperienceApple/Register/RitualRegister.class" afterPath="$PROJECT_DIR$/build/classes/main/ExperienceApple/Register/RitualRegister.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Armors/ItemAdvancedExperienceIronArmor.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Armors/ItemAdvancedExperienceIronArmor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Armors/ItemExperienceIronArmor.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Armors/ItemExperienceIronArmor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Armors/ItemWeakExperienceIronArmor.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Armors/ItemWeakExperienceIronArmor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemAshIngot.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemAshIngot.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemAshOfBalance.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemAshOfBalance.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemAshOfEntropy.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemAshOfEntropy.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemAshOfOrder.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemAshOfOrder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemCompressed.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemCompressed.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemDebug.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemDebug.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemEnchantmentPearl.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemEnchantmentPearl.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemExperienceApple.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemExperienceApple.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemFragmentOfTheBrain.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemFragmentOfTheBrain.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemGravityCompressor.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemGravityCompressor.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemMod.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemMod.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemModFood.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemModFood.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemRegisteredExperienceApple.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemRegisteredExperienceApple.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemRitualAssembler$1.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemRitualAssembler$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemRitualAssembler.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemRitualAssembler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemSuperDye.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemSuperDye.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemTimeSand.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemTimeSand.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemUniversalNutrient.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemUniversalNutrient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/ItemWarpStone.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/ItemWarpStone.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemAdvancedExperienceIronAxe.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemAdvancedExperienceIronAxe.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemAdvancedExperienceIronPickaxe.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemAdvancedExperienceIronPickaxe.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemAdvancedExperienceIronShovel.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemAdvancedExperienceIronShovel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemAdvancedExperienceIronSword.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemAdvancedExperienceIronSword.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemAtomicCutter.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemAtomicCutter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemExperienceIronAxe.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemExperienceIronAxe.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemExperienceIronPickaxe.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemExperienceIronPickaxe.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemExperienceIronShovel.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemExperienceIronShovel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemExperienceIronSword.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemExperienceIronSword.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemFeatherSword.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemFeatherSword.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemMagicBow.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemMagicBow.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemUnstableAxe.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemUnstableAxe.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemWeakExperienceIronAxe.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemWeakExperienceIronAxe.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemWeakExperienceIronPickaxe.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemWeakExperienceIronPickaxe.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemWeakExperienceIronShovel.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemWeakExperienceIronShovel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemWeakExperienceIronSword.class" afterPath="$PROJECT_DIR$/build/classes/main/Item/Tools/ItemWeakExperienceIronSword.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Potion/PotionRetention.class" afterPath="$PROJECT_DIR$/build/classes/main/Potion/PotionRetention.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Recipes/EACraft.class" afterPath="$PROJECT_DIR$/build/classes/main/Recipes/EACraft.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Rituals/Rituals/RitualCraft/RitualCraftRegister.class" afterPath="$PROJECT_DIR$/build/classes/main/Rituals/Rituals/RitualCraft/RitualCraftRegister.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/Rituals/Rituals/RitualInjection/RitualInjectionRegister.class" afterPath="$PROJECT_DIR$/build/classes/main/Rituals/Rituals/RitualInjection/RitualInjectionRegister.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/TileEntity/TileRackManager$TileandInt.class" afterPath="$PROJECT_DIR$/build/classes/main/TileEntity/TileRackManager$TileandInt.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/classes/main/TileEntity/TileRackManager.class" afterPath="$PROJECT_DIR$/build/classes/main/TileEntity/TileRackManager.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/assets/experienceapple2/lang/ja_JP.lang" afterPath="$PROJECT_DIR$/build/resources/main/assets/experienceapple2/lang/ja_JP.lang" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/assets/experienceapple2/textures/items/enchantmentpearl.png" afterPath="$PROJECT_DIR$/build/resources/main/assets/experienceapple2/textures/items/enchantmentpearl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/retromapping/retromappedReplacedMain.jar" afterPath="$PROJECT_DIR$/build/retromapping/retromappedReplacedMain.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/experienceapple2/lang/ja_JP.lang" afterPath="$PROJECT_DIR$/resources/assets/experienceapple2/lang/ja_JP.lang" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/experienceapple2/textures/items/enchantmentpearl.png" afterPath="$PROJECT_DIR$/resources/assets/experienceapple2/textures/items/enchantmentpearl.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/gradle.log" afterPath="$PROJECT_DIR$/.gradle/gradle.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/resources/main/assets/experienceapple2/lang/en_US.lang" afterPath="$PROJECT_DIR$/build/resources/main/assets/experienceapple2/lang/en_US.lang" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/retromapping/replacedMain.rangemap" afterPath="$PROJECT_DIR$/build/retromapping/replacedMain.rangemap" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockAccelerateStone.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockAccelerateStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockAwakenedSpawner.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockAwakenedSpawner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockCabinetStone.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockCabinetStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockClearGlass.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockClearGlass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockCodensedExperienceOre.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockCodensedExperienceOre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockExperienceOre.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockExperienceOre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockGrowthStone.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockGrowthStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockHighFrequencyRedStone.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockHighFrequencyRedStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockMod.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockMod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockPureExperience.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockPureExperience.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockRackManager.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockRackManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockRitual.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockRitual.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockRitualGlass.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockRitualGlass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockRitualLauncher.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockRitualLauncher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockRitualStone.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockRitualStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockStorageRack.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Blocks/BlockStorageRack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Client/RepairCraftingEvent.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Client/RepairCraftingEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Client/TooltipHandler.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Client/TooltipHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Common/DeathEnderDragon.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Common/DeathEnderDragon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Common/FlyingSpellPaper/HasItemUpdate.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Common/FlyingSpellPaper/HasItemUpdate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/EAMain.java" afterPath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/EAMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/Register/ItemRegister.java" afterPath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/Register/ItemRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/Register/PotionRegister.java" afterPath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/Register/PotionRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/Register/RecipeRegister.java" afterPath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/Register/RecipeRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/Register/RitualRegister.java" afterPath="$PROJECT_DIR$/build/sources/main/java/ExperienceApple/Register/RitualRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Armors/ItemAdvancedExperienceIronArmor.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Armors/ItemAdvancedExperienceIronArmor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Armors/ItemExperienceIronArmor.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Armors/ItemExperienceIronArmor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Armors/ItemWeakExperienceIronArmor.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Armors/ItemWeakExperienceIronArmor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemAshIngot.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemAshIngot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemAshOfBalance.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemAshOfBalance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemAshOfEntropy.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemAshOfEntropy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemAshOfOrder.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemAshOfOrder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemCompressed.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemCompressed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemDebug.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemDebug.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemEnchantmentPearl.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemEnchantmentPearl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemExperienceApple.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemExperienceApple.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemFragmentOfTheBrain.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemFragmentOfTheBrain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemGravityCompressor.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemGravityCompressor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemMod.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemMod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemModFood.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemModFood.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemRegisteredExperienceApple.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemRegisteredExperienceApple.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemRitualAssembler.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemRitualAssembler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemSuperDye.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemSuperDye.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemTimeSand.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemTimeSand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemUniversalNutrient.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemUniversalNutrient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/ItemWarpStone.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/ItemWarpStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemAdvancedExperienceIronAxe.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemAdvancedExperienceIronAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemAdvancedExperienceIronPickaxe.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemAdvancedExperienceIronPickaxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemAdvancedExperienceIronShovel.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemAdvancedExperienceIronShovel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemAdvancedExperienceIronSword.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemAdvancedExperienceIronSword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemAtomicCutter.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemAtomicCutter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemExperienceIronAxe.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemExperienceIronAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemExperienceIronPickaxe.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemExperienceIronPickaxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemExperienceIronShovel.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemExperienceIronShovel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemExperienceIronSword.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemExperienceIronSword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemFeatherSword.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemFeatherSword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemMagicBow.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemMagicBow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemUnstableAxe.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemUnstableAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemWeakExperienceIronAxe.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemWeakExperienceIronAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemWeakExperienceIronPickaxe.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemWeakExperienceIronPickaxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemWeakExperienceIronShovel.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemWeakExperienceIronShovel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemWeakExperienceIronSword.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Item/Tools/ItemWeakExperienceIronSword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Potion/PotionRetention.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Potion/PotionRetention.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Recipes/EACraft.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Recipes/EACraft.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Rituals/Rituals/RitualCraft/RitualCraftRegister.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Rituals/Rituals/RitualCraft/RitualCraftRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/Rituals/Rituals/RitualInjection/RitualInjectionRegister.java" afterPath="$PROJECT_DIR$/build/sources/main/java/Rituals/Rituals/RitualInjection/RitualInjectionRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/sources/main/java/TileEntity/TileRackManager.java" afterPath="$PROJECT_DIR$/build/sources/main/java/TileEntity/TileRackManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/taskLogs/extractRangemapReplacedMain.log" afterPath="$PROJECT_DIR$/build/taskLogs/extractRangemapReplacedMain.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/taskLogs/retromapReplacedMain.log" afterPath="$PROJECT_DIR$/build/taskLogs/retromapReplacedMain.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockAccelerateStone.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockAccelerateStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockAwakenedSpawner.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockAwakenedSpawner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockCabinetStone.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockCabinetStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockClearGlass.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockClearGlass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockCodensedExperienceOre.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockCodensedExperienceOre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockExperienceOre.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockExperienceOre.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockGrowthStone.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockGrowthStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockHighFrequencyRedStone.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockHighFrequencyRedStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockMod.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockMod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockPureExperience.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockPureExperience.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockRackManager.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockRackManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockRitual.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockRitual.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockRitualGlass.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockRitualGlass.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockRitualLauncher.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockRitualLauncher.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockRitualStone.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockRitualStone.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Blocks/BlockStorageRack.java" afterPath="$PROJECT_DIR$/java/Blocks/BlockStorageRack.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Common/CommonProxy.java" afterPath="$PROJECT_DIR$/java/Common/CommonProxy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Rituals/Rituals/RitualCollection.java" afterPath="$PROJECT_DIR$/java/Rituals/Rituals/RitualCollection.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/TileEntity/TileStorageRack.java" afterPath="$PROJECT_DIR$/java/TileEntity/TileStorageRack.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Client/RepairCraftingEvent.java" afterPath="$PROJECT_DIR$/java/Client/RepairCraftingEvent.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Client/TooltipHandler.java" afterPath="$PROJECT_DIR$/java/Client/TooltipHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Common/DeathEnderDragon.java" afterPath="$PROJECT_DIR$/java/Common/DeathEnderDragon.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Common/FlyingSpellPaper/HasItemUpdate.java" afterPath="$PROJECT_DIR$/java/Common/FlyingSpellPaper/HasItemUpdate.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/ExperienceApple/EAMain.java" afterPath="$PROJECT_DIR$/java/ExperienceApple/EAMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/ExperienceApple/Register/ItemRegister.java" afterPath="$PROJECT_DIR$/java/ExperienceApple/Register/ItemRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/ExperienceApple/Register/PotionRegister.java" afterPath="$PROJECT_DIR$/java/ExperienceApple/Register/PotionRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/ExperienceApple/Register/RecipeRegister.java" afterPath="$PROJECT_DIR$/java/ExperienceApple/Register/RecipeRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/ExperienceApple/Register/RitualRegister.java" afterPath="$PROJECT_DIR$/java/ExperienceApple/Register/RitualRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Armors/ItemAdvancedExperienceIronArmor.java" afterPath="$PROJECT_DIR$/java/Item/Armors/ItemAdvancedExperienceIronArmor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Armors/ItemExperienceIronArmor.java" afterPath="$PROJECT_DIR$/java/Item/Armors/ItemExperienceIronArmor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Armors/ItemWeakExperienceIronArmor.java" afterPath="$PROJECT_DIR$/java/Item/Armors/ItemWeakExperienceIronArmor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemAshIngot.java" afterPath="$PROJECT_DIR$/java/Item/ItemAshIngot.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemAshOfBalance.java" afterPath="$PROJECT_DIR$/java/Item/ItemAshOfBalance.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemAshOfEntropy.java" afterPath="$PROJECT_DIR$/java/Item/ItemAshOfEntropy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemAshOfOrder.java" afterPath="$PROJECT_DIR$/java/Item/ItemAshOfOrder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemCompressed.java" afterPath="$PROJECT_DIR$/java/Item/ItemCompressed.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemDebug.java" afterPath="$PROJECT_DIR$/java/Item/ItemDebug.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemEnchantmentPearl.java" afterPath="$PROJECT_DIR$/java/Item/ItemEnchantmentPearl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemExperienceApple.java" afterPath="$PROJECT_DIR$/java/Item/ItemExperienceApple.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemFragmentOfTheBrain.java" afterPath="$PROJECT_DIR$/java/Item/ItemFragmentOfTheBrain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemGravityCompressor.java" afterPath="$PROJECT_DIR$/java/Item/ItemGravityCompressor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemMod.java" afterPath="$PROJECT_DIR$/java/Item/ItemMod.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemModFood.java" afterPath="$PROJECT_DIR$/java/Item/ItemModFood.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemRegisteredExperienceApple.java" afterPath="$PROJECT_DIR$/java/Item/ItemRegisteredExperienceApple.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemRitualAssembler.java" afterPath="$PROJECT_DIR$/java/Item/ItemRitualAssembler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemSuperDye.java" afterPath="$PROJECT_DIR$/java/Item/ItemSuperDye.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemTimeSand.java" afterPath="$PROJECT_DIR$/java/Item/ItemTimeSand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemUniversalNutrient.java" afterPath="$PROJECT_DIR$/java/Item/ItemUniversalNutrient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/ItemWarpStone.java" afterPath="$PROJECT_DIR$/java/Item/ItemWarpStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemAdvancedExperienceIronAxe.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemAdvancedExperienceIronAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemAdvancedExperienceIronPickaxe.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemAdvancedExperienceIronPickaxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemAdvancedExperienceIronShovel.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemAdvancedExperienceIronShovel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemAdvancedExperienceIronSword.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemAdvancedExperienceIronSword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemAtomicCutter.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemAtomicCutter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemExperienceIronAxe.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemExperienceIronAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemExperienceIronPickaxe.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemExperienceIronPickaxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemExperienceIronShovel.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemExperienceIronShovel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemExperienceIronSword.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemExperienceIronSword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemFeatherSword.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemFeatherSword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemMagicBow.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemMagicBow.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemUnstableAxe.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemUnstableAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemWeakExperienceIronAxe.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemWeakExperienceIronAxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemWeakExperienceIronPickaxe.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemWeakExperienceIronPickaxe.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemWeakExperienceIronShovel.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemWeakExperienceIronShovel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Item/Tools/ItemWeakExperienceIronSword.java" afterPath="$PROJECT_DIR$/java/Item/Tools/ItemWeakExperienceIronSword.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Recipes/EACraft.java" afterPath="$PROJECT_DIR$/java/Recipes/EACraft.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Rituals/Rituals/RitualCraft/RitualCraftRegister.java" afterPath="$PROJECT_DIR$/java/Rituals/Rituals/RitualCraft/RitualCraftRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/Rituals/Rituals/RitualInjection/RitualInjectionRegister.java" afterPath="$PROJECT_DIR$/java/Rituals/Rituals/RitualInjection/RitualInjectionRegister.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/java/TileEntity/TileRackManager.java" afterPath="$PROJECT_DIR$/java/TileEntity/TileRackManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/assets/experienceapple2/lang/en_US.lang" afterPath="$PROJECT_DIR$/resources/assets/experienceapple2/lang/en_US.lang" />
     </list>
     <ignored path="$PROJECT_DIR$/bin/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,10 +252,31 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="ExperienceApple2" />
+    <favorites_list name="ExperienceApple2 - 1.12.2" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="BlockRegister.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ExperienceApple/Register/BlockRegister.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-721">
+              <caret line="35" column="48" lean-forward="true" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EACraftingEvent.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/java/Client/EACraftingEvent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,23 +307,55 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ExperienceApple2" />
+              <option name="myItemId" value="ExperienceApple2 - 1.12.2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ExperienceApple2" />
+              <option name="myItemId" value="ExperienceApple2 - 1.12.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExperienceApple2 - 1.12.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExperienceApple2 - 1.12.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExperienceApple2 - 1.12.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExperienceApple2 - 1.12.2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Client" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="RunManager">
@@ -80,61 +364,6 @@
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
       <option name="PROGRAM_PARAMETERS" />
       <predefined_log_file id="idea.log" enabled="true" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
-    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
-      <module name="" />
-      <option name="TESTING_TYPE" value="0" />
-      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
-      <option name="METHOD_NAME" value="" />
-      <option name="CLASS_NAME" value="" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="EXTRA_OPTIONS" value="" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
       <method />
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -160,22 +389,6 @@
       <envs />
       <method />
     </configuration>
-    <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list />
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <method />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -195,52 +408,6 @@
       </option>
       <envs />
       <patterns />
-      <method />
-    </configuration>
-    <configuration default="true" type="JarApplication" factoryName="JAR Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="Java Scratch" factoryName="Java Scratch">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="SCRATCH_FILE_ID" value="0" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ExperienceApple2" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="filePath" />
-      <option name="vmParameters" />
-      <option name="alternativeJrePath" />
-      <option name="programParameters" />
-      <option name="passParentEnvs" value="true" />
-      <option name="workingDirectory" />
-      <option name="isAlternativeJrePathEnabled" value="false" />
-      <envs />
       <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
@@ -285,11 +452,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4c11da15-f372-47f0-8c91-0c5ba76b8765" name="Default" comment="" />
-      <created>1521902232796</created>
+      <changelist id="513189ba-1ec7-4dc7-9046-be85a0d45826" name="Default" comment="" />
+      <created>1526736353490</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1521902232796</updated>
+      <updated>1526736353490</updated>
     </task>
     <servers />
   </component>
@@ -297,33 +464,33 @@
     <frame x="260" y="20" width="1400" height="1000" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -334,10 +501,33 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/java/Blocks/BlockAccelerateStone.java">
+    <entry file="file://$PROJECT_DIR$/java/ExperienceApple/EAMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="510">
+          <caret line="50" column="34" lean-forward="true" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/Client/ClientProxy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="20" column="5" lean-forward="true" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ExperienceApple/Register/BlockRegister.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-721">
+          <caret line="35" column="48" lean-forward="true" selection-start-line="35" selection-start-column="48" selection-end-line="35" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java/Client/EACraftingEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="29" column="32" lean-forward="false" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
           <folding />
         </state>
       </provider>

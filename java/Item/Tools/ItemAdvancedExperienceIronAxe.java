@@ -1,12 +1,10 @@
 package Item.Tools;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
 import com.google.common.collect.Sets;
 
-import ExperienceApple.ITooltip;
 import Util.ParticleUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLeaves;
@@ -29,10 +27,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemAdvancedExperienceIronAxe extends ItemTool implements ITooltip {
+public class ItemAdvancedExperienceIronAxe extends ItemTool {
 
-	public static int cooldown = 0;
-	public int range = 3;
 	private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(new Block[] { Blocks.PLANKS, Blocks.BOOKSHELF,
 			Blocks.LOG, Blocks.LOG2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN, Blocks.MELON_BLOCK,
 			Blocks.LADDER, Blocks.WOODEN_BUTTON, Blocks.WOODEN_PRESSURE_PLATE });
@@ -58,7 +54,6 @@ public class ItemAdvancedExperienceIronAxe extends ItemTool implements ITooltip 
 		if (!(world.getBlockState(pos).getBlock() instanceof BlockLog)
 				&& !(world.getBlockState(pos).getBlock() instanceof BlockLeaves))
 			return false;
-		ParticleUtil.blockSurface(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 5);
 		ParticleUtil.blockRemaining(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 5);
 		cheinDestruction(pos, world, (EntityPlayer) entityLiving, world.getBlockState(pos).getBlock());
 		world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE,
@@ -164,17 +159,5 @@ public class ItemAdvancedExperienceIronAxe extends ItemTool implements ITooltip 
 	@SideOnly(Side.CLIENT)
 	public boolean hasEffect(ItemStack stack) {
 		return true;
-	}
-
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
 	}
 }

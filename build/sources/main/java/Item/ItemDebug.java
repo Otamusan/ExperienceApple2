@@ -1,9 +1,5 @@
 package Item;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ExperienceApple.ITooltip;
 import Util.ParticleUtil;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -17,7 +13,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemDebug extends Item implements ITooltip {
+public class ItemDebug extends Item {
 	@Override
 	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
 			EntityLivingBase entityLiving) {
@@ -29,17 +25,5 @@ public class ItemDebug extends Item implements ITooltip {
 	public EnumActionResult onItemUse(ItemStack stack, EntityPlayer playerIn, World world, BlockPos pos, EnumHand hand,
 			EnumFacing facing, float hitX, float hitY, float hitZ) {
 		return EnumActionResult.SUCCESS;
-	}
-
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
 	}
 }

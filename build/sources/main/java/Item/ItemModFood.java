@@ -1,13 +1,9 @@
 package Item;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ExperienceApple.ITooltip;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 
-public class ItemModFood extends ItemFood implements ITooltip {
+public class ItemModFood extends ItemFood {
 
 	private int speed;
 
@@ -16,19 +12,8 @@ public class ItemModFood extends ItemFood implements ITooltip {
 		this.speed = speed;
 	}
 
-	private List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
 	public int getMaxItemUseDuration(ItemStack stack) {
-		return 4;
+		return speed;
 	}
 
-	@Override
-	public void addTooltip(String str) {
-		this.Tooltip.add(str);
-	}
 }

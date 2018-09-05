@@ -21,9 +21,7 @@ import Item.ItemWarpStone;
 import Item.Armors.ItemAdvancedExperienceIronArmor;
 import Item.Armors.ItemExperienceIronArmor;
 import Item.Armors.ItemWeakExperienceIronArmor;
-import Item.SpellPapers.ItemAcceleratedSpellPaper;
-import Item.SpellPapers.ItemFlyingSpellPaper;
-import Item.SpellPapers.ItemSatietySpellPaper;
+import Item.SpellPapers.ItemSpellPapers;
 import Item.Tools.ItemAdvancedExperienceIronAxe;
 import Item.Tools.ItemAdvancedExperienceIronPickaxe;
 import Item.Tools.ItemAdvancedExperienceIronShovel;
@@ -78,9 +76,9 @@ public class ItemRegister {
 	public static final Item ashOfOrder = new ItemAshOfOrder().setMaxStackSize(1).setMaxDamage(10000);
 	public static final Item orderIngot = new ItemAshIngot();
 
-	public static final Item flyingSpellPaper = new ItemFlyingSpellPaper(5).setMaxStackSize(1);
-	public static final Item satietySpellPaper = new ItemSatietySpellPaper(50).setMaxStackSize(1);
-	public static final Item acceleratedSpellPaper = new ItemAcceleratedSpellPaper().setMaxStackSize(1);
+	public static final Item flyingSpellPaper = new ItemSpellPapers(PotionRegister.potionFly, 5, 0).setMaxStackSize(1);
+	public static final Item satietySpellPaper = new ItemSpellPapers(PotionRegister.potionSatiety, 1, 0)
+			.setMaxStackSize(1);
 
 	public static final Item warpStone = new ItemWarpStone();
 
@@ -158,6 +156,7 @@ public class ItemRegister {
 		// ((ITooltip) experienceIronIngot).addTooltip("114514");
 
 		Fside = side;
+
 		register(ashOfEntropy, "ashOfEntropy");
 		register(entropyIngot, "entropyIngot");
 		register(ashOfBalance, "ashOfBalance");
@@ -244,11 +243,10 @@ public class ItemRegister {
 		OreDictionary.registerOre("dyeMagenta", superDye);
 		OreDictionary.registerOre("dyeOrange", superDye);
 		OreDictionary.registerOre("dyeWhite", superDye);
+
 	}
 
 	public static void register(Item item, String str) {
-		// GameRegistry.register(item, new ResourceLocation(EAMain.MOD_ID + ":"
-		// + str));
 		item.setRegistryName(new ResourceLocation(EAMain.MOD_ID + ":" + str));
 		ForgeRegistries.ITEMS.register(item);
 		if (Fside == Side.CLIENT) {

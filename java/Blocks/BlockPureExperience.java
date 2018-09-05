@@ -1,11 +1,7 @@
 package Blocks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Nullable;
 
-import ExperienceApple.ITooltip;
 import net.minecraft.block.BlockSlime;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.state.IBlockState;
@@ -15,7 +11,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockPureExperience extends BlockSlime implements ITooltip {
+public class BlockPureExperience extends BlockSlime {
 	public BlockPureExperience() {
 		setSoundType(SoundType.SLIME);
 	}
@@ -53,17 +49,5 @@ public class BlockPureExperience extends BlockSlime implements ITooltip {
 	@Override
 	public boolean isFullCube(IBlockState state) {
 		return true;
-	}
-
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
 	}
 }

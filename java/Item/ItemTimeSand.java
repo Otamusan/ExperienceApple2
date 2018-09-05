@@ -1,14 +1,12 @@
 package Item;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 import ExperienceApple.EAMain;
-import ExperienceApple.ITooltip;
 import ExperienceApple.Register.BlockRegister;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -23,7 +21,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemTimeSand extends Item implements ITooltip {
+public class ItemTimeSand extends Item {
 	private int acc;
 
 	public ItemTimeSand(int acc) {
@@ -31,9 +29,8 @@ public class ItemTimeSand extends Item implements ITooltip {
 	}
 
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-		if (!GuiScreen.isShiftKeyDown())
-			return;
+	@Override
+	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(I18n.format("item.tick.name") + " : " + this.acc);
 	}
 
@@ -78,15 +75,4 @@ public class ItemTimeSand extends Item implements ITooltip {
 		return EnumActionResult.SUCCESS;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

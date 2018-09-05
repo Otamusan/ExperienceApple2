@@ -1,10 +1,7 @@
 package Blocks;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-import ExperienceApple.ITooltip;
 import Util.ParticleUtil;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
@@ -18,7 +15,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockCabinetStone extends BlockGlass implements ITooltip {
+public class BlockCabinetStone extends BlockGlass {
 	public BlockCabinetStone(Material materialIn) {
 		super(materialIn, true);
 	}
@@ -26,14 +23,7 @@ public class BlockCabinetStone extends BlockGlass implements ITooltip {
 	@Override
 	public void randomDisplayTick(IBlockState state, World world, BlockPos pos, Random rnd) {
 		ParticleUtil.blockRemaining(EnumParticleTypes.ENCHANTMENT_TABLE, world, pos, 9);
-		/*
-		 * for (int i = 0; i < 10; i++) { ParticleEABase particle = new
-		 * ParticleEABase(world, pos.getX() + rnd.nextFloat(), pos.getY() +
-		 * rnd.nextFloat(), pos.getZ() + rnd.nextFloat());
-		 * particle.setRBGColorF(0, 0.5F, 0); particle.setAlphaF(0.5F);
-		 * particle.setmotion(0, -0.01, 0); particle.setMaxAge(20);
-		 * Minecraft.getMinecraft().effectRenderer.addEffect(particle); }
-		 */
+
 
 	}
 
@@ -63,15 +53,4 @@ public class BlockCabinetStone extends BlockGlass implements ITooltip {
 		return BlockRenderLayer.CUTOUT;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

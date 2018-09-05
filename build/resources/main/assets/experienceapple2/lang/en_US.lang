@@ -30,12 +30,14 @@ item.ashOfBalance.name=Ash of Balance
 item.ashOfOrder.name=Ash of Order
 item.ash.processing=Processing
 
+item.spellPaper.cost=Cost
+item.spellPaper.enable=Enable
+item.spellPaper.disable=Disable
+item.spellPaper.state=State
 
 item.flyingSpellPaper.name=Flying Spell Paper
-item.flyingSpellPaper.cost=Cost
 
 item.satietySpellPaper.name=Satiety Spell Paper
-item.satietySpellPaper.cost=Cost
 
 
 item.enchantmentPearl.name=Enchantment Pearl
@@ -64,6 +66,7 @@ item.experienceIron.cost=Repair Cost
 item.advancedExperienceIronAxe.name=AEI Axe
 
 item.advancedExperienceIronPickaxe.name=AEI Pickaxe
+item.advancedExperienceIronPickaxe.range=Range
 
 item.advancedExperienceIronShovel.name=AEI Shovel
 
@@ -181,7 +184,8 @@ tile.rackManager.name=Rack Manager
 
 effect.retention=Effect Protection
 effect.stateProtection=Maintaining Health
-
+effect.fly=Fly
+effect.satiety=Satiety
 
 potion.effect.retention=Potion of Effect Protection
 potion.effect.retentionLong=Potion of Effect Protection

@@ -24,7 +24,9 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;;
 
 public class RecipeRegister {
 	public static int ritualGlassCost = 50;
-	public static List<ItemStack> repaiableItem = new ArrayList<>();
+	public static List<IRecipe> repaiableItem = new ArrayList<>();
+	public static List<IRecipe> eaCraftedItem = new ArrayList<>();
+	public static List<IRecipe> enchantableItem = new ArrayList<>();
 
 	public static void init() {
 		addEnchRecipe(ItemRegister.advancedExperienceIronAxe);
@@ -147,6 +149,11 @@ public class RecipeRegister {
 		faceRecipe(new ItemStack(BlockRegister.ritualStoneTier3), new ItemStack(BlockRegister.largeRitualStone3));
 		faceRecipe(new ItemStack(BlockRegister.ritualStoneTier4), new ItemStack(BlockRegister.largeRitualStone4));
 
+		addShapelessRecipe(new ItemStack(ItemRegister.flyingSpellPaper), Items.PAPER, ItemRegister.ashOfBalance,
+				Items.FEATHER);
+		addShapelessRecipe(new ItemStack(ItemRegister.satietySpellPaper), Items.PAPER, ItemRegister.ashOfBalance,
+				Items.GOLDEN_APPLE);
+
 		addShapelessRecipe(new ItemStack(ItemRegister.warpStone), ItemRegister.warpStone);
 		addShapelessRecipe(new ItemStack(ItemRegister.enchantmentPearl), Items.ENCHANTED_BOOK, Items.ENDER_PEARL);
 		addShapelessRecipe(new ItemStack(ItemRegister.flyingSpellPaper), ItemRegister.ashOfOrder,
@@ -195,6 +202,7 @@ public class RecipeRegister {
 		IRecipe recipe = new EnchCraft(tool);
 		recipe.setRegistryName(new ResourceLocation(EAMain.MOD_ID, recipe.toString()));
 		ForgeRegistries.RECIPES.register(recipe);
+		enchantableItem.add(recipe);
 	}
 
 	public static void addEnchRecipe(Item tool) {
@@ -205,6 +213,7 @@ public class RecipeRegister {
 		IRecipe recipe = new EACraft(material, cost, output);
 		recipe.setRegistryName(new ResourceLocation(EAMain.MOD_ID, recipe.toString()));
 		ForgeRegistries.RECIPES.register(recipe);
+		eaCraftedItem.add(recipe);
 	}
 
 	public static void addEARecipe(Item material, int cost, Item output) {
@@ -215,7 +224,7 @@ public class RecipeRegister {
 		IRecipe recipe = new RepairCraft(itemStack, amount);
 		recipe.setRegistryName(new ResourceLocation(EAMain.MOD_ID, recipe.toString()));
 		ForgeRegistries.RECIPES.register(recipe);
-		repaiableItem.add(itemStack);
+		repaiableItem.add(recipe);
 	}
 
 	public static void addRepairRecipe(Item item, int amount) {

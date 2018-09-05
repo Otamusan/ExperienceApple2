@@ -25,6 +25,14 @@ public class EACraft extends IForgeRegistryEntry.Impl<IRecipe> implements IRecip
 		this.output = output;
 	}
 
+	public ItemStack getMaterial() {
+		return material;
+	}
+
+	public int getEXPamount() {
+		return EXPamount;
+	}
+
 	@Override
 	public boolean matches(InventoryCrafting inv, World world) {
 		int materialAmount = 0;

@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import ExperienceApple.ITooltip;
 import TileEntity.TileGrowthStone;
 import Util.ParticleUtil;
 import net.minecraft.block.BlockGlass;
@@ -18,7 +17,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockGrowthStone extends BlockGlass implements ITileEntityProvider, ITooltip {
+public class BlockGrowthStone extends BlockGlass implements ITileEntityProvider {
 
 	private int acceleration;
 
@@ -52,16 +51,6 @@ public class BlockGrowthStone extends BlockGlass implements ITileEntityProvider,
 	}
 
 	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 
 	public int getAcceleration() {
 		return acceleration;

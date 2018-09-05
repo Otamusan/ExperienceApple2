@@ -9,7 +9,9 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
-import ExperienceApple.ITooltip;
+import javax.annotation.Nonnull;
+
+import Util.ExperienceUtil;
 import Util.ParticleUtil;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -19,12 +21,9 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.potion.Potion;
-import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
@@ -33,18 +32,50 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemAdvancedExperienceIronSword extends ItemSword implements ITooltip {
-
-	public static int cooldown = 0;
-	public int par = 0;
-
+public class ItemAdvancedExperienceIronSword extends ItemSword {
 	public ItemAdvancedExperienceIronSword(ToolMaterial mate) {
 		super(mate);
 	}
 
 	@Override
-	public void onCreated(ItemStack stack, World world, EntityPlayer player) {
+	public void onUsingTick(ItemStack stack, EntityLivingBase player, int count) {
+		if (!(player instanceof EntityPlayer))
+			return;
+		if (count % 5 == 0) {
+			ExperienceUtil.experiencePull((EntityPlayer) player, 5, player.world);
+		}
+	}
 
+	public void onPlayerStoppedUsing(ItemStack stack, World worldIn, EntityLivingBase player, int timeLeft) {
+		if (!(player instanceof EntityPlayer))
+			return;
+
+		List<Entity> list = (List<Entity>) ((ArrayList<Entity>) worldIn.getLoadedEntityList()).clone();
+
+		for (Entity entity : list) {
+			if (entity instanceof EntityLivingBase && player.getDistance(entity) < 20
+					&& !(entity instanceof EntityPlayer)) {
+				entity.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) player), (400 - timeLeft));
+
+				ParticleUtil.playerRemaining(EnumParticleTypes.FIREWORKS_SPARK, entity, 20);
+			}
+		}
+		worldIn.playSound(player.posX, player.posY, player.posZ, SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE,
+				SoundCategory.PLAYERS, 1, 1, true);
+		ParticleUtil.ball(EnumParticleTypes.FIREWORKS_SPARK, worldIn, player.posX, player.posY, player.posZ, 20,
+				(400 - timeLeft) * 20);
+	}
+
+	@Nonnull
+	@Override
+	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, @Nonnull EnumHand hand) {
+		player.setActiveHand(hand);
+		ItemStack stack = player.getHeldItem(hand);
+		return ActionResult.newResult(EnumActionResult.SUCCESS, stack);
+	}
+
+	public int getMaxItemUseDuration(ItemStack stack) {
+		return 400;
 	}
 
 	@Override
@@ -55,7 +86,6 @@ public class ItemAdvancedExperienceIronSword extends ItemSword implements IToolt
 	@Override
 	public boolean onBlockDestroyed(ItemStack stack, World world, IBlockState state, BlockPos pos,
 			EntityLivingBase entityLiving) {
-		ParticleUtil.blockSurface(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 10);
 		ParticleUtil.blockRemaining(EnumParticleTypes.FIREWORKS_SPARK, world, pos, 10);
 
 		return false;
@@ -89,37 +119,6 @@ public class ItemAdvancedExperienceIronSword extends ItemSword implements IToolt
 		return false;
 	}
 
-	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
-		playerIn.addPotionEffect(
-				new PotionEffect(Potion.getPotionFromResourceLocation("resistance"), 10, 10, false, false));
-		playerIn.addPotionEffect(
-				new PotionEffect(Potion.getPotionFromResourceLocation("slowness"), 10, 10, false, false));
-		guardParticle(playerIn, 0.5, par);
-		par += 5;
-		return new ActionResult<ItemStack>(EnumActionResult.PASS, playerIn.getHeldItem(hand));
-	}
-
-	@Override
-	public EnumActionResult onItemUse(EntityPlayer playerIn, World worldIn, BlockPos pos, EnumHand hand,
-			EnumFacing facing, float hitX, float hitY, float hitZ) {
-		playerIn.addPotionEffect(
-				new PotionEffect(Potion.getPotionFromResourceLocation("resistance"), 10, 10, false, false));
-		playerIn.addPotionEffect(
-				new PotionEffect(Potion.getPotionFromResourceLocation("slowness"), 10, 10, false, false));
-		guardParticle(playerIn, 0.5, par);
-		par += 5;
-		return EnumActionResult.PASS;
-	}
-
-	public void guardParticle(EntityPlayer player, double r, double count) {
-		ParticleUtil.partofCircle(EnumParticleTypes.FIREWORKS_SPARK, player.world, player.posX, player.posY + 2,
-				player.posZ, r, count);
-		ParticleUtil.partofCircle(EnumParticleTypes.FIREWORKS_SPARK, player.world, player.posX, player.posY + 2,
-				player.posZ, r, -count);
-
-	}
-
 	@SuppressWarnings("unchecked")
 	public static <T> T deepcopy(T obj) throws IOException, ClassNotFoundException {
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -133,15 +132,4 @@ public class ItemAdvancedExperienceIronSword extends ItemSword implements IToolt
 		return true;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

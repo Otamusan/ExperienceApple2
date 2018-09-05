@@ -1,11 +1,7 @@
 package Blocks;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Nonnull;
 
-import ExperienceApple.ITooltip;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
@@ -17,7 +13,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockClearGlass extends BlockGlass implements ITooltip {
+public class BlockClearGlass extends BlockGlass {
 
 	public BlockClearGlass(Material materialIn) {
 		super(materialIn, true);
@@ -56,17 +52,4 @@ public class BlockClearGlass extends BlockGlass implements ITooltip {
 
 		return super.shouldSideBeRendered(blockState, blockAccess, pos, side);
 	}
-
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
-
 }

@@ -1,11 +1,8 @@
 package Item;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import ExperienceApple.EAMain;
-import ExperienceApple.ITooltip;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.util.EnumActionResult;
@@ -15,7 +12,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemUniversalNutrient extends Item implements ITooltip {
+public class ItemUniversalNutrient extends Item {
 	private int acc;
 
 	public ItemUniversalNutrient(int acc) {
@@ -45,18 +42,6 @@ public class ItemUniversalNutrient extends Item implements ITooltip {
 		player.getHeldItem(hand).shrink(1);
 
 		return EnumActionResult.SUCCESS;
-	}
-
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
 	}
 
 }

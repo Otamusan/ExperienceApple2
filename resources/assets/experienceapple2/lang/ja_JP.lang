@@ -30,13 +30,15 @@ item.ashOfBalance.name=均等の灰
 item.ashOfOrder.name=秩序の灰
 item.ash.processing=加工回数
 
+item.spellPaper.cost=消費経験値
+item.spellPaper.enable=有効
+item.spellPaper.disable=無効
+item.spellPaper.state=状態
+
 
 item.flyingSpellPaper.name=飛行の呪文紙
-item.flyingSpellPaper.cost=消費経験値
 
 item.satietySpellPaper.name=満腹の呪文紙
-item.satietySpellPaper.cost=消費経験値
-
 
 item.enchantmentPearl.name=エンチャントの珠
 
@@ -64,6 +66,8 @@ item.experienceIron.cost=修復コスト
 item.advancedExperienceIronAxe.name=AEI斧
 
 item.advancedExperienceIronPickaxe.name=AEIツルハシ
+item.advancedExperienceIronPickaxe.range=範囲
+
 
 item.advancedExperienceIronShovel.name=AEIシャベル
 
@@ -154,24 +158,24 @@ tile.storageRack.name=収納棚
 
 tile.faceBlock.name=皮ブロック
 
-tile.largeRitualGlass1.name=大きな儀式ガラスTier1
-tile.largeRitualGlass2.name=大きな儀式ガラスTier2
-tile.largeRitualGlass3.name=大きな儀式ガラスTier3
-tile.largeRitualGlass4.name=大きな儀式ガラスTier4
+tile.largeRitualGlass1.name=見せかけの儀式ガラスTier1
+tile.largeRitualGlass2.name=見せかけの儀式ガラスTier2
+tile.largeRitualGlass3.name=見せかけの儀式ガラスTier3
+tile.largeRitualGlass4.name=見せかけの儀式ガラスTier4
 
-tile.largeRitualStone1.name=大きな儀式石Tier1
-tile.largeRitualStone2.name=大きな儀式石Tier2
-tile.largeRitualStone3.name=大きな儀式石Tier3
-tile.largeRitualStone4.name=大きな儀式石Tier4
+tile.largeRitualStone1.name=見せかけの儀式石Tier1
+tile.largeRitualStone2.name=見せかけの儀式石Tier2
+tile.largeRitualStone3.name=見せかけの儀式石Tier3
+tile.largeRitualStone4.name=見せかけの儀式石Tier4
 
-tile.largeCabinetStone.name=大きな収納石
+tile.largeCabinetStone.name=見せかけの収納石
 
-tile.largeAccelerateStone.name=大きな加速石
-tile.largeAdvancedAccelerateStone.name=大きな高性能加速石
+tile.largeAccelerateStone.name=見せかけの加速石
+tile.largeAdvancedAccelerateStone.name=見せかけの高性能加速石
 
-tile.largeGrowthStone.name=大きな成長石
+tile.largeGrowthStone.name=見せかけの成長石
 
-tile.largeAdvancedGrowthStone.name=大きな高性能成長石
+tile.largeAdvancedGrowthStone.name=見せかけの高性能成長石
 
 tile.wEIHopper.name=WEIホッパー
 tile.eIHopper.name=EIホッパー
@@ -182,6 +186,8 @@ itemGroup.experienceApple=経験値リンゴ
 
 effect.retention=エフェクト保護
 effect.stateProtection=悪性エフェクト耐性
+effect.fly=飛行
+effect.satiety=満腹
 
 potion.effect.retention=エフェクト保護のポーション
 potion.effect.retentionLong=エフェクト保護のポーション
@@ -228,12 +234,12 @@ ea.ritual.spawnerActivation.description=スポナーを中心に設置して起�
 ea.ritual.collection.name=収集の儀式
 ea.ritual.collection.description=近くのアイテムと経験値を上のチェストに収納する儀式
 
-ea.eacraft.description=登録済みの経験リンゴと一緒にクラフトし、経験値を消費してクラフトする
+ea.eacraft.description=登録済みの経験リンゴの経験値を使用してクラフトする
 ea.eacraft.expcost=要求経験値
 ea.eacraft.item=要求アイテム
 
 ea.repaircraft.description=クラフトすることで耐久値を1回復する
 
-ea.eccraft.description=エンチャントの珠とクラフトすることでエンチャントを移すことができる
+ea.eccraft.description=§bエンチャントの珠とクラフトすることでエンチャントを移すことができる
 
 

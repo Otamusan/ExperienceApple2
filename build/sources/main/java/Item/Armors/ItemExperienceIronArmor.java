@@ -1,14 +1,11 @@
 package Item.Armors;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import ExperienceApple.ITooltip;
 import Item.ExperienceRepair;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemStack;
@@ -16,7 +13,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemExperienceIronArmor extends ItemArmor implements ITooltip {
+public class ItemExperienceIronArmor extends ItemArmor {
 
 	public static int cooldown = 0;
 	private ExperienceRepair experienceRepair;
@@ -29,12 +26,11 @@ public class ItemExperienceIronArmor extends ItemArmor implements ITooltip {
 	}
 
 	@SideOnly(Side.CLIENT)
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
-		if (!GuiScreen.isShiftKeyDown())
-			return;
+
+	@Override
+	public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
 		tooltip.add(I18n.format("item.experienceIron.cooltime") + " : " + this.experienceRepair.getCooltime());
 		tooltip.add(I18n.format("item.experienceIron.cost") + " : " + this.experienceRepair.getCost());
-
 	}
 
 	@Override
@@ -52,15 +48,4 @@ public class ItemExperienceIronArmor extends ItemArmor implements ITooltip {
 		return 0;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

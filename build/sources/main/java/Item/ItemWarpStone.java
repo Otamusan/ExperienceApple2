@@ -1,10 +1,7 @@
 package Item;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import ExperienceApple.ITooltip;
-import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
@@ -22,7 +19,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemWarpStone extends Item implements ITooltip {
+public class ItemWarpStone extends Item {
 	@Override
 	public ActionResult<ItemStack> onItemRightClick(World world, EntityPlayer player, EnumHand hand) {
 
@@ -110,25 +107,11 @@ public class ItemWarpStone extends Item implements ITooltip {
 	@Override
 	public void addInformation(ItemStack stack, World world, List<String> tooltip, ITooltipFlag tooltipFlag) {
 		NBTTagCompound nbt = stack.getTagCompound();
-		if (!GuiScreen.isShiftKeyDown())
-			return;
 		if (nbt != null) {
 			tooltip.add(I18n.format("item.warpStone.x") + " : " + (int) nbt.getDouble("setX") + " "
 					+ I18n.format("item.warpStone.y") + " : " + (int) nbt.getDouble("setY") + " "
 					+ I18n.format("item.warpStone.z") + " : " + (int) nbt.getDouble("setZ"));
 			tooltip.add(I18n.format("item.warpStone.dimension") + " : " + nbt.getInteger("setDimention"));
 		}
-	}
-
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
 	}
 }

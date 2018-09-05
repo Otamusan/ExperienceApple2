@@ -1,9 +1,5 @@
 package Item.Tools;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import ExperienceApple.ITooltip;
 import Util.ParticleUtil;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
@@ -21,7 +17,7 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemMagicBow extends ItemBow implements ITooltip {
+public class ItemMagicBow extends ItemBow {
 
 	public static int chargeTime = 0;
 
@@ -110,17 +106,6 @@ public class ItemMagicBow extends ItemBow implements ITooltip {
 		}
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 	// }
 
 }

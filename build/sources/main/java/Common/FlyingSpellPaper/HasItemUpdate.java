@@ -1,16 +1,19 @@
 package Common.FlyingSpellPaper;
 
-import ExperienceApple.Register.ItemRegister;
-import Util.PlayerUtil;
+import java.util.Map;
+
+import ExperienceApple.Register.PotionRegister;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.PlayerCapabilities;
+import net.minecraft.potion.Potion;
+import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 public class HasItemUpdate {
-	public static boolean hasFlyPaper = false;
-	public static boolean bhasFlyPaper = false;
+	public static boolean currentEffect = false;
+	public static boolean prevEffect = false;
 	public static boolean playerfly = false;
 
 	@SubscribeEvent
@@ -18,20 +21,27 @@ public class HasItemUpdate {
 		EntityPlayer player = event.player;
 		Entity entity = player;
 		PlayerCapabilities capabilities = ((EntityPlayer) entity).capabilities;
-		hasFlyPaper = PlayerUtil.hasPlayerItem(player, ItemRegister.flyingSpellPaper);
+		currentEffect = hasFlyEffect(player);
 
-		if (hasFlyPaper && !bhasFlyPaper) {
+		if (currentEffect && !prevEffect) {
 			capabilities.allowFlying = true;
 			player.sendPlayerAbilities();
 		}
 
-		if (!hasFlyPaper && bhasFlyPaper) {
+		if (!currentEffect && prevEffect) {
 			capabilities.allowFlying = false;
 			capabilities.isFlying = false;
 			player.sendPlayerAbilities();
 		}
 
-		bhasFlyPaper = hasFlyPaper;
+		prevEffect = currentEffect;
+	}
+
+	public static boolean hasFlyEffect(EntityPlayer player) {
+		Map<Potion, PotionEffect> list = player.getActivePotionMap();
+		if (list.containsKey(PotionRegister.potionFly))
+			return true;
+		return false;
 	}
 
 }

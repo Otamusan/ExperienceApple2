@@ -30,13 +30,16 @@ item.ashOfBalance.name=均等の灰
 item.ashOfOrder.name=秩序の灰
 item.ash.processing=加工回数
 
+item.spellPaper.cost=消費経験値
+item.spellPaper.enable=有効
+item.spellPaper.disable=無効
+item.spellPaper.state=状態
+
+
 
 item.flyingSpellPaper.name=飛行の呪文紙
-item.flyingSpellPaper.cost=消費経験値
 
 item.satietySpellPaper.name=満腹の呪文紙
-item.satietySpellPaper.cost=消費経験値
-
 
 item.enchantmentPearl.name=エンチャントの珠
 
@@ -64,6 +67,8 @@ item.experienceIron.cost=修復コスト
 item.advancedExperienceIronAxe.name=AEI斧
 
 item.advancedExperienceIronPickaxe.name=AEIツルハシ
+item.advancedExperienceIronPickaxe.range=範囲
+
 
 item.advancedExperienceIronShovel.name=AEIシャベル
 
@@ -182,6 +187,8 @@ itemGroup.experienceApple=経験値リンゴ
 
 effect.retention=エフェクト保護
 effect.stateProtection=悪性エフェクト耐性
+effect.fly=飛行
+effect.satiety=満腹
 
 potion.effect.retention=エフェクト保護のポーション
 potion.effect.retentionLong=エフェクト保護のポーション
@@ -234,6 +241,6 @@ ea.eacraft.item=要求アイテム
 
 ea.repaircraft.description=クラフトすることで耐久値を1回復する
 
-ea.eccraft.description=エンチャントの珠とクラフトすることでエンチャントを移すことができる
+ea.eccraft.description=§bエンチャントの珠とクラフトすることでエンチャントを移すことができる
 
 

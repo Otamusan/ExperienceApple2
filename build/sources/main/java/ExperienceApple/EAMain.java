@@ -1,5 +1,6 @@
 package ExperienceApple;
 
+import java.awt.Color;
 import java.io.File;
 
 import Common.CommonProxy;
@@ -9,13 +10,17 @@ import ExperienceApple.Register.ItemRegister;
 import ExperienceApple.Register.PotionRegister;
 import ExperienceApple.Register.RecipeRegister;
 import ExperienceApple.Register.RitualRegister;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.color.IItemColor;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 @Mod(modid = EAMain.MOD_ID, name = EAMain.MOD_NAME, version = EAMain.MOD_VERSION, acceptedMinecraftVersions = EAMain.MOD_ACCEPTED_MC_VERSIONS, useMetadata = true)
 public class EAMain {
@@ -47,33 +52,23 @@ public class EAMain {
 		PotionRegister.init();
 		RecipeRegister.init();
 
-		// ForgeRegistries.RECIPES
-		// .register(new ExperienceAppleCrafting().setRegistryName(MOD_ID,
-		// "experienceapplecrafting"));
-		// ForgeRegistries.RECIPES.register(new
-		// RepairCrafting().setRegistryName(MOD_ID, "repaircrafting"));
-		// ForgeRegistries.RECIPES.register(new
-		// EnchantCrafting().setRegistryName(MOD_ID, "enchantcrafting"));
-
-		// GameRegistry.addRecipe(new ExperienceAppleCrafting());
-		// GameRegistry.addRecipe(new RepairCrafting());
-		// GameRegistry.addRecipe(new EnchantCrafting());
-		// RecipeSorter.register("experienceapple2:experienceAppleCrafting",
-		// ExperienceAppleCrafting.class,
-		// Category.SHAPELESS, "after:minecraft:shapeless");
-		// RecipeSorter.register("experienceapple2:repairCrafting",
-		// RepairCrafting.class, Category.SHAPELESS,
-		// "after:minecraft:shapeless");
-		// RecipeSorter.register("experienceapple2:enchantCrafting",
-		// EnchantCrafting.class, Category.SHAPELESS,
-		// "after:minecraft:shapeless");
-		// GameRegistry.registerWorldGenerator(new ExperienceOreGenerator(), 0);
-
 	}
 
 	@EventHandler
 	public void init(FMLInitializationEvent event) {
+		Minecraft.getMinecraft().getItemColors().registerItemColorHandler(new IItemColor() {
+			@Override
+			public int colorMultiplier(ItemStack stack, int tintIndex) {
 
+				if (stack.getEnchantmentTagList() != null) {
+					int EnchID = stack.getEnchantmentTagList().getCompoundTagAt(0).getShort("id");
+					int EnchMAX = ForgeRegistries.ENCHANTMENTS.getKeys().size();
+					float hue = (float) ((float) EnchID / (float) EnchMAX);
+					return Color.getHSBColor(hue, 1.0F, 1.0F).getRGB();
+				}
+				return Color.getHSBColor(0.0f, 0.0F, 1.0F).getRGB();
+			}
+		}, ItemRegister.enchantmentPearl);
 		proxy.registerTileEntity();
 		proxy.registerEventHandlers();
 

@@ -1,10 +1,7 @@
 package Item.Armors;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-import ExperienceApple.ITooltip;
 import Util.ParticleUtil;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -16,7 +13,7 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class ItemWeakExperienceIronArmor extends ItemArmor implements ITooltip {
+public class ItemWeakExperienceIronArmor extends ItemArmor {
 
 	public ItemWeakExperienceIronArmor(ArmorMaterial materialIn, int renderIndexIn,
 			EntityEquipmentSlot equipmentSlotIn) {
@@ -36,15 +33,4 @@ public class ItemWeakExperienceIronArmor extends ItemArmor implements ITooltip {
 		world.playSound(player, new BlockPos(player), SoundEvents.ENTITY_BLAZE_HURT, SoundCategory.PLAYERS, 1, 1);
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

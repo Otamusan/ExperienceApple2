@@ -1,10 +1,7 @@
 package Blocks;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
-import ExperienceApple.ITooltip;
 import Util.ParticleUtil;
 import net.minecraft.block.BlockGlass;
 import net.minecraft.block.material.Material;
@@ -18,7 +15,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockCabinetStone extends BlockGlass implements ITooltip {
+public class BlockCabinetStone extends BlockGlass {
 	public BlockCabinetStone(Material materialIn) {
 		super(materialIn, true);
 	}
@@ -63,15 +60,4 @@ public class BlockCabinetStone extends BlockGlass implements ITooltip {
 		return BlockRenderLayer.CUTOUT;
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }

@@ -5,67 +5,75 @@ import java.util.List;
 
 import javax.annotation.Nullable;
 
+import ExperienceApple.Register.BlockRegister;
+import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ITickable;
 import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.common.util.Constants;
+import net.minecraft.world.World;
 
-public class TileRackManager extends TileEntity implements IInventory {
+public class TileRackManager extends TileEntity implements IInventory, ITickable {
 
-	private List<BlockPos> posrack = new ArrayList<BlockPos>();
+	public List<TileStorageRack> racks;
+
+	List<Block> chainBlockList = new ArrayList<Block>() {
+		{
+			add(BlockRegister.rackManager);
+			add(BlockRegister.cabinetStone);
+			add(BlockRegister.storageRack);
+		}
+	};
 
 	public List<BlockPos> getRackPosList() {
-		return posrack;
+
+		List<BlockPos> list = new ArrayList<>();
+
+		list = getNearBlockPos(chainBlockList, this.world, this.pos, list);
+
+		return list;
 	}
 
-	public void setRackPosList(List<BlockPos> posrack) {
-		this.posrack = posrack;
-	}
+	public static List<BlockPos> getNearBlockPos(List<Block> blist, World world, BlockPos pos, List<BlockPos> list) {
+		if (list.contains(pos))
+			return list;
+		list.add(pos);
 
-	public void addRackPosList(BlockPos pos) {
-
-		if (!posrack.contains(pos)) {
-			posrack.add(pos);
+		if (blist.contains(world.getBlockState(pos.up()).getBlock())) {
+			list = getNearBlockPos(blist, world, pos.up(), list);
 		}
+		if (blist.contains(world.getBlockState(pos.down()).getBlock())) {
+			list = getNearBlockPos(blist, world, pos.down(), list);
+		}
+		if (blist.contains(world.getBlockState(pos.east()).getBlock())) {
+			list = getNearBlockPos(blist, world, pos.east(), list);
+		}
+		if (blist.contains(world.getBlockState(pos.south()).getBlock())) {
+			list = getNearBlockPos(blist, world, pos.south(), list);
+		}
+		if (blist.contains(world.getBlockState(pos.north()).getBlock())) {
+			list = getNearBlockPos(blist, world, pos.north(), list);
+		}
+		if (blist.contains(world.getBlockState(pos.west()).getBlock())) {
+			list = getNearBlockPos(blist, world, pos.west(), list);
+		}
+		return list;
 	}
 
 	@Override
 	public NBTTagCompound writeToNBT(NBTTagCompound compound) {
 		super.writeToNBT(compound);
-		NBTTagList tagList = new NBTTagList();
-
-		for (BlockPos blockPos : posrack) {
-			NBTTagCompound Tagpos = new NBTTagCompound();
-			Tagpos.setInteger("x", blockPos.getX());
-			Tagpos.setInteger("y", blockPos.getY());
-			Tagpos.setInteger("z", blockPos.getZ());
-			tagList.appendTag(Tagpos);
-		}
-		compound.setTag("PosRack", tagList);
 		return compound;
 	}
 
 	@Override
 	public void readFromNBT(NBTTagCompound compound) {
 		super.readFromNBT(compound);
-		List<BlockPos> poslist = new ArrayList<BlockPos>();
-
-		NBTTagList tagList = compound.getTagList("PosRack", Constants.NBT.TAG_COMPOUND);
-
-		for (int i = 0; i < tagList.tagCount(); i++) {
-			NBTTagCompound posnbt = tagList.getCompoundTagAt(i);
-			BlockPos pos = new BlockPos(posnbt.getInteger("x"), posnbt.getInteger("y"), posnbt.getInteger("z"));
-			poslist.add(pos);
-		}
-
-		setRackPosList(poslist);
-
 	}
 
 	@Override
@@ -81,8 +89,8 @@ public class TileRackManager extends TileEntity implements IInventory {
 	@Override
 	public int getSizeInventory() {
 		int size = 0;
-		List<TileStorageRack> list = getTileList(new ArrayList<TileStorageRack>());
-		for (TileStorageRack tile : this.getTileList(list)) {
+		List<TileStorageRack> list = this.racks;
+		for (TileStorageRack tile : list) {
 			size += tile.getSizeInventory();
 		}
 		return size;
@@ -163,10 +171,9 @@ public class TileRackManager extends TileEntity implements IInventory {
 	}
 
 	public List<TileStorageRack> getTileList(List<TileStorageRack> list) {
-		for (BlockPos pos : this.posrack) {
+		for (BlockPos pos : this.getRackPosList()) {
 			if (world.getTileEntity(pos) instanceof TileStorageRack) {
 				addlist(list, pos);
-
 			}
 		}
 		return list;
@@ -181,9 +188,9 @@ public class TileRackManager extends TileEntity implements IInventory {
 	}
 
 	public TileandInt getTileandInt(int index) {
-		List<TileStorageRack> list = this.getTileList(new ArrayList<TileStorageRack>());
+		List<TileStorageRack> list = this.racks;
 		int buffi = index;
-		for (TileStorageRack tile : this.getTileList(list)) {
+		for (TileStorageRack tile : list) {
 			if (buffi < tile.getSizeInventory()) {
 				return new TileandInt(tile, buffi);
 			} else {
@@ -246,7 +253,7 @@ public class TileRackManager extends TileEntity implements IInventory {
 
 	@Override
 	public boolean isEmpty() {
-		for (BlockPos blockPos : posrack) {
+		for (BlockPos blockPos : getRackPosList()) {
 			if (world.getBlockState(blockPos) instanceof TileStorageRack)
 
 				if (!((TileStorageRack) world.getBlockState(blockPos)).isEmpty()) {
@@ -259,5 +266,10 @@ public class TileRackManager extends TileEntity implements IInventory {
 	@Override
 	public boolean isUsableByPlayer(EntityPlayer player) {
 		return true;
+	}
+
+	@Override
+	public void update() {
+		this.racks = getTileList(new ArrayList<>());
 	}
 }

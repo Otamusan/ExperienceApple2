@@ -1,12 +1,9 @@
 package Blocks;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 import javax.annotation.Nullable;
 
-import ExperienceApple.ITooltip;
 import ExperienceApple.Register.BlockRegister;
 import TileEntity.TileAwakenedSpawner;
 import net.minecraft.block.BlockMobSpawner;
@@ -19,7 +16,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class BlockAwakenedSpawner extends BlockMobSpawner implements ITileEntityProvider, ITooltip {
+public class BlockAwakenedSpawner extends BlockMobSpawner implements ITileEntityProvider {
 
 	@Nullable
 	public Item getItemDropped(IBlockState state, Random rand, int fortune) {
@@ -36,20 +33,9 @@ public class BlockAwakenedSpawner extends BlockMobSpawner implements ITileEntity
 		return new TileAwakenedSpawner();
 	}
 
-	public List<String> Tooltip = new ArrayList<String>();
-
-	@Override
-	public List<String> getTooltip() {
-		return Tooltip;
-	}
-
 	@Nullable
 	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) {
 		return new ItemStack(BlockRegister.awakenedSpawner);
 	}
 
-	@Override
-	public void addTooltip(String str) {
-		Tooltip.add(str);
-	}
 }
