@@ -16,11 +16,14 @@ import Rituals.Rituals.RitualExplode;
 import Rituals.Rituals.RitualSpawnerActivation;
 import Rituals.Rituals.RitualCraft.RitualCraft;
 import Rituals.Rituals.RitualCraft.RitualCraftCore;
+import Rituals.Rituals.RitualDehydration.RitualDehydration;
+import Rituals.Rituals.RitualDehydration.RitualDehydrationRecipe;
 import Rituals.Rituals.RitualInjection.RitualInjection;
 import Rituals.Rituals.RitualInjection.RitualInjectionCore;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 
 public class RitualRegister {
 	public static Ritual ritualExplode = new RitualExplode(new StonePosData(), "explode");
@@ -32,6 +35,7 @@ public class RitualRegister {
 	public static Ritual ritualSpawnerActivation = new RitualSpawnerActivation(new StonePosData(), "spawnerActivation");
 	public static Ritual ritualCollection = new RitualCollection(new StonePosData(), "collection");
 	public static Ritual ritualCraft = new RitualCraftCore(new StonePosData(), "ritualCraft");
+	public static Ritual ritualDehydration = new RitualDehydration(new StonePosData(), "ritualDehydration");
 
 	public static void init() {
 		ritualExplode.setStoneBlock(0, 0, 0, tier1);
@@ -243,5 +247,35 @@ public class RitualRegister {
 		AEIBoots.setIteminList(new ItemStack(ItemRegister.experienceIronBoots, 1));
 		((RitualCraftCore) ritualCraft).register.register("AEIBoots", AEIBoots);
 
+		ritualDehydration.setStoneBlock(0, 0, 0, tier1);
+		ritualDehydration.setStoneBlock(1, 0, 2, tier1);
+		ritualDehydration.setStoneBlock(-1, 0, 2, tier1);
+		ritualDehydration.setStoneBlock(1, 0, -2, tier1);
+		ritualDehydration.setStoneBlock(-1, 0, -2, tier1);
+		ritualDehydration.setStoneBlock(2, 0, 1, tier1);
+		ritualDehydration.setStoneBlock(2, 0, -1, tier1);
+		ritualDehydration.setStoneBlock(-2, 0, 1, tier1);
+		ritualDehydration.setStoneBlock(-2, 0, -1, tier1);
+		ritualDehydration.setStoneBlock(0, 1, 1, tier1);
+		ritualDehydration.setStoneBlock(0, 1, -1, tier1);
+		ritualDehydration.setStoneBlock(1, 1, 0, tier1);
+		ritualDehydration.setStoneBlock(-1, 1, 0, tier1);
+		// RitualRegistry.register(ritualDehydration);
+
+		((RitualDehydration) ritualDehydration).setRecipeAll(OreDictionary.getOres("logWood"),
+				new ItemStack(Items.COAL, 9, 1));
+		((RitualDehydration) ritualDehydration).setRecipeAll(OreDictionary.getOres("plankWood"),
+				new ItemStack(Items.COAL, 1, 1));
+		((RitualDehydration) ritualDehydration).setRecipeAll(OreDictionary.getOres("treeLeaves"),
+				new ItemStack(Items.COAL, 1, 1));
+		((RitualDehydration) ritualDehydration).setRecipeAll(OreDictionary.getOres("treeSapling"),
+				new ItemStack(Blocks.DEADBUSH, 1));
+		((RitualDehydration) ritualDehydration).setRecipe(new ItemStack(Blocks.GRASS), new ItemStack(Blocks.DIRT, 1));
+
+		for (RitualDehydrationRecipe recipe : ((RitualDehydration) ritualDehydration).list) {
+			System.out.println(recipe.getSource());
+			System.out.println(recipe.getItem());
+			System.out.println("////////////");
+		}
 	}
 }
