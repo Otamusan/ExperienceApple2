@@ -1,0 +1,265 @@
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>if "Windows_NT" == "Windows_NT" setlocal
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set DEFAULT_JVM_OPTS= 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set JAVA_HOME=C:\PROGRA~1\Java\jdk1.8.0_102 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set DIRNAME=C:\Users\otamusan\Documents\GitHub\Java\Forge-1.12.2-14.23.4.2760\ 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>if "C:\Users\otamusan\Documents\GitHub\Java\Forge-1.12.2-14.23.4.2760\" == "" set DIRNAME=. 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set APP_BASE_NAME=gradlew 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set APP_HOME=C:\Users\otamusan\Documents\GitHub\Java\Forge-1.12.2-14.23.4.2760\ 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>if defined JAVA_HOME goto findJavaFromJavaHome 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set JAVA_HOME=C:\PROGRA~1\Java\jdk1.8.0_102 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set JAVA_EXE=C:\PROGRA~1\Java\jdk1.8.0_102/bin/java.exe 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>if exist "C:\PROGRA~1\Java\jdk1.8.0_102/bin/java.exe" goto init 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>if not "Windows_NT" == "Windows_NT" goto win9xME_args 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>if "@eval[2+2]" == "4" goto 4NT_args 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set CMD_LINE_ARGS= 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set _SKIP=2 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>if "xbuild" == "x" goto execute 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set CMD_LINE_ARGS=build --info 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>goto execute 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>set CLASSPATH=C:\Users\otamusan\Documents\GitHub\Java\Forge-1.12.2-14.23.4.2760\\gradle\wrapper\gradle-wrapper.jar 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>"C:\PROGRA~1\Java\jdk1.8.0_102/bin/java.exe"    "-Dorg.gradle.appname=gradlew" -classpath "C:\Users\otamusan\Documents\GitHub\Java\Forge-1.12.2-14.23.4.2760\\gradle\wrapper\gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain build --info 
+To honour the JVM settings for this build a new JVM will be forked. Please consider using the daemon: https://docs.gradle.org/2.14/userguide/gradle_daemon.html.
+Starting daemon process: workingDir = C:\Users\otamusan\.gradle\daemon\2.14, daemonArgs: [C:\Program Files\Java\jdk1.8.0_102\bin\java.exe, -Xmx3G, -Dfile.encoding=windows-31j, -Duser.country=JP, -Duser.language=ja, -Duser.variant, -cp, C:\Users\otamusan\.gradle\wrapper\dists\gradle-2.14-bin\76oc0mnc3ieqtsukq90mp0rxk\gradle-2.14\lib\gradle-launcher-2.14.jar, org.gradle.launcher.daemon.bootstrap.GradleDaemon, 2.14]
+Starting process 'Gradle build daemon'. Working directory: C:\Users\otamusan\.gradle\daemon\2.14 Command: C:\Program Files\Java\jdk1.8.0_102\bin\java.exe -Xmx3G -Dfile.encoding=windows-31j -Duser.country=JP -Duser.language=ja -Duser.variant -cp C:\Users\otamusan\.gradle\wrapper\dists\gradle-2.14-bin\76oc0mnc3ieqtsukq90mp0rxk\gradle-2.14\lib\gradle-launcher-2.14.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 2.14
+Successfully started process 'Gradle build daemon'
+An attempt to start the daemon took 0.792 secs.
+Connected to daemon DaemonInfo{pid=12312, address=[5eec3a48-630f-4712-a314-eecedd6dc9a8 port:62052, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], idle=false, lastBusy=1538493156187, context=DefaultDaemonContext[uid=67f80bed-2531-4e99-874e-dd689f55c0e6,javaHome=C:\Program Files\Java\jdk1.8.0_102,daemonRegistryDir=C:\Users\otamusan\.gradle\daemon,pid=12312,idleTimeout=120000,daemonOpts=-Xmx3G,-Dfile.encoding=windows-31j,-Duser.country=JP,-Duser.language=ja,-Duser.variant]}. Dispatching request BuildAndStop{id=fcd769b5-5b12-4518-a24e-39d1b2ac2ef9.1, currentDir=C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2}.
+Received result org.gradle.launcher.daemon.protocol.BuildStarted@563e4951 from daemon DaemonInfo{pid=12312, address=[5eec3a48-630f-4712-a314-eecedd6dc9a8 port:62052, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], idle=false, lastBusy=1538493156187, context=DefaultDaemonContext[uid=67f80bed-2531-4e99-874e-dd689f55c0e6,javaHome=C:\Program Files\Java\jdk1.8.0_102,daemonRegistryDir=C:\Users\otamusan\.gradle\daemon,pid=12312,idleTimeout=120000,daemonOpts=-Xmx3G,-Dfile.encoding=windows-31j,-Duser.country=JP,-Duser.language=ja,-Duser.variant]} (build should be starting).
+The client will now receive all logging from the daemon (pid: 12312). The daemon log file: C:\Users\otamusan\.gradle\daemon\2.14\daemon-12312.out.log
+Executing build with daemon context: DefaultDaemonContext[uid=67f80bed-2531-4e99-874e-dd689f55c0e6,javaHome=C:\Program Files\Java\jdk1.8.0_102,daemonRegistryDir=C:\Users\otamusan\.gradle\daemon,pid=12312,idleTimeout=120000,daemonOpts=-Xmx3G,-Dfile.encoding=windows-31j,-Duser.country=JP,-Duser.language=ja,-Duser.variant]
+Starting Build
+Settings evaluated using settings file 'C:\master\settings.gradle'.
+Projects loaded. Root project using build file 'C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build.gradle'.
+Included projects: [root project 'ExperienceApple2 - 1.12.2']
+Evaluating root project 'ExperienceApple2 - 1.12.2' using build file 'C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build.gradle'.
+This mapping 'snapshot_20171003' was designed for MC 1.12! Use at your own peril.
+#################################################
+         ForgeGradle 2.3-SNAPSHOT-ee3e3df        
+  https://github.com/MinecraftForge/ForgeGradle  
+#################################################
+                 Powered by MCP                  
+             http://modcoderpack.com             
+     by: Searge, ProfMobius, R4wk, ZeuX          
+     Fesh0r, IngisKahn, bspkrs, LexManos         
+#################################################
+file or directory 'C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\src\api\resources', not found
+All projects evaluated.
+Selected primary task 'build' from project :
+Tasks to be executed: [task ':deobfCompileDummyTask', task ':extractMcpMappings', task ':deobfProvidedDeobfDepTask0', task ':deobfProvidedRemapDepSourcesTask1', task ':deobfProvidedDummyTask', task ':sourceApiJava', task ':compileApiJava', task ':processApiResources', task ':apiClasses', task ':sourceMainJava', task ':compileJava', task ':processResources', task ':classes', task ':jar', task ':sourceTestJava', task ':compileTestJava', task ':processTestResources', task ':testClasses', task ':test', task ':extractMcpData', task ':getVersionJson', task ':extractUserdev', task ':genSrgs', task ':reobfJar', task ':extractAnnotationsJar', task ':extractRangemapReplacedMain', task ':retromapReplacedMain', task ':sourceJar', task ':assemble', task ':check', task ':build']
+Creating In-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\fileHashes.bin: MaxSize{1358400}
+Creating In-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\treeSnapshots.bin: MaxSize{67900}
+Creating In-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\treeSnapshotUsage.bin: MaxSize{67900}
+Creating In-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\fileSnapshotsToTreeSnapshotsIndex.bin: MaxSize{33900}
+Creating In-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\fileSnapshots.bin: MaxSize{33900}
+Creating In-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\taskArtifacts.bin: MaxSize{6700}
+:deobfCompileDummyTask (Thread[Daemon worker,5,main]) started.
+:deobfCompileDummyTask
+Executing task ':deobfCompileDummyTask' (up-to-date check took 0.001 secs) due to:
+  Task has not declared any outputs.
+:deobfCompileDummyTask (Thread[Daemon worker,5,main]) completed. Took 0.009 secs.
+:extractMcpMappings (Thread[Daemon worker,5,main]) started.
+:extractMcpMappings
+Skipping task ':extractMcpMappings' as task onlyIf is false.
+:extractMcpMappings SKIPPED
+:extractMcpMappings (Thread[Daemon worker,5,main]) completed. Took 0.142 secs.
+:deobfProvidedDeobfDepTask0 (Thread[Daemon worker,5,main]) started.
+:deobfProvidedDeobfDepTask0
+Skipping task ':deobfProvidedDeobfDepTask0' as task onlyIf is false.
+:deobfProvidedDeobfDepTask0 SKIPPED
+:deobfProvidedDeobfDepTask0 (Thread[Daemon worker,5,main]) completed. Took 0.03 secs.
+:deobfProvidedRemapDepSourcesTask1 (Thread[Daemon worker,5,main]) started.
+:deobfProvidedRemapDepSourcesTask1
+Skipping task ':deobfProvidedRemapDepSourcesTask1' as task onlyIf is false.
+:deobfProvidedRemapDepSourcesTask1 SKIPPED
+:deobfProvidedRemapDepSourcesTask1 (Thread[Daemon worker,5,main]) completed. Took 0.045 secs.
+:deobfProvidedDummyTask (Thread[Daemon worker,5,main]) started.
+:deobfProvidedDummyTask
+Executing task ':deobfProvidedDummyTask' (up-to-date check took 0.0 secs) due to:
+  Task has not declared any outputs.
+:deobfProvidedDummyTask (Thread[Daemon worker,5,main]) completed. Took 0.003 secs.
+:sourceApiJava (Thread[Daemon worker,5,main]) started.
+:sourceApiJava
+Invalidating in-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\fileSnapshots.bin
+Invalidating in-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\treeSnapshots.bin
+Invalidating in-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\taskArtifacts.bin
+Invalidating in-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\fileHashes.bin
+Invalidating in-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\fileSnapshotsToTreeSnapshotsIndex.bin
+Invalidating in-memory cache of C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\.gradle\2.14\taskArtifacts\treeSnapshotUsage.bin
+file or directory 'C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\src\api\java', not found
+Skipping task ':sourceApiJava' as it is up-to-date (took 0.018 secs).
+:sourceApiJava UP-TO-DATE
+:sourceApiJava (Thread[Daemon worker,5,main]) completed. Took 0.02 secs.
+:compileApiJava (Thread[Daemon worker,5,main]) started.
+:compileApiJava
+Skipping task ':compileApiJava' as it has no source files.
+:compileApiJava UP-TO-DATE
+:compileApiJava (Thread[Daemon worker,5,main]) completed. Took 0.001 secs.
+:processApiResources (Thread[Daemon worker,5,main]) started.
+:processApiResources
+file or directory 'C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\src\api\resources', not found
+Skipping task ':processApiResources' as it has no source files.
+:processApiResources UP-TO-DATE
+:processApiResources (Thread[Daemon worker,5,main]) completed. Took 0.001 secs.
+:apiClasses (Thread[Daemon worker,5,main]) started.
+:apiClasses
+Skipping task ':apiClasses' as it has no actions.
+:apiClasses UP-TO-DATE
+:apiClasses (Thread[Daemon worker,5,main]) completed. Took 0.002 secs.
+:sourceMainJava (Thread[Daemon worker,5,main]) started.
+:sourceMainJava
+Skipping task ':sourceMainJava' as it is up-to-date (took 0.038 secs).
+:sourceMainJava UP-TO-DATE
+:sourceMainJava (Thread[Daemon worker,5,main]) completed. Took 0.039 secs.
+:compileJava (Thread[Daemon worker,5,main]) started.
+:compileJava
+Executing task ':compileJava' (up-to-date check took 0.231 secs) due to:
+  Output file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\classes\main\ExperienceApple\Register\BlockRegister.class has been removed.
+  Output file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\classes\main\Client\ClientProxy.class has been removed.
+  Output file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\classes\main\Blocks\BlockWEIHopper.class has been removed.
+All input files are considered out-of-date for incremental task ':compileJava'.
+Compiling with JDK Java compiler API.
+注意:一部の入力ファイルは非推奨のAPIを使用またはオーバーライドしています。
+注意:詳細は、-Xlint:deprecationオプションを指定して再コンパイルしてください。
+注意:C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\sources\main\java\Item\Tools\ItemAdvancedExperienceIronSword.javaの操作は、未チェックまたは安全ではありません。
+注意:詳細は、-Xlint:uncheckedオプションを指定して再コンパイルしてください。
+:compileJava (Thread[Daemon worker,5,main]) completed. Took 3.1 secs.
+:processResources (Thread[Daemon worker,5,main]) started.
+:processResources
+Executing task ':processResources' (up-to-date check took 0.086 secs) due to:
+  Input file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\src\main\resources\assets\experienceapple2\textures\items\orderingot.png has been added.
+  Input file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\src\main\resources\assets\experienceapple2\textures\items\timesand.png has been added.
+  Input file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\src\main\resources\assets\experienceapple2 has been added.
+:processResources (Thread[Daemon worker,5,main]) completed. Took 1.52 secs.
+:classes (Thread[Daemon worker,5,main]) started.
+:classes
+Skipping task ':classes' as it has no actions.
+:classes (Thread[Daemon worker,5,main]) completed. Took 0.001 secs.
+:jar (Thread[Daemon worker,5,main]) started.
+:jar
+Executing task ':jar' (up-to-date check took 0.006 secs) due to:
+  Output file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\libs\modid-1.0.jar has changed.
+  Output file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\libs\modid-1.0.jar has been removed.
+:jar (Thread[Daemon worker,5,main]) completed. Took 0.201 secs.
+:sourceTestJava (Thread[Daemon worker,5,main]) started.
+:sourceTestJava
+file or directory 'C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\src\test\java', not found
+Skipping task ':sourceTestJava' as it is up-to-date (took 0.002 secs).
+:sourceTestJava UP-TO-DATE
+:sourceTestJava (Thread[Daemon worker,5,main]) completed. Took 0.003 secs.
+:compileTestJava (Thread[Daemon worker,5,main]) started.
+:compileTestJava
+Skipping task ':compileTestJava' as it has no source files.
+:compileTestJava UP-TO-DATE
+:compileTestJava (Thread[Daemon worker,5,main]) completed. Took 0.001 secs.
+:processTestResources (Thread[Daemon worker,5,main]) started.
+:processTestResources
+file or directory 'C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\src\test\resources', not found
+Skipping task ':processTestResources' as it has no source files.
+:processTestResources UP-TO-DATE
+:processTestResources (Thread[Daemon worker,5,main]) completed. Took 0.001 secs.
+:testClasses (Thread[Daemon worker,5,main]) started.
+:testClasses
+Skipping task ':testClasses' as it has no actions.
+:testClasses UP-TO-DATE
+:testClasses (Thread[Daemon worker,5,main]) completed. Took 0.0 secs.
+:test (Thread[Daemon worker,5,main]) started.
+:test
+file or directory 'C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\classes\test', not found
+Skipping task ':test' as it has no source files.
+:test UP-TO-DATE
+:test (Thread[Daemon worker,5,main]) completed. Took 0.001 secs.
+:extractMcpData (Thread[Daemon worker,5,main]) started.
+:extractMcpData
+Skipping task ':extractMcpData' as task onlyIf is false.
+:extractMcpData SKIPPED
+:extractMcpData (Thread[Daemon worker,5,main]) completed. Took 0.129 secs.
+:getVersionJson (Thread[Daemon worker,5,main]) started.
+:getVersionJson
+Executing task ':getVersionJson' (up-to-date check took 0.004 secs) due to:
+  Task.upToDateWhen is false.
+:getVersionJson (Thread[Daemon worker,5,main]) completed. Took 1.063 secs.
+:extractUserdev (Thread[Daemon worker,5,main]) started.
+:extractUserdev
+Skipping task ':extractUserdev' as it is up-to-date (took 0.013 secs).
+:extractUserdev UP-TO-DATE
+:extractUserdev (Thread[Daemon worker,5,main]) completed. Took 0.013 secs.
+:genSrgs (Thread[Daemon worker,5,main]) started.
+:genSrgs
+Skipping task ':genSrgs' as task onlyIf is false.
+:genSrgs SKIPPED
+:genSrgs (Thread[Daemon worker,5,main]) completed. Took 0.333 secs.
+:reobfJar (Thread[Daemon worker,5,main]) started.
+:reobfJar
+Executing task ':reobfJar' (up-to-date check took 0.0 secs) due to:
+  Task.upToDateWhen is false.
+:reobfJar (Thread[Daemon worker,5,main]) completed. Took 0.634 secs.
+:extractAnnotationsJar (Thread[Daemon worker,5,main]) started.
+:extractAnnotationsJar
+Executing task ':extractAnnotationsJar' (up-to-date check took 0.0 secs) due to:
+  Task.upToDateWhen is false.
+:extractAnnotationsJar (Thread[Daemon worker,5,main]) completed. Took 0.073 secs.
+:extractRangemapReplacedMain (Thread[Daemon worker,5,main]) started.
+:extractRangemapReplacedMain
+Executing task ':extractRangemapReplacedMain' (up-to-date check took 0.008 secs) due to:
+  Input file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\sources\main\java\Rituals\Rituals\RitualCraft\RitualCraftRegister.java has changed.
+  Input file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\sources\main\java\Item\ItemFragmentOfTheBrain.java has changed.
+  Input file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\sources\main\java\Client\ClientProxy.java has changed.
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\sources\main\java
+:extractRangemapReplacedMain (Thread[Daemon worker,5,main]) completed. Took 7.805 secs.
+:retromapReplacedMain (Thread[Daemon worker,5,main]) started.
+:retromapReplacedMain
+Executing task ':retromapReplacedMain' (up-to-date check took 0.0 secs) due to:
+  Input file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\sources\main\java\Item\ItemTimeSand.java has changed.
+  Input file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\sources\main\java\Rituals\Rituals\RitualCraft\RitualCraftRegister.java has changed.
+  Input file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\sources\main\java\Client\JEI has been added.
+remapping source...
+:retromapReplacedMain (Thread[Daemon worker,5,main]) completed. Took 1.108 secs.
+:sourceJar (Thread[Daemon worker,5,main]) started.
+:sourceJar
+Executing task ':sourceJar' (up-to-date check took 0.002 secs) due to:
+  Output file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\libs\modid-1.0-sources.jar has changed.
+  Output file C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2\build\libs\modid-1.0-sources.jar has been removed.
+:sourceJar (Thread[Daemon worker,5,main]) completed. Took 0.11 secs.
+:assemble (Thread[Daemon worker,5,main]) started.
+:assemble
+Skipping task ':assemble' as it has no actions.
+:assemble (Thread[Daemon worker,5,main]) completed. Took 0.0 secs.
+:check (Thread[Daemon worker,5,main]) started.
+:check
+Skipping task ':check' as it has no actions.
+:check UP-TO-DATE
+:check (Thread[Daemon worker,5,main]) completed. Took 0.001 secs.
+:build (Thread[Daemon worker,5,main]) started.
+:build
+Skipping task ':build' as it has no actions.
+:build (Thread[Daemon worker,5,main]) completed. Took 0.0 secs.
+
+BUILD SUCCESSFUL
+
+Total time: 24.769 secs
+Stopped 0 compiler daemon(s).
+Received result Success[value=null] from daemon DaemonInfo{pid=12312, address=[5eec3a48-630f-4712-a314-eecedd6dc9a8 port:62052, addresses:[/127.0.0.1, /0:0:0:0:0:0:0:1]], idle=false, lastBusy=1538493156187, context=DefaultDaemonContext[uid=67f80bed-2531-4e99-874e-dd689f55c0e6,javaHome=C:\Program Files\Java\jdk1.8.0_102,daemonRegistryDir=C:\Users\otamusan\.gradle\daemon,pid=12312,idleTimeout=120000,daemonOpts=-Xmx3G,-Dfile.encoding=windows-31j,-Duser.country=JP,-Duser.language=ja,-Duser.variant]} (build should be done).
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>if "0" == "0" goto mainEnd 
+
+C:\Users\otamusan\Documents\GitHub\Java\ExperienceApple2 - 1.12.2>if "Windows_NT" == "Windows_NT" endlocal

@@ -1,18 +1,22 @@
 Symbol range map extraction starting
-Processing 130 files
+Processing 148 files
 startProcessing "Blocks\BlockAccelerateStone.java" md5: b4164c4f1d531b8d247dc12ecd5a8021
+Cache Hit!
 endProcessing "Blocks\BlockAccelerateStone.java"
 
 startProcessing "Blocks\BlockAwakenedSpawner.java" md5: a455c356ea3ac3533d0837e9aa2db426
+Cache Hit!
 endProcessing "Blocks\BlockAwakenedSpawner.java"
 
-startProcessing "Blocks\BlockCabinetStone.java" md5: 669e4e84943c7e6d27abf6c8b9596f0d
+startProcessing "Blocks\BlockCabinetStone.java" md5: d161d39503d2ef4fe45fda734260f406
 endProcessing "Blocks\BlockCabinetStone.java"
 
 startProcessing "Blocks\BlockClearGlass.java" md5: 045c060a6080cb602f1eb4ae0cd41936
+Cache Hit!
 endProcessing "Blocks\BlockClearGlass.java"
 
 startProcessing "Blocks\BlockCodensedExperienceOre.java" md5: 427bbb19df3d53fcc91927bfb59c1929
+Cache Hit!
 endProcessing "Blocks\BlockCodensedExperienceOre.java"
 
 startProcessing "Blocks\BlockEIHopper.java" md5: b65b3370214325ed08ea739118040140
@@ -20,36 +24,44 @@ Cache Hit!
 endProcessing "Blocks\BlockEIHopper.java"
 
 startProcessing "Blocks\BlockExperienceOre.java" md5: fbc71b96a05f3123aca9175018abdc37
+Cache Hit!
 endProcessing "Blocks\BlockExperienceOre.java"
 
-startProcessing "Blocks\BlockGrowthStone.java" md5: 1b0fdd351005216d50f06818450ac489
+startProcessing "Blocks\BlockGrowthStone.java" md5: f3f1f2aa23d7c1efd2ea9a2847a608de
 endProcessing "Blocks\BlockGrowthStone.java"
 
 startProcessing "Blocks\BlockHighFrequencyRedStone.java" md5: 74c280d45d98bf15e650c93e1fbb50b8
+Cache Hit!
 endProcessing "Blocks\BlockHighFrequencyRedStone.java"
 
 startProcessing "Blocks\BlockMod.java" md5: 110b3432f580927d640294ffbca8278e
+Cache Hit!
 endProcessing "Blocks\BlockMod.java"
 
 startProcessing "Blocks\BlockPureExperience.java" md5: e0cb364f95c996ae82c88a367acbcfd5
+Cache Hit!
 endProcessing "Blocks\BlockPureExperience.java"
 
 startProcessing "Blocks\BlockRackManager.java" md5: c20a17cb188d01ca4d1f35a26e5063a4
+Cache Hit!
 endProcessing "Blocks\BlockRackManager.java"
 
-startProcessing "Blocks\BlockRitual.java" md5: a36f2776d027ff42c566a66eba7b4fbd
+startProcessing "Blocks\BlockRitual.java" md5: 37370a31768d39d95e1530f78526940c
 endProcessing "Blocks\BlockRitual.java"
 
-startProcessing "Blocks\BlockRitualGlass.java" md5: bdda228c0d1cf6416e0c7d555e23e639
+startProcessing "Blocks\BlockRitualGlass.java" md5: 14f483936a0257455586f92eeb12fa48
 endProcessing "Blocks\BlockRitualGlass.java"
 
 startProcessing "Blocks\BlockRitualLauncher.java" md5: bcafac9a2ed230a51ee331c99009b440
+Cache Hit!
 endProcessing "Blocks\BlockRitualLauncher.java"
 
 startProcessing "Blocks\BlockRitualStone.java" md5: 735802994fd77f86bde602f6c7b8c156
+Cache Hit!
 endProcessing "Blocks\BlockRitualStone.java"
 
 startProcessing "Blocks\BlockStorageRack.java" md5: 119359b65da3a808eef4aafcabf928ae
+Cache Hit!
 endProcessing "Blocks\BlockStorageRack.java"
 
 startProcessing "Blocks\BlockWEIHopper.java" md5: aed46049d6afcbdf3283e07f460f3471
@@ -60,57 +72,97 @@ startProcessing "Blocks\Dirt\BlockEADirt.java" md5: b13e219bd027c080dfd70f558ac0
 Cache Hit!
 endProcessing "Blocks\Dirt\BlockEADirt.java"
 
-startProcessing "Blocks\Dirt\BlockEnrichedFarmLand.java" md5: 3476bcfe168564cc309380c2f3c52047
-Cache Hit!
+startProcessing "Blocks\Dirt\BlockEnrichedFarmLand.java" md5: 391439c337e21cf37900524d4c839ec9
 endProcessing "Blocks\Dirt\BlockEnrichedFarmLand.java"
 
-startProcessing "Blocks\Dirt\BlockPath.java" md5: 6ecf23fbe7ceb93be9801f8ab5865f39
-Cache Hit!
+startProcessing "Blocks\Dirt\BlockPath.java" md5: ac0424bd6a95c3be2c3f83f621fad30e
 endProcessing "Blocks\Dirt\BlockPath.java"
 
-startProcessing "Blocks\Dirt\BlockRottenDirt.java" md5: 9a56f3ceba786c5bf9b470cadd21c9f5
-Cache Hit!
+startProcessing "Blocks\Dirt\BlockRottenDirt.java" md5: d64907142d118fa156aea54a6252ca51
 endProcessing "Blocks\Dirt\BlockRottenDirt.java"
 
 startProcessing "Blocks\ILeftClick.java" md5: 42f885b81eaafda14da501f274135bfd
 Cache Hit!
 endProcessing "Blocks\ILeftClick.java"
 
-startProcessing "Client\ClientProxy.java" md5: d03632dcbde8acd47bb5e171deb92c85
-Cache Hit!
+startProcessing "Client\ClientProxy.java" md5: f482c331075a888ea7f60ff2fad08e21
 endProcessing "Client\ClientProxy.java"
 
-startProcessing "Client\EACraftingEvent.java" md5: 861ab8842a11a971a223d4671077364b
-Cache Hit!
+startProcessing "Client\EACraftingEvent.java" md5: 591b1dd2ed7e3f84cc836764d77cc804
 endProcessing "Client\EACraftingEvent.java"
 
-startProcessing "Client\Particle\ParticleEABase.java" md5: e782ed92ac6a0684b606a6573ce824c3
-Cache Hit!
-endProcessing "Client\Particle\ParticleEABase.java"
+startProcessing "Client\JEI\EAPlugin.java" md5: cab959c7d66689a5006ea14d681109b0
+endProcessing "Client\JEI\EAPlugin.java"
+
+startProcessing "Client\JEI\EA\EARecipeWrapper.java" md5: 3edbd33be081e27e2509623c83de0d5b
+endProcessing "Client\JEI\EA\EARecipeWrapper.java"
+
+startProcessing "Client\JEI\Enchant\EnchantRecipeWrapper.java" md5: 7298ac776dddf8659201c1737ccda946
+endProcessing "Client\JEI\Enchant\EnchantRecipeWrapper.java"
+
+startProcessing "Client\JEI\Repair\RepairRecipeWrapper.java" md5: 394881fe3effd96c4e18358dcf84f723
+endProcessing "Client\JEI\Repair\RepairRecipeWrapper.java"
+
+startProcessing "Client\JEI\RitualCraft\RitualCraftRecipeCategory.java" md5: 1ceaa2b03ce95ff34e15345ed9097ba2
+endProcessing "Client\JEI\RitualCraft\RitualCraftRecipeCategory.java"
+
+startProcessing "Client\JEI\RitualCraft\RitualCraftRecipeWrapper.java" md5: 00b4556cded0e7dbb5969d29982421ce
+endProcessing "Client\JEI\RitualCraft\RitualCraftRecipeWrapper.java"
+
+startProcessing "Client\JEI\RitualInjection\RitualInjectionRecipeCategory.java" md5: ba759ced0034c2c5e16ee787194f02e8
+endProcessing "Client\JEI\RitualInjection\RitualInjectionRecipeCategory.java"
+
+startProcessing "Client\JEI\RitualInjection\RitualInjectionRecipeWrapper.java" md5: 0c651cf7fff69397fd59e6bbc71fc9eb
+endProcessing "Client\JEI\RitualInjection\RitualInjectionRecipeWrapper.java"
+
+startProcessing "Client\Particle\EAFandInt.java" md5: da37fceb8015c24b92092a82231a80e2
+endProcessing "Client\Particle\EAFandInt.java"
+
+startProcessing "Client\Particle\EAParticle.java" md5: 5d2e2ad91aa80cb6e5d6ff9275163dcf
+endProcessing "Client\Particle\EAParticle.java"
+
+startProcessing "Client\Particle\EAParticleFunc.java" md5: 7f89c1990fa0ca967a0247656785d58c
+endProcessing "Client\Particle\EAParticleFunc.java"
+
+startProcessing "Client\Particle\EAParticleFuncs.java" md5: 818cac941b55e3c0d5d86ec8320fe249
+endProcessing "Client\Particle\EAParticleFuncs.java"
+
+startProcessing "Client\Particle\EAParticleWrapper.java" md5: 2a63e5de384923ca282f79dc8040dccd
+endProcessing "Client\Particle\EAParticleWrapper.java"
+
+startProcessing "Client\Particle\IEAParticleFunc.java" md5: b2f4358a58feef908b638173dba1ab6d
+endProcessing "Client\Particle\IEAParticleFunc.java"
+
+startProcessing "Client\Particle\PF.java" md5: 1af731e1aba595f0da31488d03f2e186
+endProcessing "Client\Particle\PF.java"
+
+startProcessing "Client\Particle\PS.java" md5: f4f89a458dbfcec5e42e784c8bdbf67f
+endProcessing "Client\Particle\PS.java"
 
 startProcessing "Client\Particle\TextureStitcherBreathFX.java" md5: 3175a705ef53b729260a5c73de411e11
 Cache Hit!
 endProcessing "Client\Particle\TextureStitcherBreathFX.java"
 
 startProcessing "Client\RepairCraftingEvent.java" md5: 2dd8196030c2547c82c37a3ab8695e71
+Cache Hit!
 endProcessing "Client\RepairCraftingEvent.java"
 
 startProcessing "Client\TileStorageRackRenderer.java" md5: a968f52eefaed301b0bd347079e24aee
 Cache Hit!
 endProcessing "Client\TileStorageRackRenderer.java"
 
-startProcessing "Client\TooltipHandler.java" md5: 467919b016b95d3d38efe3880603946b
+startProcessing "Client\TooltipHandler.java" md5: fa8197f0583b84bcdfcdcc81afdfa26b
 endProcessing "Client\TooltipHandler.java"
 
 startProcessing "Common\BlockLeftClick.java" md5: 8b739f4553ea1edcc017a40655b065c8
 Cache Hit!
 endProcessing "Common\BlockLeftClick.java"
 
-startProcessing "Common\CommonProxy.java" md5: b21fe2b248aa1ceaccdae24a9ddd00bb
-Cache Hit!
+startProcessing "Common\CommonProxy.java" md5: bc51cfddc6c8367cf5664d568c9ef689
 endProcessing "Common\CommonProxy.java"
 
 startProcessing "Common\DeathEnderDragon.java" md5: 8edd023277147c303f0db202d461fe69
+Cache Hit!
 endProcessing "Common\DeathEnderDragon.java"
 
 startProcessing "Common\DeathVillager.java" md5: 17d29e465fa7e2ed45df5159a65e6c1d
@@ -118,33 +170,34 @@ Cache Hit!
 endProcessing "Common\DeathVillager.java"
 
 startProcessing "Common\FlyingSpellPaper\HasItemUpdate.java" md5: 852a8e826b18f7557c9532470a058d95
+Cache Hit!
 endProcessing "Common\FlyingSpellPaper\HasItemUpdate.java"
 
 startProcessing "Common\PotionStateProtection.java" md5: 674eb125187f771af283717a3eea2c67
 Cache Hit!
 endProcessing "Common\PotionStateProtection.java"
 
-startProcessing "ExperienceApple\EAMain.java" md5: 82f8f46f598c063cc647bda991e622bf
+startProcessing "ExperienceApple\EAMain.java" md5: 517be36c738f36e2dfa9503327bb7b0b
 endProcessing "ExperienceApple\EAMain.java"
 
-startProcessing "ExperienceApple\Register\BlockRegister.java" md5: edfd96b6894e199ac7a4d5f29e5ccb9c
-Cache Hit!
+startProcessing "ExperienceApple\Register\BlockRegister.java" md5: 4ea84118a0ca5de78c43385c75d4b60a
 endProcessing "ExperienceApple\Register\BlockRegister.java"
 
 startProcessing "ExperienceApple\Register\EntityRegister.java" md5: 6a70c935f8eea1a8d7da35b6d6bde796
 Cache Hit!
 endProcessing "ExperienceApple\Register\EntityRegister.java"
 
-startProcessing "ExperienceApple\Register\ItemRegister.java" md5: 9097af222a6dd48e5aef9d9f48c1ad53
+startProcessing "ExperienceApple\Register\ItemRegister.java" md5: d1cfb4dd97cef7ca1ba8f10f7b096f24
 endProcessing "ExperienceApple\Register\ItemRegister.java"
 
 startProcessing "ExperienceApple\Register\PotionRegister.java" md5: 4721edbf83ed960bbf9cb8653caed55f
+Cache Hit!
 endProcessing "ExperienceApple\Register\PotionRegister.java"
 
-startProcessing "ExperienceApple\Register\RecipeRegister.java" md5: 09739a8f6a37c73d0113a9a26d0fd5ab
+startProcessing "ExperienceApple\Register\RecipeRegister.java" md5: 6ac3ceb7d58ae21d61d85c4a45f712a3
 endProcessing "ExperienceApple\Register\RecipeRegister.java"
 
-startProcessing "ExperienceApple\Register\RitualRegister.java" md5: 16777a1b2844b33e81ff0107b2e4127c
+startProcessing "ExperienceApple\Register\RitualRegister.java" md5: e6e8320ef36665bff211faefa7f82068
 endProcessing "ExperienceApple\Register\RitualRegister.java"
 
 startProcessing "ExperienceApple\TabExperienceApple.java" md5: 869352b6f5c38a899d360cda06422140
@@ -152,12 +205,13 @@ Cache Hit!
 endProcessing "ExperienceApple\TabExperienceApple.java"
 
 startProcessing "Item\Armors\ItemAdvancedExperienceIronArmor.java" md5: e574a3429d56a216cd5c731f014c7ec1
+Cache Hit!
 endProcessing "Item\Armors\ItemAdvancedExperienceIronArmor.java"
 
-startProcessing "Item\Armors\ItemExperienceIronArmor.java" md5: 07d12656e846bc29a7d6b5f466d7bb4b
+startProcessing "Item\Armors\ItemExperienceIronArmor.java" md5: 928ea9cbe68cf080ccb787f7ad0c32b6
 endProcessing "Item\Armors\ItemExperienceIronArmor.java"
 
-startProcessing "Item\Armors\ItemWeakExperienceIronArmor.java" md5: f4d7f63b401acfcb733a8d05cb69eff1
+startProcessing "Item\Armors\ItemWeakExperienceIronArmor.java" md5: e4aa4959759e49a9b1bb7965f06fdb8a
 endProcessing "Item\Armors\ItemWeakExperienceIronArmor.java"
 
 startProcessing "Item\ExperienceRepair.java" md5: 84e56829694c49763e354bffc914b87f
@@ -169,117 +223,130 @@ Cache Hit!
 endProcessing "Item\IExperienceRepair.java"
 
 startProcessing "Item\ItemAshIngot.java" md5: 05010b6d4596d1896fb4bae793083d5b
+Cache Hit!
 endProcessing "Item\ItemAshIngot.java"
 
-startProcessing "Item\ItemAshOfBalance.java" md5: 27eb35ebe75cf85657f7dae19ccb7601
+startProcessing "Item\ItemAshOfBalance.java" md5: 9bd0c0d75d018294c4d60c99d56cc7e5
 endProcessing "Item\ItemAshOfBalance.java"
 
-startProcessing "Item\ItemAshOfEntropy.java" md5: e9497ae4d9a7405788eb8959a0c78480
+startProcessing "Item\ItemAshOfEntropy.java" md5: f5db5ad3391e3ff4f3d37d4322c219ea
 endProcessing "Item\ItemAshOfEntropy.java"
 
-startProcessing "Item\ItemAshOfOrder.java" md5: 8132b51889f7a73c4e14c7909cc5e30f
+startProcessing "Item\ItemAshOfOrder.java" md5: 0044e180185504261e9cab80e285a484
 endProcessing "Item\ItemAshOfOrder.java"
 
 startProcessing "Item\ItemCompressed.java" md5: 4272f40be8b5ac6804c772045a9f39c8
+Cache Hit!
 endProcessing "Item\ItemCompressed.java"
 
-startProcessing "Item\ItemDebug.java" md5: b09837c52d2f6a2a5840c5767d096d4d
+startProcessing "Item\ItemDebug.java" md5: 293df35140c52632c87ad6b34116d016
 endProcessing "Item\ItemDebug.java"
 
-startProcessing "Item\ItemEnchantmentPearl.java" md5: 8cfdcb69fd1968eff023d7a9db98821e
+startProcessing "Item\ItemEnchantmentPearl.java" md5: 06f984bdd1eb8894be3cd707ae86ef58
 endProcessing "Item\ItemEnchantmentPearl.java"
 
 startProcessing "Item\ItemExperienceApple.java" md5: 7756eba2bf1ee9e3c639241e6540f608
+Cache Hit!
 endProcessing "Item\ItemExperienceApple.java"
 
-startProcessing "Item\ItemFragmentOfTheBrain.java" md5: 3a1919eca059790b1985a0cc141b679e
+startProcessing "Item\ItemFragmentOfTheBrain.java" md5: bddff961165d1b01f184539487edbea0
 endProcessing "Item\ItemFragmentOfTheBrain.java"
 
 startProcessing "Item\ItemGravityCompressor.java" md5: cf1b21a4a54503260b2224dc1c5c641b
+Cache Hit!
 endProcessing "Item\ItemGravityCompressor.java"
 
 startProcessing "Item\ItemMod.java" md5: d0051347c242c345a35bcb5f88b397d5
+Cache Hit!
 endProcessing "Item\ItemMod.java"
 
 startProcessing "Item\ItemModFood.java" md5: c783a0f0abb9c882e08aadfd407f133e
+Cache Hit!
 endProcessing "Item\ItemModFood.java"
 
-startProcessing "Item\ItemRegisteredExperienceApple.java" md5: ddeb1f90b6ddbb7d2f428c81a01d98ad
+startProcessing "Item\ItemRegisteredExperienceApple.java" md5: 673f3f12a9612fcc99d1804e8ce16244
 endProcessing "Item\ItemRegisteredExperienceApple.java"
 
-startProcessing "Item\ItemRitualAssembler.java" md5: 5d497b9d98318c24263733d419303b44
+startProcessing "Item\ItemRitualAssembler.java" md5: eb542a9c090e67246bb158894eaea8a8
 endProcessing "Item\ItemRitualAssembler.java"
 
 startProcessing "Item\ItemSuperDye.java" md5: 360def6e42b39f4969a57d73b0ed6105
+Cache Hit!
 endProcessing "Item\ItemSuperDye.java"
 
-startProcessing "Item\ItemTimeSand.java" md5: 7df25c3819e5988f77c221042fb3c954
+startProcessing "Item\ItemTimeSand.java" md5: 81ee9f303c4a7704d17295cc22090325
 endProcessing "Item\ItemTimeSand.java"
 
 startProcessing "Item\ItemUniversalNutrient.java" md5: 8608cc3354e4f9c5635f11da17127495
+Cache Hit!
 endProcessing "Item\ItemUniversalNutrient.java"
 
-startProcessing "Item\ItemWarpStone.java" md5: 1654934ab4e55c914a4d2f0624c4d1f1
+startProcessing "Item\ItemWarpStone.java" md5: dd0c405d698babae955afafc0255ad3e
 endProcessing "Item\ItemWarpStone.java"
 
-startProcessing "Item\SpellPapers\ItemSpellPapers.java" md5: 5bf278ac38a25e01eabacf02aa502065
+startProcessing "Item\SpellPapers\ItemSpellPapers.java" md5: 6ed1f768f60270af3cc47e6aa01c4df4
 endProcessing "Item\SpellPapers\ItemSpellPapers.java"
 
-startProcessing "Item\Tools\ItemAdvancedExperienceIronAxe.java" md5: c987089a5bff15d1c98d3b0b66a5587c
+startProcessing "Item\Tools\ItemAdvancedExperienceIronAxe.java" md5: 7b9632c115ad54b7f69a09acc8e76885
 endProcessing "Item\Tools\ItemAdvancedExperienceIronAxe.java"
 
-startProcessing "Item\Tools\ItemAdvancedExperienceIronPickaxe.java" md5: 66a22c53af4e9fa00a4cc31522f01eb4
+startProcessing "Item\Tools\ItemAdvancedExperienceIronPickaxe.java" md5: dbb7a453346d75d2476ba7e24fa3fbf0
 endProcessing "Item\Tools\ItemAdvancedExperienceIronPickaxe.java"
 
-startProcessing "Item\Tools\ItemAdvancedExperienceIronShovel.java" md5: 06bb121fed9ebad7b6bdb9a18182a8b4
+startProcessing "Item\Tools\ItemAdvancedExperienceIronShovel.java" md5: 6ec436358761e6cddaafd53f3c5b354a
 endProcessing "Item\Tools\ItemAdvancedExperienceIronShovel.java"
 
-startProcessing "Item\Tools\ItemAdvancedExperienceIronSword.java" md5: 586d9bf455773cc28fba5efad650e777
+startProcessing "Item\Tools\ItemAdvancedExperienceIronSword.java" md5: 32db1f34c60d202ba1bef4da40c48275
 endProcessing "Item\Tools\ItemAdvancedExperienceIronSword.java"
 
-startProcessing "Item\Tools\ItemAtomicCutter.java" md5: 63f65f587d432f33809f9013640a8ef7
+startProcessing "Item\Tools\ItemAtomicCutter.java" md5: 368049c90596d3775837adeb464926e2
 endProcessing "Item\Tools\ItemAtomicCutter.java"
 
-startProcessing "Item\Tools\ItemExperienceIronAxe.java" md5: 48116fb9ad7977296687f6b84ec61f02
+startProcessing "Item\Tools\ItemExperienceIronAxe.java" md5: 36513201dd6ba01ada54046045a9e6e7
 endProcessing "Item\Tools\ItemExperienceIronAxe.java"
 
-startProcessing "Item\Tools\ItemExperienceIronPickaxe.java" md5: c59de383a6d487ac769a2d434736a754
+startProcessing "Item\Tools\ItemExperienceIronPickaxe.java" md5: f1305ec670d80ef3989dba2c2b303f48
 endProcessing "Item\Tools\ItemExperienceIronPickaxe.java"
 
-startProcessing "Item\Tools\ItemExperienceIronShovel.java" md5: 30acffb5a7491dfd4773359ec5c2c908
+startProcessing "Item\Tools\ItemExperienceIronShovel.java" md5: 2ab600cf8fcb0fb1bf9849f77e342798
 endProcessing "Item\Tools\ItemExperienceIronShovel.java"
 
-startProcessing "Item\Tools\ItemExperienceIronSword.java" md5: f3fb355575a30dfc09d891da1508d410
+startProcessing "Item\Tools\ItemExperienceIronSword.java" md5: 8c6d926dfba859a446bb4a1fe790b954
 endProcessing "Item\Tools\ItemExperienceIronSword.java"
 
 startProcessing "Item\Tools\ItemFeatherSword.java" md5: 5e28078056e7d5ba024f746f38eb2950
+Cache Hit!
 endProcessing "Item\Tools\ItemFeatherSword.java"
 
-startProcessing "Item\Tools\ItemMagicBow.java" md5: 9fc1beacdffb9acfa6adf995c0f98b29
+startProcessing "Item\Tools\ItemMagicBow.java" md5: 36df837ddaa9310469de3f590bd233bc
 endProcessing "Item\Tools\ItemMagicBow.java"
 
 startProcessing "Item\Tools\ItemUnstableAxe.java" md5: 530ce8df63942c1cdf42d60bc7bf755e
+Cache Hit!
 endProcessing "Item\Tools\ItemUnstableAxe.java"
 
-startProcessing "Item\Tools\ItemWeakExperienceIronAxe.java" md5: b1789713d3ff1684563b97534533641d
+startProcessing "Item\Tools\ItemWeakExperienceIronAxe.java" md5: fcb2d46defaf0f13b13a7af461c15a9e
 endProcessing "Item\Tools\ItemWeakExperienceIronAxe.java"
 
-startProcessing "Item\Tools\ItemWeakExperienceIronPickaxe.java" md5: ac36d4c22c413fc365521e33ec2bd758
+startProcessing "Item\Tools\ItemWeakExperienceIronPickaxe.java" md5: a990b9a55a02bb5d69bb872cdda03d95
 endProcessing "Item\Tools\ItemWeakExperienceIronPickaxe.java"
 
-startProcessing "Item\Tools\ItemWeakExperienceIronShovel.java" md5: 6bd69b15dc421c8a5d916da4f5ad0220
+startProcessing "Item\Tools\ItemWeakExperienceIronShovel.java" md5: cf82f41368b14421bc7267bc16578927
 endProcessing "Item\Tools\ItemWeakExperienceIronShovel.java"
 
-startProcessing "Item\Tools\ItemWeakExperienceIronSword.java" md5: fb131979d5020812f3ad81fc3610ad82
+startProcessing "Item\Tools\ItemWeakExperienceIronSword.java" md5: 0eba96fce251dd6f0f3c0236d5748c55
 endProcessing "Item\Tools\ItemWeakExperienceIronSword.java"
 
 startProcessing "Potion\PotionFly.java" md5: a8489992109f0b68da2d0502c0f04a01
+Cache Hit!
 endProcessing "Potion\PotionFly.java"
 
 startProcessing "Potion\PotionRetention.java" md5: c2a3ee0df78b20350b9e185679b5d17f
+Cache Hit!
 endProcessing "Potion\PotionRetention.java"
 
 startProcessing "Potion\PotionSatiety.java" md5: a11548275cc2e57b25f9a6b9ea999fec
+Cache Hit!
 endProcessing "Potion\PotionSatiety.java"
 
 startProcessing "Potion\PotionStateProtection.java" md5: f02058863c536961b6a520cc1518b960
@@ -287,22 +354,19 @@ Cache Hit!
 endProcessing "Potion\PotionStateProtection.java"
 
 startProcessing "Recipes\EACraft.java" md5: 7be3859f8428268aac46cd9d7c8a3583
+Cache Hit!
 endProcessing "Recipes\EACraft.java"
 
-startProcessing "Recipes\EnchCraft.java" md5: 2d13d47dcc40748342f1a1d41b8fb354
-Cache Hit!
+startProcessing "Recipes\EnchCraft.java" md5: 43229a10f9c3dd4ad14fd6eb81de774f
 endProcessing "Recipes\EnchCraft.java"
 
-startProcessing "Recipes\RepairCraft.java" md5: 0246ffbcc9be835693d73db62ff4c659
-Cache Hit!
+startProcessing "Recipes\RepairCraft.java" md5: 409764c083e974b991548a81303350f7
 endProcessing "Recipes\RepairCraft.java"
 
-startProcessing "Rituals\EnumRitualStones.java" md5: 5a6724b25bd065977d97e8d47df1e59a
-Cache Hit!
+startProcessing "Rituals\EnumRitualStones.java" md5: f56e5f520c03a17a8f375e6f0c4aa7c6
 endProcessing "Rituals\EnumRitualStones.java"
 
-startProcessing "Rituals\RitualCore.java" md5: f24b447bb04535e1c6de4d91c3b3dc0f
-Cache Hit!
+startProcessing "Rituals\RitualCore.java" md5: 19338d345cbf8f47e97f089e40b88ea8
 endProcessing "Rituals\RitualCore.java"
 
 startProcessing "Rituals\RitualRegistry.java" md5: 33a4938c1ed3e7db322cdf838a84e035
@@ -317,19 +381,17 @@ startProcessing "Rituals\Rituals\RitualBlockCut.java" md5: 0038c0c83a1775221e1d8
 Cache Hit!
 endProcessing "Rituals\Rituals\RitualBlockCut.java"
 
-startProcessing "Rituals\Rituals\RitualCollection.java" md5: 2954b98a2b173a6e4e652d7f85955dc3
-Cache Hit!
+startProcessing "Rituals\Rituals\RitualCollection.java" md5: 700043f7e6266a8033a6b91f037915ad
 endProcessing "Rituals\Rituals\RitualCollection.java"
 
 startProcessing "Rituals\Rituals\RitualCraft\RitualCraft.java" md5: 0213fe63ca1ff61afee1ac6808906a04
 Cache Hit!
 endProcessing "Rituals\Rituals\RitualCraft\RitualCraft.java"
 
-startProcessing "Rituals\Rituals\RitualCraft\RitualCraftCore.java" md5: 34f285df7db0cf601fd9c5630a4e4ceb
-Cache Hit!
+startProcessing "Rituals\Rituals\RitualCraft\RitualCraftCore.java" md5: 4510c16a19039d90f010376af2a20c6e
 endProcessing "Rituals\Rituals\RitualCraft\RitualCraftCore.java"
 
-startProcessing "Rituals\Rituals\RitualCraft\RitualCraftRegister.java" md5: 5be42ff1dea96bb67cd930546ddd033c
+startProcessing "Rituals\Rituals\RitualCraft\RitualCraftRegister.java" md5: fb285dd9cc70d12a03b2152dc8a92f6a
 endProcessing "Rituals\Rituals\RitualCraft\RitualCraftRegister.java"
 
 startProcessing "Rituals\Rituals\RitualCreateLava.java" md5: de10e501ddcd5859976b9b397dcc6072
@@ -340,8 +402,13 @@ startProcessing "Rituals\Rituals\RitualCreateWater.java" md5: 193e715a9ede731096
 Cache Hit!
 endProcessing "Rituals\Rituals\RitualCreateWater.java"
 
-startProcessing "Rituals\Rituals\RitualEggization.java" md5: 818fb795cebe47d9b874ec38379deaf1
-Cache Hit!
+startProcessing "Rituals\Rituals\RitualDehydration\RitualDehydration.java" md5: bdd9eb36590154429aa9c46e8af39d45
+endProcessing "Rituals\Rituals\RitualDehydration\RitualDehydration.java"
+
+startProcessing "Rituals\Rituals\RitualDehydration\RitualDehydrationRecipe.java" md5: 3abb46268cf8c7e6ce9331c4137341e4
+endProcessing "Rituals\Rituals\RitualDehydration\RitualDehydrationRecipe.java"
+
+startProcessing "Rituals\Rituals\RitualEggization.java" md5: 2e863bc7ab6eb80ca2046e60272a0733
 endProcessing "Rituals\Rituals\RitualEggization.java"
 
 startProcessing "Rituals\Rituals\RitualExplode.java" md5: 6fd458165ffac434f30eb1344247a75b
@@ -352,15 +419,13 @@ startProcessing "Rituals\Rituals\RitualInjection\RitualInjection.java" md5: 355c
 Cache Hit!
 endProcessing "Rituals\Rituals\RitualInjection\RitualInjection.java"
 
-startProcessing "Rituals\Rituals\RitualInjection\RitualInjectionCore.java" md5: 33008531e1acc4998094fb283d380bcb
-Cache Hit!
+startProcessing "Rituals\Rituals\RitualInjection\RitualInjectionCore.java" md5: ea0362bcbe8f1e48fd7401f519339ceb
 endProcessing "Rituals\Rituals\RitualInjection\RitualInjectionCore.java"
 
-startProcessing "Rituals\Rituals\RitualInjection\RitualInjectionRegister.java" md5: 8fb5028ac01bec7298994000a10ded3c
+startProcessing "Rituals\Rituals\RitualInjection\RitualInjectionRegister.java" md5: f8be8b4f9ba576c78220000b4d1a058e
 endProcessing "Rituals\Rituals\RitualInjection\RitualInjectionRegister.java"
 
-startProcessing "Rituals\Rituals\RitualSpawnerActivation.java" md5: ca3bb8ce1c1b8f05c2a0ab2d1cf58c4d
-Cache Hit!
+startProcessing "Rituals\Rituals\RitualSpawnerActivation.java" md5: 8f13b6df251a76a9cd98b3f67effb2d0
 endProcessing "Rituals\Rituals\RitualSpawnerActivation.java"
 
 startProcessing "Rituals\StonePosData.java" md5: 27a86bd8409eb93cf2b8900082084a17
@@ -371,8 +436,7 @@ startProcessing "TileEntity\AwekenedSpawnerBaseLogic.java" md5: e9b6d468cbc5cd8d
 Cache Hit!
 endProcessing "TileEntity\AwekenedSpawnerBaseLogic.java"
 
-startProcessing "TileEntity\TileAccelerateStone.java" md5: d35b3126af127fb01578cc29f9c91368
-Cache Hit!
+startProcessing "TileEntity\TileAccelerateStone.java" md5: 7310ff4c3b34cb74dbdd402cf7b0854b
 endProcessing "TileEntity\TileAccelerateStone.java"
 
 startProcessing "TileEntity\TileAwakenedSpawner.java" md5: 8688e2d01c3783d91953d0c476000ace
@@ -392,6 +456,7 @@ Cache Hit!
 endProcessing "TileEntity\TileHighFrequencyRedStone.java"
 
 startProcessing "TileEntity\TileRackManager.java" md5: 9b051e80f2fe4c4f8b4b8bf043ed3482
+Cache Hit!
 endProcessing "TileEntity\TileRackManager.java"
 
 startProcessing "TileEntity\TileRitualLauncher.java" md5: ea83bbe6548e7497801abef1c38fd9fe
@@ -410,8 +475,7 @@ startProcessing "Util\BlockAndPos.java" md5: f71f053c207d06ebedf2e41b93cd6e60
 Cache Hit!
 endProcessing "Util\BlockAndPos.java"
 
-startProcessing "Util\EntityItemUtil.java" md5: 93d362dc24a755481efb06c330ad4032
-Cache Hit!
+startProcessing "Util\EntityItemUtil.java" md5: 8f4ac3fa55ea5ccb272d044c3ab0285f
 endProcessing "Util\EntityItemUtil.java"
 
 startProcessing "Util\EntityUtil.java" md5: 88e3cf8a0d29219079b754f96902031f
@@ -434,10 +498,6 @@ startProcessing "Util\ItemList.java" md5: 7b4e05ef3b30537790fffacc37e6d70c
 Cache Hit!
 endProcessing "Util\ItemList.java"
 
-startProcessing "Util\ParticleUtil.java" md5: a928c96bc15c7a36840823edfa206a88
-Cache Hit!
-endProcessing "Util\ParticleUtil.java"
-
 startProcessing "Util\PlayerUtil.java" md5: 9312138a4e6f2ceef07cfca529347ee8
 Cache Hit!
 endProcessing "Util\PlayerUtil.java"
@@ -445,6 +505,12 @@ endProcessing "Util\PlayerUtil.java"
 startProcessing "Util\Position3D.java" md5: f18e7388be7a9d5c4cab94bf3f78037c
 Cache Hit!
 endProcessing "Util\Position3D.java"
+
+startProcessing "Util\Vec\Coord.java" md5: f0e6de51842d6919206648a1ce7dd8cf
+endProcessing "Util\Vec\Coord.java"
+
+startProcessing "Util\Vec\Vec.java" md5: 419fd20b0ae0033aceaf2d37ed7961b0
+endProcessing "Util\Vec\Vec.java"
 
 startProcessing "World\ExperienceOreGenerator.java" md5: 51dfa428c2143c932e69180078c4303f
 Cache Hit!

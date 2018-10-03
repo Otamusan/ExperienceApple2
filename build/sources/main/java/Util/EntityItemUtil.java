@@ -43,4 +43,10 @@ public class EntityItemUtil {
 		}
 		return itemList;
 	}
+
+	public static void spawnItem(World world, ItemStack item, double x, double y, double z) {
+		if (!world.isRemote) {
+			world.spawnEntity(new EntityItem(world, x, y, z, item));
+		}
+	}
 }

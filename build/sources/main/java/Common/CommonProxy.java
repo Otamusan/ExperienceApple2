@@ -21,16 +21,15 @@ public class CommonProxy {
 	}
 
 	public void registerTileEntity() {
-		GameRegistry.registerTileEntity(TileAccelerateStone.class, EAMain.MOD_ID + "tileAccelerateStone");
-		GameRegistry.registerTileEntity(TileGrowthStone.class, EAMain.MOD_ID + "tileGrowthStone");
-		GameRegistry.registerTileEntity(TileRitualLauncher.class, EAMain.MOD_ID + "tileRitualLauncher");
-		GameRegistry.registerTileEntity(TileHighFrequencyRedStone.class, EAMain.MOD_ID + "tileHighFrequencyRedStone");
-		GameRegistry.registerTileEntity(TileAwakenedSpawner.class, EAMain.MOD_ID + "tileAwakenedSpawner");
-		GameRegistry.registerTileEntity(TileStorageRack.class, EAMain.MOD_ID + "tileStorageRack");
-		GameRegistry.registerTileEntity(TileWEIHopper.class, EAMain.MOD_ID + "tileWEIHopper");
-		GameRegistry.registerTileEntity(TileEIHopper.class, EAMain.MOD_ID + "tileEIHopper");
-		GameRegistry.registerTileEntity(TileRackManager.class, EAMain.MOD_ID + "tileRackManager");
-
+		GameRegistry.registerTileEntity(TileAccelerateStone.class, EAMain.MOD_ID + ":tileAccelerateStone");
+		GameRegistry.registerTileEntity(TileGrowthStone.class, EAMain.MOD_ID + ":tileGrowthStone");
+		GameRegistry.registerTileEntity(TileRitualLauncher.class, EAMain.MOD_ID + ":tileRitualLauncher");
+		GameRegistry.registerTileEntity(TileHighFrequencyRedStone.class, EAMain.MOD_ID + ":tileHighFrequencyRedStone");
+		GameRegistry.registerTileEntity(TileAwakenedSpawner.class, EAMain.MOD_ID + ":tileAwakenedSpawner");
+		GameRegistry.registerTileEntity(TileStorageRack.class, EAMain.MOD_ID + ":tileStorageRack");
+		GameRegistry.registerTileEntity(TileWEIHopper.class, EAMain.MOD_ID + ":tileWEIHopper");
+		GameRegistry.registerTileEntity(TileEIHopper.class, EAMain.MOD_ID + ":tileEIHopper");
+		GameRegistry.registerTileEntity(TileRackManager.class, EAMain.MOD_ID + ":tileRackManager");
 	}
 
 	public void registerEventHandlers() {
